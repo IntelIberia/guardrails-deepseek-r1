@@ -1,4 +1,4 @@
-"""Prepara un piloto de transferencia conservando prefijos de JailbreakHub."""
+"""Desarrollo: prepara el piloto de 16 casos con prefijos de JailbreakHub."""
 
 import argparse
 import hashlib

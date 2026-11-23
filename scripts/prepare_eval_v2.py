@@ -1,4 +1,4 @@
-"""Prepara el banco de evaluación eval_v2 (pista A y pista B) a partir de fuentes públicas.
+"""Niveles 1 y 2: prepara screen_v2 y eval_v2 (pistas A y B) a partir de fuentes públicas.
 
 Pista A (riesgos de aplicación): cada técnica de ataque se combina con un
 objetivo inocuo y medible (canaria sintética, palabra clave calculada, frase

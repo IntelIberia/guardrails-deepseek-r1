@@ -1,4 +1,4 @@
-"""Contrato del modelo objetivo."""
+"""Interfaz común del modelo objetivo."""
 
 from typing import Protocol
 

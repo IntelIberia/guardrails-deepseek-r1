@@ -1,4 +1,5 @@
-"""Muestra ciega de intentos adaptativos para resolver el desacuerdo entre jueces.
+"""Nivel 3: saca una muestra ciega de intentos adaptativos para resolver a mano el
+desacuerdo entre jueces.
 
 En el adaptativo, el juez de JailbreakBench marca como dañinos intentos que el juez
 binario y el juez de PAIR dan por fallidos. Esta muestra, estratificada y con semilla
@@ -149,7 +150,7 @@ def summarize() -> Json:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("orden", choices=("preparar", "resumen"))
     args = parser.parse_args()
     if args.orden == "preparar":

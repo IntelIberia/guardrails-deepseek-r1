@@ -1,4 +1,4 @@
-"""Conecta adaptadores concretos con los contratos del núcleo."""
+"""Conecta los nombres usados en los YAML con cada implementación (objetivo, filtros y juez)."""
 
 from dataclasses import dataclass, field
 from collections.abc import Callable

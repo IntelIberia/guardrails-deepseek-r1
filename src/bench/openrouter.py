@@ -1,4 +1,6 @@
-"""Transporte compartido para las llamadas de chat de OpenRouter."""
+"""Cliente de OpenRouter común a todas las fases: limita el ritmo, reintenta y registra
+coste y tiempo.
+"""
 
 import json
 from dataclasses import dataclass

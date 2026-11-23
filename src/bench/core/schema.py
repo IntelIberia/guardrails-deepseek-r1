@@ -1,4 +1,4 @@
-"""Datos intercambiados por el modelo, el juez y el motor."""
+"""Tipos de datos que se intercambian el objetivo, los filtros, el juez y el motor."""
 
 from dataclasses import dataclass
 from enum import Enum

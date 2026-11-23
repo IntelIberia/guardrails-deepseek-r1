@@ -1,4 +1,4 @@
-"""Figuras vectoriales del protocolo v2, sin ejecutar modelos ni modificar métricas.
+"""Dibuja las figuras de los niveles 1 y 2 a partir de las métricas, sin llamar a ningún modelo.
 
 Uso: PYTHONPATH=src .venv/bin/python scripts/figuras_resultados.py
 Entradas auxiliares: --screening, --screen-manifest y --agreement (JSON del

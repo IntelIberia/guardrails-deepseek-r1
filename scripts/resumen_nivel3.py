@@ -1,4 +1,4 @@
-"""Imprime la tabla resumen del nivel 3 (corpus estático y, si existe, adaptativo).
+"""Nivel 3: imprime la tabla resumen (corpus estático y, si existe, ataques adaptativos).
 
 Uso:
     .venv/bin/python scripts/resumen_nivel3.py

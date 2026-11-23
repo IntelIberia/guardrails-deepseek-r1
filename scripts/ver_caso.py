@@ -1,4 +1,4 @@
-"""Muestra qué pasó con un mismo caso en cada configuración (C0-C5).
+"""Niveles 2 y 3: muestra qué pasó con un mismo caso en cada configuración C0-C5.
 
 Uso:
     .venv/bin/python scripts/ver_caso.py ev2-a-llm07-0033

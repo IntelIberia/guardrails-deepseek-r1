@@ -1,4 +1,4 @@
-"""Prepara eval_v3 sin red: entradas fijadas, textos propios y cuatro bloques.
+"""Nivel 3: prepara el corpus eval_v3 sin red, a partir de entradas fijadas y textos propios.
 
 Uso: PYTHONPATH=src .venv/bin/python scripts/prepare_eval_v3.py build
 Las entradas se tratan como datos y se verifican antes de construir los casos.

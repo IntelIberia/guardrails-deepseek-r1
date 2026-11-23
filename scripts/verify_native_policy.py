@@ -1,4 +1,6 @@
-"""Comprueba activación diferencial de C1 sin modificar políticas de la cuenta."""
+"""Antes de usar C1, C4 o C5: comprueba que el filtro de OpenRouter actúa solo en la
+segunda clave.
+"""
 
 import argparse
 import hashlib

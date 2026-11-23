@@ -1,4 +1,4 @@
-"""Figuras del nivel 3, con el mismo estilo que las del nivel 2.
+"""Dibuja las figuras del nivel 3 (fase 3) con el mismo estilo que las del nivel 2.
 
 Uso: PYTHONPATH=src .venv/bin/python scripts/figuras_nivel3.py
 Lee results/derived/eval_v3_metrics.json y, si existen, revision_nivel3.json y

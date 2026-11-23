@@ -1,4 +1,5 @@
-"""Segundo juez: el juez original de JailbreakBench sobre casos ya registrados.
+"""Niveles 2 y 3: aplica el juez original de JailbreakBench a casos ya registrados para
+revisar al juez principal.
 
 Sirve para revisar los veredictos del juez principal (GPT-4.1-mini con la rúbrica
 adaptada), que tiene un error de polaridad documentado en la pista B. Aplica el

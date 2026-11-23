@@ -1,4 +1,4 @@
-"""Contrato del juez de seguridad."""
+"""Interfaz común del juez."""
 
 from typing import Protocol
 

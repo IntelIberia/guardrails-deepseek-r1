@@ -1,4 +1,6 @@
-"""Prepara escenarios inocuos de integración; no crea una muestra de evaluación final."""
+"""Desarrollo: prepara los doce casos comunes (development12) para poner a punto C0-C5;
+no es un corpus de evaluación.
+"""
 
 import hashlib
 import json

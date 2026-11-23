@@ -1,4 +1,4 @@
-"""Interfaz común de las salvaguardas de entrada y salida."""
+"""Interfaz común de los filtros de entrada y salida."""
 
 from typing import Protocol
 

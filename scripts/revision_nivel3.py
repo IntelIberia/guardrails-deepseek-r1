@@ -1,4 +1,5 @@
-"""Cifras revisadas de la pista B del nivel 3 con el segundo juez.
+"""Nivel 3: calcula las cifras de la pista B revisadas con el segundo juez y el
+análisis emparejado de H-CoT.
 
 Uso: PYTHONPATH=src .venv/bin/python scripts/revision_nivel3.py
 

@@ -1,4 +1,6 @@
-"""Ejecuta o reanuda el nivel 3 sin cambiar los protocolos cerrados de v2."""
+"""Nivel 3: ejecuta o reanuda los ataques adaptativos (PAIR, Crescendo, Best-of-N)
+contra una configuración.
+"""
 
 import argparse
 import fcntl

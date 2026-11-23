@@ -1,4 +1,4 @@
-"""Deriva recuentos literales del piloto JailbreakHub sin modificar el JSONL crudo."""
+"""Desarrollo: cuenta los resultados del piloto de JailbreakHub sin modificar su JSONL."""
 
 import argparse
 import hashlib

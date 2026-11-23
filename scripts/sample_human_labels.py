@@ -1,4 +1,4 @@
-"""Muestra aleatoria reproducible para que el autor etiquete a mano la pista B.
+"""Nivel 2: saca una muestra aleatoria reproducible de la pista B para etiquetarla a mano.
 
 Selecciona, con semilla fija, respuestas entregadas de la pista B (réplica 1),
 estratificadas por configuración, y escribe:

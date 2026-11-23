@@ -1,4 +1,4 @@
-"""Resume los JSONL adaptativos por técnica, configuración y tipo de conducta."""
+"""Nivel 3: resume los ataques adaptativos por técnica, configuración y tipo de conducta."""
 
 import argparse
 import json

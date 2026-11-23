@@ -1,4 +1,5 @@
-"""Métricas, plan y presupuesto de la campaña eval_v2 (docs/protocolo_evaluacion_v2.md).
+"""Niveles 1, 2 y 3: métricas, orden de ejecución y control de gasto de las campañas
+(protocolo v2).
 
 Solo lee: los JSONL de results/raw (sin modificarlos), los manifiestos de los
 corpus y, para el presupuesto, los registros reales de results/raw.

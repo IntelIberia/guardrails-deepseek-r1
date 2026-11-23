@@ -1,4 +1,4 @@
-"""Resume todas las ejecuciones de results/raw/ sin modificar los JSONL crudos.
+"""Todas las fases: resume las ejecuciones de results/raw/ sin modificar los JSONL.
 
 Para cada ejecución calcula, a partir de sus registros: identidad (run_id,
 commit, configuración, corpus), modelos y proveedores, recuentos de casos,

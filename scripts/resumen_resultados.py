@@ -1,4 +1,4 @@
-"""Imprime la tabla resumen de la evaluación completa por configuración.
+"""Nivel 2: imprime la tabla resumen de la evaluación completa por configuración.
 
 Uso:
     .venv/bin/python scripts/resumen_resultados.py

@@ -1,4 +1,5 @@
-"""Prepara el corpus de evaluación reservado eval_v1 a partir de Shen et al. y XSTest.
+"""Prepara eval_v1, el primer corpus de evaluación (descartado); sus funciones se
+reutilizan en eval_v2 y eval_v3.
 
 Lee dos ficheros públicos descargados en una revisión fija (no confiables: solo
 se leen como datos), comprueba su SHA-256 y aplica reglas de inclusión,

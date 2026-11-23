@@ -1,4 +1,4 @@
-"""Nivel 1 de eval_v2: pasa cada prompt solo por los filtros de entrada.
+"""Nivel 1: pasa cada mensaje solo por los filtros de entrada, sin llamar a DeepSeek.
 
 Filtros (independientes; cada prompt se envía a todos, no se detiene en el primero):
 - nemo_input: raíl de entrada de NeMo con su moderador (política tfg_nemo_input_output_v1);

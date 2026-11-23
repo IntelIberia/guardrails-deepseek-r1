@@ -1,4 +1,5 @@
-"""Bucles propios de PAIR, Crescendo y Best-of-N con observación pública.
+"""Nivel 3: bucles de PAIR, Crescendo y Best-of-N en los que el atacante solo ve lo que
+entregan los filtros.
 
 PAIR: Chao et al., arXiv:2310.08419; prompts del repositorio JailbreakingLLMs (MIT).
 Crescendo: Russinovich et al., USENIX Security 2025, arXiv:2404.01833; prompt del

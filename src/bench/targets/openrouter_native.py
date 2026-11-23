@@ -1,4 +1,4 @@
-"""Observa el filtro nativo en la petición real al objetivo, sin prechecks ficticios."""
+"""C1, C4 y C5: llama a DeepSeek-R1 con la clave que lleva el filtro de inyección de OpenRouter."""
 
 import json
 import hashlib

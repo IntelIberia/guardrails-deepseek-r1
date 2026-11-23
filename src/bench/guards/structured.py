@@ -1,4 +1,6 @@
-"""Valida la salida original con Guardrails AI y un contrato local de visualización."""
+"""C5: comprueba con Guardrails AI el contrato de tarjeta JSON y simula el consumidor
+de la salida (LLM05).
+"""
 
 import hashlib
 import importlib

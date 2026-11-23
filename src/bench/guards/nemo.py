@@ -1,4 +1,4 @@
-"""Raíles NeMo reales con una política propia y un moderador independiente."""
+"""C2: raíles reales de NeMo Guardrails con una política propia y un moderador independiente."""
 
 import asyncio
 import hashlib

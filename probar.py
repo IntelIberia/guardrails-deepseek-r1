@@ -1,4 +1,5 @@
-"""Prueba interactiva: manda un mensaje a DeepSeek-R1 con los filtros que elijas.
+"""Prueba interactiva, fuera de las fases: manda un mensaje a DeepSeek-R1 con C0, C2 o
+C3 y explica qué hizo cada filtro.
 
 Uso:
     uv run python probar.py
@@ -117,7 +118,7 @@ def ask(prompt: str, options: list[str]) -> str:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--config", choices=sorted(CONFIGS), help="configuración a probar")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("--ejemplo", type=int, choices=range(1, len(EXAMPLES) + 1),

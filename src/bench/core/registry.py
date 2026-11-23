@@ -1,4 +1,4 @@
-"""Registro explícito de fábricas, sin importaciones dinámicas desde YAML."""
+"""Registro de fábricas por nombre, para que un YAML no pueda importar código arbitrario."""
 
 from typing import Generic, TypeVar
 

@@ -1,4 +1,4 @@
-"""Clasifica entrada y canales de salida con Llama Guard 4 por OpenRouter."""
+"""C3: clasifica la entrada y cada canal de salida con Llama Guard 4 a través de OpenRouter."""
 
 import re
 from time import perf_counter

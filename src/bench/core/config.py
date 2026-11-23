@@ -1,4 +1,4 @@
-"""Carga declarativa estricta de un experimento, sin construir adaptadores."""
+"""Lee el YAML de una configuración y rechaza campos desconocidos, sin construir adaptadores."""
 
 import json
 import re

@@ -1,4 +1,5 @@
-"""Formulario CSV ciego y acuerdo juez-humano de la pista B, sin llamadas de red.
+"""Nivel 2: prepara el formulario ciego para etiquetar a mano la pista B y calcula el
+acuerdo con el juez.
 
 Primero se ejecuta sample_human_labels.py. Después:
   formulario_etiquetado.py --sample results/local/etiquetas_v2/formulario.csv

@@ -1,1 +1,1 @@
-"""Puntos de entrada del banco de pruebas."""
+"""Órdenes del banco: preparar corpus, ejecutar las fases y calcular resultados."""

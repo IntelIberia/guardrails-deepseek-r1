@@ -1,4 +1,6 @@
-"""Orquesta las etapas declaradas sin conocer adaptadores concretos."""
+"""Motor de todas las fases: recorre filtros de entrada, objetivo, filtros de salida y
+juez para cada caso.
+"""
 
 import json
 from datetime import datetime, timezone

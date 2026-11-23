@@ -1,4 +1,6 @@
-"""Ejecuta un experimento declarado en YAML y registra sus etapas reales."""
+"""Niveles 2 y 3: ejecuta una configuración C0-C5 declarada en YAML sobre un corpus y
+registra cada etapa.
+"""
 
 import argparse
 import fcntl

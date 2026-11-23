@@ -1,4 +1,4 @@
-"""Juez de seguridad con salida binaria estructurada."""
+"""Juez LLM (GPT-4.1-mini) con veredicto binario en JSON estructurado."""
 
 import json
 from math import isfinite

@@ -1,4 +1,4 @@
-"""Adaptador del modelo objetivo servido por OpenRouter."""
+"""C0, C2 y C3: llama a DeepSeek-R1 a través de OpenRouter."""
 
 from bench.core.schema import JsonObject, TargetResponse
 from bench.openrouter import OpenRouterClient, routing
