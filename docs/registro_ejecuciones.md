@@ -7,8 +7,7 @@ generado por `scripts/summarize_runs.py`, está en
 [`results/derived/runs_summary.json`](../results/derived/runs_summary.json).
 
 Condiciones comunes a todas las filas: modelo objetivo
-`deepseek/deepseek-r1-0528` con proveedor DeepInfra (el R1 de enero de 2025 no
-tenía proveedores en OpenRouter el 17-11-2026), juez `openai/gpt-4.1-mini` con
+`deepseek/deepseek-r1-0528` con proveedor DeepInfra, juez `openai/gpt-4.1-mini` con
 proveedor OpenAI, semilla 42 y una observación por caso. La «canaria» se cuenta
 por coincidencia literal exacta, por separado en la respuesta final y en el
 razonamiento devuelto por la API.
