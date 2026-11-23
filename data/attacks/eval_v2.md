@@ -156,7 +156,7 @@ aclaración entre comas. Están marcadas para revisión humana.
 
 El nivel 1 reúne las plantillas utilizables y los controles de cada fuente. Se
 eliminan 396 duplicados exactos, comparando las palabras sin mayúsculas ni
-puntuación. En la auditoría se retiraron además 511 plantillas de la pista A:
+puntuación. En la revisión se retiraron además 511 plantillas de la pista A:
 451 de Shen, 53 de JailbreakHub y 7 de deepset. Aunque se les añadía un objetivo
 inocuo, conservaban referencias dañinas en su texto. El cribado se aplica ahora
 al prompt completo de los ataques A, también en el nivel 1. Los controles
@@ -197,8 +197,8 @@ plantilla que se pueda separar del contenido.
 
 Gandalf, OR-Bench, HackAPrompt (Schulhoff et al., 2023), PAIR (Chao et al.,
 2023), GCG (Zou et al., 2023) y el ataque de random search (Andriushchenko et
-al., 2024) no están todavía en `biblio.bib`; hay que añadirlos antes de
-citarlos en la memoria.
+al., 2024) hay que añadirlos a la bibliografía de la memoria antes de
+citarlos.
 
 ### Embudo por fuente (nivel 2)
 
@@ -339,7 +339,7 @@ los 515 ataques de la pista A dan ±4,3 puntos para una tasa del 50 %, los 300
 de la pista B ±5,6, y cero bloqueos en 160 benignos acotan el FPR por debajo
 del 2,3 %. Los ficheros de `eval_v1` se mantienen sin cambios.
 
-## Cierre de la auditoría (20 de noviembre de 2026)
+## Revisión final del corpus (20 de noviembre de 2026)
 
 Se han regenerado ambos niveles desde las copias locales de las revisiones
 fijadas. El nivel 2 conserva su huella y su tabla familias × escenarios. El
@@ -348,12 +348,12 @@ versiones. Las 1375 filas B del cribado se han contrastado con las conductas
 públicas; los artefactos B se han cotejado además, sin cambios, con su JSON
 original. Las licencias MIT y Unlicense copiadas coinciden byte por byte con
 las fuentes. Para Lakera, deepset y OR-Bench se han cotejado las fichas y sus
-huellas con las notas guardadas en `licenses/`. La doble declaración de
-deepset sigue pendiente de interpretación por el autor antes de redistribuir.
+huellas con las notas guardadas en `licenses/`. Queda pendiente interpretar
+la doble declaración de licencia de deepset antes de redistribuir sus textos.
 
-El filtro de términos es conservador y no sustituye una lectura humana. El
-autor debe revisar las traducciones de XSTest, las plantillas largas y las
-etiquetas benignas dudosas antes de ejecutar. También debe completar las citas
-bibliográficas pendientes. El presupuesto reproducible está en
-`eval_v2_budget.json`; el orden de ejecución y las reservas están en
-[el plan de campaña](../../docs/plan_campana_v2.md).
+El filtro de términos es conservador y no sustituye una lectura humana: antes
+de ejecutar había que revisar a mano las traducciones de XSTest, las plantillas
+largas y las etiquetas benignas dudosas. El presupuesto reproducible está en
+`eval_v2_budget.json`; el orden de ejecución lo imprime
+`scripts/metrics_eval.py --print-plan` y la regla de parada está en el
+[protocolo v2](../../docs/protocolo_evaluacion_v2.md), sección 10.

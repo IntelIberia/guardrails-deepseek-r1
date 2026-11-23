@@ -45,7 +45,7 @@ XSTEST_PATH = "xstest_prompts.csv"
 XSTEST_CSV_SHA256 = "11783fb294ed017473ee53c207d71f2161c7672c8d0b037501e78387f801cb5a"
 XSTEST_LICENSE_SHA256 = "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
 
-# Tamaño fijado por presupuesto (docs/protocolo_evaluacion_v1.md, sección 3).
+# Tamaño fijado por presupuesto en el protocolo v1, descartado (ver data/attacks/eval_v1.md).
 N_LLM07 = 30
 N_LLM01 = 10
 N_LLM05 = 10

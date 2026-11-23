@@ -75,7 +75,7 @@ en el JSONL un relanzamiento posterior; si se hizo, no dejó registro.
 
 ## Reglas del resumen derivado (revisión del 20-11-2026)
 
-Tras una auditoría independiente del motor, `scripts/summarize_runs.py` aplica
+Tras revisar el motor, `scripts/summarize_runs.py` aplica
 estas reglas. Al regenerar el resumen, ninguna cifra de las siete filas
 anteriores cambia: no hay errores del objetivo ni del juez, ni bloqueos de
 salida con canaria, ni costes desconocidos en ellas. Solo se añaden campos.
@@ -122,14 +122,11 @@ salida con canaria, ni costes desconocidos en ellas. Solo se añaden campos.
 | `h4-c3-native-20261118` | `241c9f478debffb62ae6a34ba1d51fe298b2548e7662a5bccecc6c10a19f390f` |
 | `h5-c2-nemo-20261118` | `e7f2c645e4c5e71f7cb933a6db483656cd09db8806395fdae37649c3df8d8ac7` |
 
-Los JSONL están excluidos de Git (`results/raw/`). Para comprobar que una copia
-es la original basta con `shasum -a 256 results/raw/*.jsonl`.
+`results/raw/` está en `.gitignore` y los registros publicados se añadieron a
+mano. Para comprobar que una copia es la original basta con
+`shasum -a 256 results/raw/*.jsonl`.
 
 ## Ensayos posteriores y evaluación
-
-Al cerrar las siete filas anteriores aún faltaban los pilotos de C1, C4, C5 y
-Guardrails AI, el corpus reservado, la campaña comparativa y las etiquetas
-humanas. Es una descripción de ese momento, no del estado actual.
 
 [protocolos.md](protocolos.md) y las guías de las salvaguardas documentan la
 verificación nativa `c1-verificacion-nativa-20261119` y los pilotos
@@ -137,7 +134,9 @@ verificación nativa `c1-verificacion-nativa-20261119` y los pilotos
 `piloto-gai-20261119`, del 19-11-2026. Esos ensayos no están incluidos en las
 sumas de las siete filas anteriores. No se han recalculado sus cifras aquí.
 
-El corpus reservado v2 se preparó el 20-11-2026; su diseño y el estado previsto
-de la campaña están en [protocolo_evaluacion_v2.md](protocolo_evaluacion_v2.md).
-Preparar el corpus no acredita haber ejecutado la campaña ni haber validado
-al juez con etiquetas humanas.
+Las ejecuciones de la evaluación (niveles 1, 2 y 3) se documentan en sus
+protocolos: [protocolo_evaluacion_v2.md](protocolo_evaluacion_v2.md),
+[protocolo_evaluacion_v3.md](protocolo_evaluacion_v3.md) y
+[protocolo_v3_adaptativo.md](protocolo_v3_adaptativo.md). Sus cifras están en
+los ficheros de métricas de `results/derived/`, no en `runs_summary.json`, que
+solo resume los pilotos.

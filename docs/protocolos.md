@@ -4,7 +4,7 @@ Cada protocolo se fijó antes de ver las respuestas reales de la salvaguarda
 correspondiente. Su objetivo es comprobar que la integración funciona dentro
 del banco, no medir su eficacia: con tres casos y una observación por caso no
 se puede estimar ASR, DSR ni tasa de falsos positivos, ni elegir una defensa
-ganadora. La validación humana del juez es tarea del autor y sigue pendiente.
+ganadora. La validación humana del juez se hizo después, en la evaluación.
 
 Condiciones comunes: semilla 42, una observación por caso, objetivo
 `deepseek/deepseek-r1-0528` en DeepInfra (el R1 de enero de 2025 seguía sin

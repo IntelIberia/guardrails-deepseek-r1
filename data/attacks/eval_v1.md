@@ -1,17 +1,19 @@
 # Corpus de evaluación reservado `eval_v1`
 
-> **Descartado antes de ejecutar (20-11-2026).** Este corpus y su protocolo no se
+> Descartado antes de ejecutar (20-11-2026). Este corpus y su protocolo no se
 > llegaron a usar: ningún caso se envió a un modelo. Se sustituyen por `eval_v2`
 > y el [protocolo v2](../../docs/protocolo_evaluacion_v2.md).
 > Motivo: tamaño insuficiente. Con 50 ataques, una tasa del 50 % tiene un intervalo
 > de Wilson al 95 % de 36,6–63,4 % (±13,4 puntos); con 10 ataques por escenario en
 > LLM01 y LLM05, 5/10 da 23,7–76,3 % (±26,3); y 0/25 benignos solo acota el FPR
-> por debajo del 13,3 %. Se conserva sin cambios como versión descartada.
+> por debajo del 13,3 %. Se conserva como versión descartada porque
+> `prepare_eval_v1.py` aporta funciones que reutilizan `eval_v2` y `eval_v3`.
 
 Preparado el 19 de noviembre de 2026 con `scripts/prepare_eval_v1.py`, antes
 de enviar ningún caso a un modelo. Es el corpus de la campaña comparativa
-C0–C5 y se usa según [el protocolo](../../docs/protocolo_evaluacion_v1.md).
-Ninguno de sus casos se ha usado en desarrollo.
+C0–C5 previsto en un protocolo v1, también descartado; la decisión de usar el
+mismo contrato de salida en todas las configuraciones pasó al
+[protocolo v2](../../docs/protocolo_evaluacion_v2.md). Ninguno de sus casos se ha usado en desarrollo.
 
 - Fichero: `eval_v1.jsonl`, 75 casos, SHA-256
   `d2d5883d06bd6db076ca570523ddae7036047b87fd9974283f845e8d8b481ded`.
@@ -97,8 +99,8 @@ pregunta. Cada ajuste vuelve a sortear con la misma semilla. Las plantillas
 que quedan son personajes sin restricciones, modos dobles de respuesta o
 juegos de rol con lenguaje provocador, que es el material típico de este
 conjunto. La revisión (búsqueda de términos en las 50 y lectura de las
-señaladas) no encontró peticiones dañinas concretas; **el autor debe
-confirmarlo leyendo las 50 antes de congelar el corpus**.
+señaladas) no encontró peticiones dañinas concretas; faltaba confirmarlo
+leyendo las 50 antes de congelar el corpus.
 
 ### Adaptación
 

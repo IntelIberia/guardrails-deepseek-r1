@@ -68,7 +68,7 @@ perfil auxiliar para probar Guardrails AI por separado; no es una de las seis.
   cliente retira la clave de cualquier texto que se registre.
 - **Origen de las cifras.** Toda cifra de la memoria sale de un JSONL de
   `results/raw/`, de `results/derived/` o del código. Las conclusiones, la
-  discusión y las etiquetas humanas del juez son del autor.
+  discusión y las etiquetas humanas del juez son mías.
 - **Reanudación.** Repetir la orden con el mismo `--run-id` continúa la
   ejecución: omite los casos terminados. Si cambian el corpus, el YAML o el
   código, la huella de la configuración cambia y la reanudación se rechaza.

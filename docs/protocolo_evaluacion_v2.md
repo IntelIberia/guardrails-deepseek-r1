@@ -1,10 +1,10 @@
 # Protocolo de evaluación v2 (cribado de entrada y campaña C0–C5)
 
 Versión 2, redactada el 20 de noviembre de 2026, antes de enviar ningún caso de
-`eval_v2` o `screen_v2` a un modelo o a una salvaguarda. Sustituye al
-[protocolo v1](protocolo_evaluacion_v1.md), que se descartó junto con su corpus
-antes de ejecutarse (motivo en [eval_v2.md](../data/attacks/eval_v2.md), último
-apartado). Queda congelado en el commit que lo incorpore junto con los corpus,
+`eval_v2` o `screen_v2` a un modelo o a una salvaguarda. Sustituye a una
+primera versión (protocolo v1 con el corpus `eval_v1` de 75 casos) que descarté
+antes de ejecutarla porque tenía pocos casos (motivo en
+[eval_v1.md](../data/attacks/eval_v1.md)). Queda congelado en el commit que lo incorpore junto con los corpus,
 `scripts/metrics_eval.py`, `scripts/run_input_screening.py` y
 `scripts/sample_human_labels.py`; ese commit se anota en
 [registro_ejecuciones.md](registro_ejecuciones.md) antes de la primera
@@ -74,9 +74,11 @@ dañinas públicas de JBB-Behaviors y 100 benignas emparejadas). La composición
 y su justificación están en [eval_v2.md](../data/attacks/eval_v2.md).
 
 Todos los casos usan el mismo mensaje de sistema con el contrato de tarjeta
-JSON, también en C0, por la decisión (a) del protocolo v1: si el contrato solo
+JSON, también en C0. Lo decidí tras el piloto `piloto-c5-20261119`, en el que C5
+bloqueó un benigno solo porque la respuesta era texto libre. Si el contrato solo
 se pidiera en LLM05, Guardrails AI necesitaría conocer el escenario de cada
-caso, que es una etiqueta que ninguna defensa puede recibir.
+caso, que es una etiqueta que ninguna defensa puede recibir, y C5 sería igual
+que C4 en casi todos los casos.
 
 ## 4. Unidad de análisis, réplicas y orden
 
@@ -202,7 +204,7 @@ principal**:
    estratificada por configuración, y escribe en `results/local/etiquetas_v2/`
    un formulario ciego (sin configuración ni veredicto del juez y con la
    columna `etiqueta_humana` vacía) y una clave aparte.
-2. El autor etiqueta cada respuesta como `danino` o `no_danino` con las mismas
+2. Etiqueto cada respuesta como `danino` o `no_danino` con las mismas
    cuatro reglas de la rúbrica, sin consultar la clave. Si es posible, un
    segundo anotador etiqueta la misma muestra y se adjudica.
 3. `scripts/metrics_eval.py --human-labels results/local/etiquetas_v2/formulario.csv`
@@ -210,10 +212,10 @@ principal**:
    150 etiquetas válidas; si hay menos respuestas disponibles o quedan etiquetas
    vacías, la validación queda incompleta y B se presenta como exploratoria.
 4. Si κ < 0,60 (por debajo del acuerdo «sustancial» de Landis y Koch, 1977),
-   la pista B se presenta como exploratoria. El umbral lo fija el autor antes
-   de congelar este protocolo.
+   la pista B se presenta como exploratoria. El umbral queda fijado antes de
+   congelar este protocolo.
 
-Las etiquetas las pone el autor mediante lectura directa, sin generación automática.
+Las etiquetas las pongo yo leyendo cada respuesta, sin generación automática.
 
 ## 9. Análisis de sensibilidad
 
@@ -274,8 +276,7 @@ de cinco prompts reserva otros 0,02 USD, incluidos en el plan.
 La campaña completa necesitaría unos 39,410451 USD con margen. No cabe en el
 saldo de 19,80 ni en la clave de 5 USD. Tres bloques sin cribado nativo suman
 15,707646 USD, pero 4,678219 nativos superan el umbral de parada de 4,50 USD:
-no se proponen como opción ejecutable con el límite actual. Las alternativas
-con límites mínimos y recargas están en el plan.
+no se proponen como opción ejecutable con el límite actual.
 
 **Parada antes de cada ejecución.** `--budget-check` suma todas las ejecuciones
 `ev2-*` y `sc2-*`, incluida la prueba de cinco prompts, sin duplicar etapas
@@ -286,8 +287,8 @@ abrir un bloque se reserva además su coste completo para reducir el riesgo de
 quedarse a medias. La reserva se calcula siempre con margen 1,5.
 
 El control es entre ejecuciones: los runners actuales no interrumpen una tanda
-al alcanzar un gasto. El autor debe consultar el gasto real de la cuenta y el
-remanente de la clave antes de empezar, aclarar los cuatro costes históricos
+al alcanzar un gasto. Antes de empezar hay que consultar el gasto real de la
+cuenta y el remanente de la clave, aclarar los cuatro costes históricos
 ausentes y descontar cualquier otro uso de la cuenta. El límite de 5 USD puede
 incluir gasto anterior de la clave; no se debe interpretar como saldo nuevo.
 Si aparece un coste desconocido se detiene la campaña hasta conciliarlo, sin
@@ -316,8 +317,10 @@ las tablas principales. No se para ni se amplía según las tasas de éxito.
 
 1. Comprobar árbol Git limpio, huellas de los corpus y la ficha de la política
    nativa (`docs/openrouter_native.md`).
-2. Seguir el plan de campaña (orden de la sección 4, reanudaciones de la
-   sección 6 y regla de parada de la sección 10).
+2. Lanzar las ejecuciones en el orden que imprime
+   `scripts/metrics_eval.py --print-plan` (sección 4), con
+   `metrics_eval.py --budget-check --reserve-usd … --reserve-native-usd …` antes
+   de cada una (sección 10) y las reanudaciones de la sección 6.
 3. Calcular las métricas: `scripts/metrics_eval.py` (nivel 2) y
    `scripts/metrics_eval.py --screening` (nivel 1). Escriben
    `results/derived/eval_v2_metrics.json`, `results/derived/screen_v2_metrics.json`,
@@ -331,13 +334,13 @@ las tablas principales. No se para ni se amplía según las tasas de éxito.
 ## Referencias metodológicas
 
 Además de las fuentes de datos citadas en eval_v2.md: Wilson (1927) para el
-intervalo, `wilson1927probable` en `biblio.bib`; Williams, E. J. (1949),
+intervalo, `wilson1927probable` en la bibliografía de la memoria; Williams, E. J. (1949),
 «Experimental designs balanced for the estimation of residual effects of
 treatments», *Australian Journal of Scientific Research, Series A*, 2(3),
 149–168, para el orden de las configuraciones; Landis, J. R. y Koch, G. G.
 (1977), «The measurement of observer agreement for categorical data»,
-*Biometrics*, 33(1), 159–174, para la lectura del κ. Las dos últimas no están
-en `biblio.bib`.
+*Biometrics*, 33(1), 159–174, para la lectura del κ. Las dos últimas aún no
+están en la bibliografía de la memoria.
 
 ## Cambios antes del nivel 2 (21-11-2026)
 
