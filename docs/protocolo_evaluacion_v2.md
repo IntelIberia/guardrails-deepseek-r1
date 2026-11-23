@@ -61,7 +61,7 @@ cortada por `max_tokens`, significa que la petición pasó. Esta medida es solo
 de detección de entrada: la respuesta truncada no se evalúa ni se guarda más
 allá de los metadatos. El cribado de
 contenido dañino se aplica a todos los ataques de la pista A, también en este
-nivel. Se retiraron 511 plantillas durante la auditoría.
+nivel. Se retiraron 511 plantillas al revisar el corpus.
 Antes de la primera parte se hace una prueba con 5 prompts para confirmar que
 el proveedor acepta `max_tokens=16` con un modelo de razonamiento; si no lo
 acepta, se sube el valor y se anota como desviación.
