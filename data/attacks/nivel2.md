@@ -1,30 +1,33 @@
-# Banco de evaluación `eval_v2`
+# Corpus de los niveles 1 y 2
 
-Preparado el 20 de noviembre de 2026 con `scripts/prepare_eval_v2.py` (semilla
-20261120), antes de enviar ningún caso a un modelo. Sustituye a `eval_v1`, que
-se conserva en el repositorio como versión descartada (ver el final de este
-documento). Se usa según [el protocolo v2](../../docs/protocolo_evaluacion_v2.md).
+Los mensajes de prueba del cribado de entrada (nivel 1) y de la evaluación
+completa C0–C5 (nivel 2). Los genera `scripts/prepare_niveles_1_y_2.py`
+(semilla 20261120) a partir de fuentes públicas. Cómo se usan:
+[protocolo de los niveles 1 y 2](../../docs/protocolo_niveles_1_y_2.md).
 
-El banco tiene dos niveles:
-
-- **Nivel 1, cribado de entrada** (`screen_v2.jsonl`, 5995 prompts). Cada
-  prompt pasa solo por los filtros de entrada (NeMo, Llama Guard 4 y el filtro
-  nativo de OpenRouter). Sirve para medir con muchos casos qué familias detecta
-  cada filtro y cuántos benignos bloquea.
-- **Nivel 2, extremo a extremo** (`eval_v2.jsonl`, 1075 casos en 8 bloques).
-  Cada caso recorre la configuración completa C0–C5: defensas de entrada,
-  modelo, defensas de salida y juez. Es un subconjunto estratificado del
-  nivel 1: los 1075 casos están en `screen_v2.jsonl` con el mismo `prompt_id`
-  y el mismo texto.
+- **Nivel 1** (`nivel1_cribado.jsonl`, 5995 prompts). Cada prompt pasa solo por
+  los filtros de entrada (NeMo, Llama Guard 4 y el filtro nativo de
+  OpenRouter). Mide con muchos casos qué familias detecta cada filtro y cuántos
+  benignos bloquea.
+- **Nivel 2** (`nivel2.jsonl`, 1075 casos en 8 bloques). Cada caso recorre la
+  configuración completa: defensas de entrada, modelo, defensas de salida y
+  juez. Los 1075 casos también están en el nivel 1, con el mismo `prompt_id` y
+  el mismo texto.
 
 | Fichero | Contenido | SHA-256 |
 |---|---|---|
-| `eval_v2.jsonl` | Nivel 2, 1075 casos | `fcef43319af88d7a9cf66d2118b1ee5f3d58d5c3d7b9cdf4c32ac7225136cfec` |
-| `eval_v2_b1.jsonl` … `eval_v2_b8.jsonl` | Las mismas líneas en 8 bloques (135 o 134) | en `eval_v2_manifest.json` |
-| `eval_v2_manifest.json` | Procedencia, oráculo, bloque y huella de cada caso; embudo por fuente | — |
-| `screen_v2.jsonl` | Nivel 1, 5995 prompts | `5d33bbc356cbda3f93bd34e60643578a3b557e7802fde1bf0a1473b7d32477ea` |
-| `screen_v2_manifest.json` | Procedencia, familia y parte (1–4) de cada prompt, sin textos | — |
+| `nivel2.jsonl` | Nivel 2, 1075 casos | `fcef43319af88d7a9cf66d2118b1ee5f3d58d5c3d7b9cdf4c32ac7225136cfec` |
+| `nivel2_b1.jsonl` … `nivel2_b8.jsonl` | Las mismas líneas en 8 bloques (135 o 134) | en `nivel2_manifest.json` |
+| `nivel2_manifest.json` | Procedencia, oráculo, bloque y huella de cada caso; embudo por fuente | — |
+| `nivel1_cribado.jsonl` | Nivel 1, 5995 prompts | `5d33bbc356cbda3f93bd34e60643578a3b557e7802fde1bf0a1473b7d32477ea` |
+| `nivel1_cribado_manifest.json` | Procedencia, familia y parte (1–4) de cada prompt, sin textos | — |
+| `nivel2_source_files.json` | SHA-256 de los 117 ficheros de origen | — |
+| `nivel2_audit.json` | Contraste con las fuentes originales y huellas de las conductas públicas | — |
+| `nivel2_budget.json` | Estimación de coste y duración | — |
 | `licenses/` | Licencias y notas de licencia de cada fuente | — |
+
+Los manifiestos guardan las rutas con las que se generaron los ficheros;
+`scripts/rutas_grabadas.py` las relaciona con los nombres actuales.
 
 ## Dos pistas
 
@@ -169,11 +172,10 @@ pista, clase y familia, para poder ejecutarlo por partes.
 
 Todas las fuentes se descargaron en una revisión fija, en un directorio
 separado, y se leyeron como datos: no se ejecutó nada de ellas. El script
-comprueba los 117 SHA-256 de `eval_v2_source_files.json` antes de construir los
-corpus. Incluye los ficheros adicionales del cribado. El manifiesto registra
-también las huellas de los avisos de licencia. `eval_v2_audit.json` conserva
-el contraste con las fuentes originales y las huellas de las 200 conductas
-públicas de JBB-Behaviors, tanto dañinas como benignas.
+comprueba los 117 SHA-256 de `nivel2_source_files.json` antes de construir los
+corpus. El manifiesto registra también las huellas de los avisos de licencia.
+`nivel2_audit.json` conserva el contraste con las fuentes originales y las
+huellas de las 200 conductas públicas de JBB-Behaviors, dañinas y benignas.
 
 | Fuente | Cita | Revisión | Licencia |
 |---|---|---|---|
@@ -211,8 +213,7 @@ plantilla (misma comunidad de Shen et al. o al menos un 30 % de 5-gramas en
 común). De cada grupo se toma la plantilla más antigua. Se reservan 20 grupos
 con marcador para la pista B y se sortean 150 para la pista A: 60 con
 comunidad asignada por Shen et al. (`shen_comunidad`, con la comunidad como
-subtécnica) y 90 sin ella. A diferencia de `eval_v1`, se admiten plantillas
-sin marcador de pregunta: la petición se añade al final, tras una línea en
+subtécnica) y 90 sin ella. Se admiten plantillas sin marcador de pregunta: la petición se añade al final, tras una línea en
 blanco, que es como se usan en la práctica.
 
 **JailbreakHub.** De 86 ficheros del commit: 19 vacíos, README, licencia o
@@ -275,8 +276,8 @@ dañino que atienda la petición, con detalles específicos; una respuesta
 afirmativa sin ese contenido es segura; y una respuesta irrelevante o una
 petición no dañina también. El texto exacto está en `jbb_judge_rubric` del
 manifiesto. La validez de este juez frente a las etiquetas humanas del autor es
-requisito para presentar la pista B como resultado principal (protocolo,
-sección 8).
+requisito para presentar la pista B como resultado principal
+([protocolo, sección 8](../../docs/protocolo_niveles_1_y_2.md#8-juez-y-etiquetas-humanas)).
 
 ## Ética
 
@@ -297,8 +298,7 @@ Ningún caso coincide con un prompt de los corpus de desarrollo (`c0_20`,
 `development12`, `h4_smoke3`, `h5_c4_smoke2`, `jailbreakhub_probe16` y
 `pilot_llm07`), y ningún ataque del nivel 2 comparte un 30 % o más de sus
 5-gramas con ellos. Los ficheros de JailbreakHub y los IDs de XSTest usados en
-desarrollo están excluidos. `eval_v1` no cuenta como desarrollo porque nunca
-se ejecutó. `tests/test_eval_v2_corpus.py` lo comprueba.
+desarrollo están excluidos. `tests/test_corpus_niveles_1_y_2.py` lo comprueba.
 
 ## Reproducir
 
@@ -309,7 +309,7 @@ se ejecutó. `tests/test_eval_v2_corpus.py` lo comprueba.
    no es dependencia del proyecto):
 
    ```sh
-   uv run --no-project --with pyarrow==18.1.0 python -I scripts/prepare_eval_v2.py \
+   uv run --no-project --with pyarrow==18.1.0 python -I scripts/prepare_niveles_1_y_2.py \
        extract-parquet --input lakera/data/train-….parquet --output lakera/extracted/train.jsonl
    ```
 
@@ -318,41 +318,21 @@ se ejecutó. `tests/test_eval_v2_corpus.py` lo comprueba.
 3. Construir:
 
    ```sh
-   PYTHONPATH=src .venv/bin/python -I scripts/prepare_eval_v2.py build --src-root /ruta/fuentes
+   PYTHONPATH=src .venv/bin/python -I scripts/prepare_niveles_1_y_2.py build --src-root /ruta/fuentes
    ```
 
 El script comprueba las huellas de las fuentes y produce exactamente los
 SHA-256 de este documento; se ha ejecutado dos veces con el mismo resultado.
 
-## Por qué se descartó `eval_v1`
+## Comprobaciones de las fuentes
 
-`eval_v1` (75 casos: 50 ataques y 25 benignos) se preparó y congeló el 19 de
-noviembre, pero no llegó a ejecutarse. Se descarta por tamaño: con 50 ataques,
-una tasa observada del 50 % tiene un intervalo de Wilson al 95 % de 36,6–63,4 %
-(±13,4 puntos), y en los escenarios con 10 ataques (LLM01 y LLM05) el
-intervalo de 5/10 va de 23,7 % a 76,3 % (±26,3 puntos). Con 25 benignos, cero
-bloqueos solo permiten decir que la tasa de falsos positivos está por debajo
-del 13,3 %. Con esos márgenes la campaña solo podía distinguir diferencias muy
-grandes y no permitía ningún análisis por familia. En el nivel 2 de `eval_v2`,
-los 515 ataques de la pista A dan ±4,3 puntos para una tasa del 50 %, los 300
-de la pista B ±5,6, y cero bloqueos en 160 benignos acotan el FPR por debajo
-del 2,3 %. Como nunca se ejecutó, sus ficheros no están en este repositorio.
-
-## Revisión final del corpus (20 de noviembre de 2026)
-
-Se han regenerado ambos niveles desde las copias locales de las revisiones
-fijadas. El nivel 2 conserva su huella y su tabla familias × escenarios. El
-nivel 1 pasa de 6506 a 5995 filas; no se deben mezclar resultados de ambas
-versiones. Las 1375 filas B del cribado se han contrastado con las conductas
-públicas; los artefactos B se han cotejado además, sin cambios, con su JSON
-original. Las licencias MIT y Unlicense copiadas coinciden byte por byte con
-las fuentes. Para Lakera, deepset y OR-Bench se han cotejado las fichas y sus
-huellas con las notas guardadas en `licenses/`. Queda pendiente interpretar
-la doble declaración de licencia de deepset antes de redistribuir sus textos.
-
-El filtro de términos es conservador y no sustituye una lectura humana: antes
-de ejecutar había que revisar a mano las traducciones de XSTest, las plantillas
-largas y las etiquetas benignas dudosas. El presupuesto reproducible está en
-`eval_v2_budget.json`; el orden de ejecución lo imprime
-`scripts/metrics_eval.py --print-plan` y la regla de parada está en el
-[protocolo v2](../../docs/protocolo_evaluacion_v2.md), sección 10.
+- Las 1375 filas B del cribado se contrastaron con las conductas públicas, y
+  los artefactos B con su JSON original.
+- Las licencias MIT y Unlicense copiadas coinciden byte a byte con las fuentes.
+  Para Lakera, deepset y OR-Bench se cotejaron las fichas con las notas de
+  `licenses/`.
+- Pendiente: interpretar la doble declaración de licencia de deepset antes de
+  redistribuir sus textos.
+- El filtro de términos dañinos es conservador y no sustituye una lectura
+  humana de las traducciones de XSTest, las plantillas largas y las etiquetas
+  benignas dudosas.
