@@ -1,0 +1,41 @@
+# C4 = C1 + C2 + C3: filtro nativo de OpenRouter, NeMo Guardrails y Llama Guard 4.
+# Entrada: NeMo y después Llama Guard 4; el filtro nativo actúa al llamar al
+# objetivo; salida: NeMo y después Llama Guard 4. Requiere la clave nativa aislada.
+schema_version: 1
+config_id: C4
+dataset: data/attacks/development12.jsonl
+seed: 42
+target:
+  adapter: openrouter_native_guarded
+  model: deepseek/deepseek-r1-0528
+  provider: deepinfra
+judge:
+  adapter: openrouter_llm
+  model: openai/gpt-4.1-mini
+  provider: openai
+guardrails:
+- adapter: nemo
+  name: nemo-policy-v1
+  stages:
+  - input
+  - output
+  options:
+    model: openai/gpt-4.1-nano
+    provider: azure
+    policy: tfg_nemo_input_output_v1
+- adapter: llama_guard
+  name: llama-guard-4-native
+  stages:
+  - input
+  - output
+  options:
+    model: meta-llama/llama-guard-4-12b
+    provider: deepinfra
+    policy: native_s1_s14
+    max_tokens: 128
+execution:
+  timeout_seconds: 180.0
+  max_concurrency: 2
+  requests_per_second: 1.0
+  max_retries: 3
+  retry_base_delay_seconds: 1.0

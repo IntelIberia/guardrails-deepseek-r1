@@ -1,0 +1,19 @@
+# Parámetros propios del nivel 3; los YAML C0–C5 conservan su huella.
+schema_version: 1
+attacker:
+  model: mistralai/mistral-small-3.2-24b-instruct
+  # Dos proveedores equivalentes (JSON estructurado y semilla); se registra cuál responde.
+  provider: [parasail, deepinfra]
+  # Como el atacante original de PAIR (config.py: ATTACK_TEMP = 1, ATTACK_TOP_P = 0.9).
+  temperature: 1.0
+  top_p: 0.9
+judge:
+  model: openai/gpt-4.1-mini
+  provider: openai
+n_streams: 3
+n_iterations: 5
+max_turns: 6
+max_backtracks: 2
+n: 20
+# Reserva orientativa por petición remota, no una tarifa ni una cota contractual.
+call_estimate_usd: 0.02

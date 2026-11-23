@@ -1,0 +1,20 @@
+# C0 sin salvaguardas externas; objetivo R1-0528 por la contingencia acordada con el tutor.
+schema_version: 1
+config_id: C0
+dataset: data/attacks/c0_20.jsonl
+seed: 42
+target:
+  adapter: openrouter
+  model: deepseek/deepseek-r1-0528
+  provider: deepinfra
+judge:
+  adapter: openrouter_llm
+  model: openai/gpt-4.1-mini
+  provider: openai
+guardrails: []
+execution:
+  timeout_seconds: 180.0
+  max_concurrency: 2
+  requests_per_second: 1.0
+  max_retries: 3
+  retry_base_delay_seconds: 1.0

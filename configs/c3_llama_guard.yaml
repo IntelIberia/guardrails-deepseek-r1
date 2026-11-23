@@ -1,0 +1,28 @@
+# Política nativa de contenido; no presupone cobertura de canarias sintéticas.
+schema_version: 1
+config_id: C3
+dataset: data/attacks/c0_20.jsonl
+seed: 42
+target:
+  adapter: openrouter
+  model: deepseek/deepseek-r1-0528
+  provider: deepinfra
+judge:
+  adapter: openrouter_llm
+  model: openai/gpt-4.1-mini
+  provider: openai
+guardrails:
+  - adapter: llama_guard
+    name: llama-guard-4-native
+    stages: [input, output]
+    options:
+      model: meta-llama/llama-guard-4-12b
+      provider: deepinfra
+      policy: native_s1_s14
+      max_tokens: 128
+execution:
+  timeout_seconds: 180.0
+  max_concurrency: 2
+  requests_per_second: 1.0
+  max_retries: 3
+  retry_base_delay_seconds: 1.0

@@ -1,0 +1,27 @@
+# Perfil auxiliar: prueba de integración de Guardrails AI por separado.
+# No es una de las seis configuraciones C0-C5; su capa forma parte de C5.
+schema_version: 1
+config_id: GAI-integracion
+dataset: data/attacks/h5_c4_smoke2.jsonl
+seed: 42
+target:
+  adapter: openrouter
+  model: deepseek/deepseek-r1-0528
+  provider: deepinfra
+judge:
+  adapter: openrouter_llm
+  model: openai/gpt-4.1-mini
+  provider: openai
+guardrails:
+- adapter: structured
+  name: guardrails-ai-display-contract
+  stages:
+  - output
+  options:
+    policy: display_contract_v1
+execution:
+  timeout_seconds: 180.0
+  max_concurrency: 2
+  requests_per_second: 1.0
+  max_retries: 3
+  retry_base_delay_seconds: 1.0
