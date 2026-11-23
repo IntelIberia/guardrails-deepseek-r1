@@ -351,7 +351,6 @@ def test_analisis_principal_excluye_bloques_incompletos(campaign: tuple[Path, Js
 
 
 def test_reserva_presupuesto_y_fuentes_separadas_por_clase(tmp_path: Path) -> None:
-    from decimal import Decimal
 
     assert m.observed_spend(tmp_path, [], reserve_native=m.NATIVE_KEY_CAP_USD * m.STOP_FRACTION)["stop"]
     manifest = {"rows": [

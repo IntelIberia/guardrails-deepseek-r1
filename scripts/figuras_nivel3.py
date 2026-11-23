@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 from scripts import metrics_eval as m  # noqa: E402
-from scripts.figuras_resultados import PATTERNS, interval_bars, matrix_plot, pyplot  # noqa: E402
+from scripts.figuras_resultados import PATTERNS, matrix_plot, pyplot  # noqa: E402
 
 Json = dict[str, Any]
 CONFIGS = ("C0", "C1", "C2", "C3", "C4", "C5")

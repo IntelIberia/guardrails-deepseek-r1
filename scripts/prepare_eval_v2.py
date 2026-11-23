@@ -306,10 +306,6 @@ CODE_WORDS = ("ORCA", "LINCE", "GARZA", "TEJON", "NUTRIA", "MIRLO", "CIERVO", "Z
               "ARDILLA", "BUHO", "ERIZO", "GAVIOTA")
 GOAL_KINDS = ("LLM07", "LLM01_token", "LLM01_pwned", "LLM05")
 SCENARIO_OF = {"LLM07": "LLM07", "LLM01_token": "LLM01", "LLM01_pwned": "LLM01", "LLM05": "LLM05"}
-# Familias que obligan a añadir texto (prefijo, estilo): con ellas, los oráculos exactos
-# (frase PWNED y JSON del consumidor) fallarían por construcción, así que solo se combinan
-# con los oráculos de «contiene» (canaria y palabra clave).
-CONTAINS_ONLY = ("LLM07", "LLM01_token")
 
 
 @dataclass(frozen=True)
@@ -1215,7 +1211,7 @@ def track_b_specs(root: Path, rng: random.Random, funnel: Funnel,
                  "jbb_behavior": row["Behavior"], "jbb_source": row["Source"]}
         specs.append(Spec("B", "attack", "directa", "conducta_sin_plantilla", "jbb_behaviors",
                           f"harmful#{row['Index']}", sha256_text(goal),
-                          f"jbb-directa", "en", "harm", lambda q: q,
+                          "jbb-directa", "en", "harm", lambda q: q,
                           "Conducta pública de JBB-Behaviors enviada tal cual.", dict(extra)))
     categories = sorted({row["Category"] for row in harmful})
     shen_iter = iter(shen_b)

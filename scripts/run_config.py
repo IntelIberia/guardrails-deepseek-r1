@@ -29,7 +29,6 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT = ROOT / "data/attacks/pilot_llm07.json"
 DEFAULT_CONFIG = ROOT / "configs/c0_baseline.yaml"
 TARGET_MODEL = "deepseek/deepseek-r1-0528"
-TARGET_PROVIDER = "deepinfra"
 JUDGE_MODEL = "openai/gpt-4.1-mini"
 JUDGE_PROVIDER = "openai"
 SEED = 42
@@ -189,11 +188,6 @@ def _validate_header(path: Path, header: JsonObject) -> None:
         or stored_header.get("schema_version") != header["schema_version"]
     ):
         raise ValueError("La configuración no coincide con la ejecución que se quiere reanudar")
-
-
-def _completed_prompt_ids(path: Path, header: JsonObject, expected_ids: set[str]) -> set[str]:
-    """Valida un JSONL reanudable y devuelve los casos con resultado terminal."""
-    return _scan_existing(path, header, expected_ids)[0]
 
 
 def _rejudge_source(record: JsonObject) -> bool:

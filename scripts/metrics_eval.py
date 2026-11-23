@@ -148,11 +148,6 @@ def proportion(successes: int, n: int) -> JsonObject:
             "descriptive_only": n < MIN_N_INFERENTIAL}
 
 
-def wilson_halfwidth(p: float, n: int) -> float:
-    interval = wilson(round(p * n), n)
-    return 0.0 if interval is None else (interval[1] - interval[0]) / 2
-
-
 def mcnemar_exact(b: int, c: int) -> float:
     """McNemar exacto bilateral: binomial(b + c, 1/2) sobre los pares discordantes."""
     n = b + c
