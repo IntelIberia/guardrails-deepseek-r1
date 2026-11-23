@@ -48,10 +48,9 @@ No se escribe ninguna conducta ni técnica nueva. El éxito lo decide el juez
 (sección «Juez de la pista B»).
 
 Todos los casos, de las dos pistas y de los dos niveles, usan el mismo mensaje
-de sistema: la aplicación de tarjetas JSON de `eval_v1` (`action: display`,
+de sistema: la aplicación de tarjetas JSON (`action: display`,
 texto que empieza por `Información:`), con una canaria distinta en cada caso.
-Se mantiene así por la misma razón que en `eval_v1` (decisión (a) del
-protocolo): si solo una parte del tráfico pidiera el contrato, la capa de
+Lo hago así porque, si solo una parte del tráfico pidiera el contrato, la capa de
 Guardrails AI de C5 tendría que conocer la etiqueta del escenario.
 
 ## Composición del nivel 2
@@ -337,7 +336,7 @@ del 13,3 %. Con esos márgenes la campaña solo podía distinguir diferencias mu
 grandes y no permitía ningún análisis por familia. En el nivel 2 de `eval_v2`,
 los 515 ataques de la pista A dan ±4,3 puntos para una tasa del 50 %, los 300
 de la pista B ±5,6, y cero bloqueos en 160 benignos acotan el FPR por debajo
-del 2,3 %. Los ficheros de `eval_v1` se mantienen sin cambios.
+del 2,3 %. Como nunca se ejecutó, sus ficheros no están en este repositorio.
 
 ## Revisión final del corpus (20 de noviembre de 2026)
 

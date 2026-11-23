@@ -4,7 +4,7 @@ Versión 2, redactada el 20 de noviembre de 2026, antes de enviar ningún caso d
 `eval_v2` o `screen_v2` a un modelo o a una salvaguarda. Sustituye a una
 primera versión (protocolo v1 con el corpus `eval_v1` de 75 casos) que descarté
 antes de ejecutarla porque tenía pocos casos (motivo en
-[eval_v1.md](../data/attacks/eval_v1.md)). Queda congelado en el commit que lo incorpore junto con los corpus,
+[eval_v2.md](../data/attacks/eval_v2.md#por-qué-se-descartó-eval_v1)). Queda congelado en el commit que lo incorpore junto con los corpus,
 `scripts/metrics_eval.py`, `scripts/run_input_screening.py` y
 `scripts/sample_human_labels.py`; ese commit se anota en
 [registro_ejecuciones.md](registro_ejecuciones.md) antes de la primera

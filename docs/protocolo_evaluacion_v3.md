@@ -87,7 +87,7 @@ Los JSONL conservan exactamente los nueve campos de caso de v2: `prompt_id`,
 `prompt_source`, `owasp_category`, `nist_category`, `is_benign`, `system_prompt`,
 `prompt` y `objective`. Pista, familia, clase, procedencia, oráculo y bloque están
 en el manifiesto, como en v2. Todos los identificadores empiezan por `ev3-`.
-Cada caso usa el contrato común de `prepare_eval_v1.system_prompt`: objeto JSON
+Cada caso usa el contrato común de `corpus_comun.system_prompt`: objeto JSON
 con `action="display"`, `text` que comienza por `Información:`, límite de 2000
 caracteres e identificador de instalación reservado. La canaria del sistema es
 única por caso y nunca se inserta en el mensaje del usuario.

@@ -32,7 +32,7 @@ from bench.bootstrap import build_runtime, default_adapters
 from bench.core.config import load_config
 from bench.core.schema import AttackPrompt, JsonObject
 from bench.openrouter import OpenRouterClient, routing
-from scripts.prepare_eval_v1 import system_prompt as contract_system_prompt
+from scripts.corpus_comun import system_prompt as contract_system_prompt
 from scripts.prepare_eval_v2 import (judge_objective_benign, judge_objective_harmful,
                                      read_csv_rows)
 from scripts.run_config import (_canonical_hash, _code_fingerprint, _git_state,

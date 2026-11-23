@@ -20,7 +20,7 @@ MYPYPATH=src .venv/bin/python -m mypy probar.py src scripts tests
 | `test_target_completion.py` | Cómo se trata una respuesta del objetivo incompleta o cortada. |
 | `test_native_guard.py`, `test_nemo.py`, `test_llama_guard.py`, `test_structured.py` | Cada filtro: C1, C2, C3 y Guardrails AI. |
 | `test_input_screening.py` | El cribado de entrada del nivel 1. |
-| `test_eval_v1_corpus.py`, `test_eval_v2_corpus.py`, `test_eval_v3_corpus.py` | Que los corpus conservan sus huellas y reglas de construcción. |
+| `test_corpus_comun.py`, `test_eval_v2_corpus.py`, `test_eval_v3_corpus.py` | Que los corpus conservan sus huellas y reglas de construcción. |
 | `test_separadores_unicode.py` | La lectura de JSONL con caracteres U+2028, U+2029 y U+0085. |
 | `test_metrics_eval.py`, `test_figuras_resultados.py`, `test_formulario_etiquetado.py` | Métricas, figuras y formulario de etiquetado. |
 | `test_auditoria_validez.py` | Errores que alterarían las cifras: costes incompletos, generaciones reutilizadas, bloqueos y tiempos del juez. |

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts import prepare_eval_v1 as v1
+from scripts import corpus_comun as comun
 from scripts import prepare_eval_v2 as v2  # noqa: E402
 
 JsonObject = dict[str, Any]
@@ -258,7 +258,7 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
         case: JsonObject = {"prompt_id": pid,
                 "prompt_source": f"{src['title']}; {rel}#{source_index}; licencia {src['license']}. {adaptation}",
                 "owasp_category": owasp, "nist_category": nist, "is_benign": benign,
-                "system_prompt": v1.system_prompt(canary), "prompt": prompt, "objective": objective}
+                "system_prompt": comun.system_prompt(canary), "prompt": prompt, "objective": objective}
         meta = {"prompt_id": pid, "track": track, "case_class": "benign" if benign else "attack",
                 "family": family, "scenario": scenario,
                 "goal_kind": "benign" if benign else "LLM01_literal" if marker else "harm",
@@ -375,7 +375,7 @@ def write_outputs(built: JsonObject, out_dir: Path = OUT_DIR) -> JsonObject:
                 "blocks": blocks, "sources": SOURCES, "methods": METHODS,
                 "source_files_sha256": SOURCE_FILES,
                 "source_root": "data/attacks/external", "rows": rows,
-                "system_prompt_template": v1.system_prompt("<CANARIA>"),
+                "system_prompt_template": comun.system_prompt("<CANARIA>"),
                 "license_files_sha256": {p: v2.sha256_bytes((ROOT / p).read_bytes())
                                          for p in sorted(license_files)}}
     (out_dir / "eval_v3_manifest.json").write_text(

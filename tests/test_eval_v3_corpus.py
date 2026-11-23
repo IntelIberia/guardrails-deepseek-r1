@@ -9,7 +9,7 @@ from typing import Any
 import pytest
 
 from scripts import metrics_eval as metrics
-from scripts import prepare_eval_v1 as v1
+from scripts import corpus_comun as comun
 from scripts import prepare_eval_v2 as v2
 from scripts import prepare_eval_v3 as prep
 from scripts.run_config import load_attacks
@@ -68,7 +68,7 @@ def test_pistas_contrato_oraculos_y_fuentes() -> None:
     hcot = [json.loads(l) for l in (ROOT / 'data/attacks/external/hcot/hcot_deepseek_r1.jsonl').read_text().splitlines()]
     for row in MANIFEST['rows']:
         case = cases[row['prompt_id']]
-        assert case.system_prompt == v1.system_prompt(row['canary'])
+        assert case.system_prompt == comun.system_prompt(row['canary'])
         assert row['canary'] not in case.prompt
         assert row['row_sha256'] == metrics.row_sha256({
             k: getattr(case, k) for k in ('prompt_id', 'prompt_source', 'owasp_category',

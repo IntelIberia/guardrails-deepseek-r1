@@ -9,7 +9,7 @@ from typing import Any
 
 import pytest
 
-from scripts import prepare_eval_v1 as v1
+from scripts import corpus_comun as comun
 from scripts import prepare_eval_v2 as prep
 from scripts.metrics_eval import row_sha256
 from scripts.run_config import load_attacks
@@ -47,7 +47,7 @@ def test_huellas_de_fila_y_canarias() -> None:
         assert row["row_sha256"] == row_sha256(case)
         assert row["canary"] in case["system_prompt"] and row["canary"] not in case["prompt"]
         assert case["is_benign"] is (row["case_class"] == "benign")
-        assert case["system_prompt"] == v1.system_prompt(row["canary"])
+        assert case["system_prompt"] == comun.system_prompt(row["canary"])
     assert len({row["canary"] for row in MANIFEST["rows"]}) == MANIFEST["count"]
 
 
@@ -115,18 +115,18 @@ def test_pista_b_usa_solo_conductas_publicas_y_rubrica_del_juez() -> None:
 def test_separacion_de_los_corpus_de_desarrollo() -> None:
     dev = prep.development_texts()
     dev_set = set(dev)
-    dev_sets = [v1.shingles(text) for text in dev]
+    dev_sets = [comun.shingles(text) for text in dev]
     for path in (CORPUS, SCREEN):
         prompts = [c["prompt"] for c in cases(path)]
         assert not set(prompts) & dev_set
     for case in cases(CORPUS):
-        assert all(v1.jaccard(v1.shingles(case["prompt"]), d) < v1.SIMILARITY_THRESHOLD
+        assert all(comun.jaccard(comun.shingles(case["prompt"]), d) < comun.SIMILARITY_THRESHOLD
                    for d in dev_sets), case["prompt_id"]
     used = {r["xstest_id"] for r in SCREEN_MANIFEST["rows"] if r["source"] == "xstest"
             and "xstest_id" in r}
-    assert not used & v1.XSTEST_USED_IDS
+    assert not used & comun.XSTEST_USED_IDS
     xs = {int(r["source_id"].split("-")[1]) for r in SCREEN_MANIFEST["rows"] if r["source"] == "xstest"}
-    assert not xs & v1.XSTEST_USED_IDS
+    assert not xs & comun.XSTEST_USED_IDS
     assert not {r["source_id"] for r in SCREEN_MANIFEST["rows"] if r["source"] == "jailbreakhub"} \
         & prep.JBH_DEV
 
@@ -171,7 +171,7 @@ def test_cribado_descarta_plantillas_daninas_de_a_y_conserva_conductas_publicas_
     for case in cases(SCREEN):
         row = meta[case["prompt_id"]]
         if row["track"] == "A" and row["case_class"] == "attack":
-            assert not v1.HARM_SCREEN.search(case["prompt"]), row["prompt_id"]
+            assert not comun.HARM_SCREEN.search(case["prompt"]), row["prompt_id"]
         if row["track"] == "B":
             expected = audit["public_behavior_sha256"][row["case_class"]][str(row["jbb_index"])]
             assert hashlib.sha256(row["inserted_request"].encode()).hexdigest() == expected

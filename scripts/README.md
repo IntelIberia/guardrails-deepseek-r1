@@ -39,7 +39,7 @@ guarda nada en `results/`.
 
 | Archivo | Tipo | Para qué sirve |
 |---|---|---|
-| `prepare_eval_v1.py` | Preparar | El primer corpus de evaluación, descartado. Se conserva porque `prepare_eval_v2.py` y `prepare_eval_v3.py` usan sus funciones. |
+| `corpus_comun.py` | (módulo) | Reglas que comparten `prepare_eval_v2.py`, `prepare_eval_v3.py` y `run_adaptive.py`: lectura del corpus de Shen, idioma, agrupación de plantillas y mensaje de sistema. |
 | `prepare_eval_v2.py` | Preparar | Los corpus `screen_v2` (nivel 1) y `eval_v2` (nivel 2) con sus manifiestos. |
 | `run_input_screening.py` | Ejecutar | Nivel 1: pasa cada ataque solo por los filtros de entrada. |
 | `run_config.py` | Ejecutar | Nivel 2: una configuración C0–C5 completa; `--dry-run` comprueba el plan sin gasto. |
