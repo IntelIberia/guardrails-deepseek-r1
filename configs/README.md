@@ -22,7 +22,7 @@ Mira primero `c0_baseline.yaml` (sin salvaguardas) y después
 Para comparar configuraciones hay que pasarles el mismo corpus con `--input`;
 el corpus por defecto no es el mismo en todas.
 
-**No se editan.** La huella de configuración que guarda cada ejecución
+No se editan. La huella de configuración que guarda cada ejecución
 incluye los bytes del YAML, comentarios incluidos, así que cambiar una coma
 impide reconocer y reanudar las ejecuciones existentes. Los nombres de los
 ficheros se mantienen por el mismo motivo. Detalle en

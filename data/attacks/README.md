@@ -26,6 +26,8 @@ recuentos siguientes son líneas de casos, sin sumar dos veces los bloques.
 | `eval_v2_b6.jsonl` | Bloque 6 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
 | `eval_v2_b7.jsonl` | Bloque 7 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
 | `eval_v2_b8.jsonl` | Bloque 8 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
+| `eval_v3.jsonl` | Ataques actuales: inyección en documentos (BIPIA), H-CoT, FlipAttack, Policy Puppetry, CoT Hijacking y benignos | 320 | Preparado el 22-11-2026; ejecutado el 22 y 23-11-2026 según el protocolo v3 | Evaluación, nivel 3 |
+| `eval_v3_b1.jsonl` … `eval_v3_b4.jsonl` | Los cuatro bloques de `eval_v3` | 80 cada uno | Parte de la campaña v3 | Evaluación, nivel 3 |
 
 Los bloques contienen los mismos casos del corpus completo. Los 1075 casos de
 `eval_v2` también están en `screen_v2`, con el mismo identificador y texto.
@@ -39,6 +41,11 @@ Los `*_manifest.json` conservan procedencia, selección y huellas. Las fichas
 [source_assessment.md](source_assessment.md) explican las decisiones.
 `licenses/` contiene las licencias de evaluación; los dos archivos `*LICENSE.txt`
 de esta carpeta acompañan a las fuentes de los pilotos.
+
+`external/` guarda copias fijadas de las fuentes del nivel 3: BIPIA, H-CoT,
+las conductas de JBB-Behaviors que usan los ataques adaptativos, el juez de
+JailbreakBench y los prompts originales del atacante de PAIR y PyRIT
+(Crescendo). No se modifican: el código comprueba sus huellas.
 
 `jailbreakhub_seleccion.json` conserva la plantilla del mensaje de sistema y
 las exclusiones del piloto de 16 casos, separadas del código de preparación.
