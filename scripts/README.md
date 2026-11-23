@@ -39,11 +39,10 @@ guarda nada en `results/`.
 
 | Archivo | Tipo | Para qué sirve |
 |---|---|---|
-| `corpus_comun.py` | (módulo) | Reglas que comparten `prepare_eval_v2.py`, `prepare_eval_v3.py` y `run_adaptive.py`: lectura del corpus de Shen, idioma, agrupación de plantillas y mensaje de sistema. |
-| `prepare_eval_v2.py` | Preparar | Los corpus `screen_v2` (nivel 1) y `eval_v2` (nivel 2) con sus manifiestos. |
+| `prepare_niveles_1_y_2.py` | Preparar | Los corpus del nivel 1 (`nivel1_cribado.jsonl`) y del nivel 2 (`nivel2*.jsonl`) con sus manifiestos. |
 | `run_input_screening.py` | Ejecutar | Nivel 1: pasa cada ataque solo por los filtros de entrada. |
 | `run_config.py` | Ejecutar | Nivel 2: una configuración C0–C5 completa; `--dry-run` comprueba el plan sin gasto. |
-| `metrics_eval.py` | Analizar | Métricas, tablas, orden de ejecución (`--print-plan`) y control de gasto (`--budget-check`). |
+| `metrics_eval.py` | Analizar | Métricas de los niveles 1, 2 y 3 (`--screening`, por defecto, `--corpus nivel3`), tablas, orden de ejecución (`--print-plan`) y control de gasto (`--budget-check`). |
 | `figuras_resultados.py` | Analizar | Figuras del nivel 2 (en `results/figuras/nivel2/`). |
 | `sample_human_labels.py`, `formulario_etiquetado.py` | Analizar | Muestra ciega de respuestas para etiquetar a mano y acuerdo con el juez. |
 
@@ -51,8 +50,8 @@ guarda nada en `results/`.
 
 | Archivo | Tipo | Para qué sirve |
 |---|---|---|
-| `prepare_eval_v3.py` | Preparar | Corpus de ataques actuales (BIPIA, H-CoT, FlipAttack, Policy Puppetry, CoT Hijacking), sin red. |
-| `run_config.py` | Ejecutar | El mismo ejecutor del nivel 2, con el corpus `eval_v3`. |
+| `prepare_nivel3.py` | Preparar | Corpus de ataques actuales (`nivel3*.jsonl`: BIPIA, H-CoT, FlipAttack, Policy Puppetry, CoT Hijacking), sin red. |
+| `run_config.py` | Ejecutar | El mismo ejecutor del nivel 2, con los bloques `nivel3_b*.jsonl`. |
 | `run_adaptive.py` | Ejecutar | Ataques adaptativos PAIR, Crescendo y Best-of-N con la defensa dentro del bucle. Reanudable. |
 | `metrics_adaptive.py` | Analizar | Éxito por técnica y configuración, con intervalo de Wilson. |
 | `segundo_juez.py`, `segundo_juez_adaptativo.py` | Revisión (gasto pequeño) | Aplican el juez publicado por JailbreakBench a casos ya registrados para contrastar al juez principal. |
@@ -60,5 +59,12 @@ guarda nada en `results/`.
 | `muestra_revision_adaptativa.py` | Analizar | Muestra ciega de intentos adaptativos para resolver el desacuerdo entre jueces. |
 | `figuras_nivel3.py` | Analizar | Figuras del nivel 3 (en `results/figuras/nivel3/`). |
 
-Las órdenes exactas de cada campaña están en los protocolos
+## Módulos comunes
+
+| Archivo | Para qué sirve |
+|---|---|
+| `corpus_comun.py` | Reglas que comparten los preparadores y `run_adaptive.py`: lectura del corpus de Shen, idioma, agrupación de plantillas y mensaje de sistema. |
+| `rutas_grabadas.py` | Relaciona las rutas grabadas en manifiestos, registros y métricas con los nombres actuales de los ficheros. |
+
+Las órdenes exactas de cada nivel están en los protocolos
 ([../docs/README.md](../docs/README.md)).

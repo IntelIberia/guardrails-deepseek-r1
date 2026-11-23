@@ -8,12 +8,12 @@ Si es tu primer contacto con el proyecto, empieza por el
 | 1 | [glosario.md](glosario.md) | Los términos del proyecto en lenguaje llano. |
 | 2 | [arquitectura.md](arquitectura.md) | Cómo recorre un caso el banco y qué hace cada parte del código. |
 | 3 | [desviaciones_anteproyecto.md](desviaciones_anteproyecto.md) | En qué me aparto del anteproyecto y por qué. |
-| 4 | [protocolo_evaluacion_v2.md](protocolo_evaluacion_v2.md) | Niveles 1 y 2: cribado de entrada (`screen_v2`) y evaluación completa C0–C5 (`eval_v2`). |
-| 5 | [protocolo_evaluacion_v3.md](protocolo_evaluacion_v3.md) | Nivel 3 con ataques actuales de un mensaje e inyección en documentos (`eval_v3`), con su ejecución y revisión. |
-| 6 | [protocolo_v3_adaptativo.md](protocolo_v3_adaptativo.md) | Nivel 3 con atacantes automáticos (PAIR, Crescendo, Best-of-N): diseño, gasto y resultados. |
+| 4 | [protocolo_niveles_1_y_2.md](protocolo_niveles_1_y_2.md) | Niveles 1 y 2: cribado de entrada y evaluación completa C0–C5. |
+| 5 | [protocolo_nivel3.md](protocolo_nivel3.md) | Nivel 3: ataques actuales de un mensaje e inyección en documentos. |
+| 6 | [protocolo_nivel3_adaptativo.md](protocolo_nivel3_adaptativo.md) | Nivel 3: atacantes automáticos (PAIR, Crescendo, Best-of-N). |
 
-Los protocolos se escribieron antes de ejecutar cada fase y no se reescriben
-después: los cambios se añaden al final como desviaciones con fecha.
+Cada protocolo dice qué se mide, cómo se calcula y con qué órdenes se
+reproduce. Lo que cambió durante la ejecución está al final, con fecha y motivo.
 
 ## Para consultar
 

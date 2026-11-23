@@ -63,7 +63,7 @@ Comparo seis configuraciones:
 
 Cada configuración es un fichero YAML de [`configs/`](configs/).
 
-## Las tres fases
+## Los tres niveles
 
 1. Cribado (nivel 1). Pruebo solo los filtros de entrada con unos 6.000
    mensajes, sin llamar a DeepSeek. Sirve para ver rápido qué detecta cada filtro.
@@ -74,6 +74,15 @@ Cada configuración es un fichero YAML de [`configs/`](configs/).
    (H-CoT), plantillas nuevas y atacantes automáticos que reintentan y aprenden
    de cada respuesta (PAIR, Crescendo y Best-of-N).
 
+Cada nivel usa el mismo patrón de nombres en todas las carpetas:
+
+| Nivel | Protocolo (`docs/`) | Corpus (`data/attacks/`) | Preparador (`scripts/`) | Métricas (`results/derived/`) |
+|---|---|---|---|---|
+| 1 | `protocolo_niveles_1_y_2.md` | `nivel1_cribado.jsonl` | `prepare_niveles_1_y_2.py` | `metricas_nivel1.json` |
+| 2 | `protocolo_niveles_1_y_2.md` | `nivel2.jsonl`, `nivel2_b1…b8.jsonl` | `prepare_niveles_1_y_2.py` | `metricas_nivel2.json` |
+| 3 | `protocolo_nivel3.md` | `nivel3.jsonl`, `nivel3_b1…b4.jsonl` | `prepare_nivel3.py` | `metricas_nivel3.json` |
+| 3, adaptativo | `protocolo_nivel3_adaptativo.md` | Conductas de JBB-Behaviors (`external/`) | — | `metricas_nivel3_adaptativo.json` |
+
 ## Qué he encontrado
 
 - Llama Guard 4 (C3) es el mejor equilibrio. Bloquea 47 de 50 ataques H-CoT y
@@ -81,10 +90,10 @@ Cada configuración es un fichero YAML de [`configs/`](configs/).
   Crescendo en 0 de 20 conductas y PAIR en 2 de 20. A cambio bloquea un 20 % de
   las preguntas inocentes disfrazadas.
 - NeMo (C2, C4 y C5) lo para casi todo, también lo inocente. Con C4 y C5 no pasa
-  ningún ataque en la fase 3, pero las tres configuraciones bloquean entre el 95
+  ningún ataque en el nivel 3, pero las tres configuraciones bloquean entre el 95
   y el 98 % de esas preguntas inocentes. Además, parte de su eficacia depende de
   cómo se cuenten las veces en que su moderador se niega a analizar un mensaje.
-- El filtro de OpenRouter (C1) no protege. En la fase 3 no bloqueó ningún ataque
+- El filtro de OpenRouter (C1) no protege. En el nivel 3 no bloqueó ningún ataque
   y, tras revisar los veredictos del juez, pasaron incluso algunos jailbreaks
   más que sin filtros (63 de 210 frente a 53 de 210 en C0).
 - Los ataques actuales sí rompen a DeepSeek-R1 sin filtros. H-CoT consigue 39
@@ -107,7 +116,7 @@ recalcular con los scripts sin hacer llamadas nuevas.
 | [`data/attacks/`](data/attacks/) | Los mensajes de prueba, con su origen y su licencia. |
 | [`results/`](results/) | Los registros de cada ejecución y las métricas calculadas a partir de ellos. |
 | [`tests/`](tests/) | Pruebas del código con respuestas simuladas: no hacen llamadas ni gastan. |
-| [`docs/`](docs/) | El diseño y los protocolos de cada fase, escritos antes de ejecutarlas. |
+| [`docs/`](docs/) | El diseño y el protocolo de cada nivel: qué se mide y cómo se reproduce. |
 
 Cada carpeta tiene su propio README.
 
@@ -116,7 +125,7 @@ Cada carpeta tiene su propio README.
 ```sh
 uv sync --locked                                           # instala las dependencias
 PYTHONPATH=src .venv/bin/pytest -q                         # pruebas del código (sin red)
-PYTHONPATH=src .venv/bin/python scripts/resumen_nivel3.py  # tabla de resultados de la fase 3
+PYTHONPATH=src .venv/bin/python scripts/resumen_nivel3.py  # tabla de resultados del nivel 3
 PYTHONPATH=src .venv/bin/python scripts/ver_caso.py ev3-bipia-attack-1076  # un caso en C0–C5
 ```
 

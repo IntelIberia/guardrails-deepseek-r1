@@ -135,8 +135,8 @@ verificación nativa `c1-verificacion-nativa-20261119` y los pilotos
 sumas de las siete filas anteriores. No se han recalculado sus cifras aquí.
 
 Las ejecuciones de la evaluación (niveles 1, 2 y 3) se documentan en sus
-protocolos: [protocolo_evaluacion_v2.md](protocolo_evaluacion_v2.md),
-[protocolo_evaluacion_v3.md](protocolo_evaluacion_v3.md) y
-[protocolo_v3_adaptativo.md](protocolo_v3_adaptativo.md). Sus cifras están en
+protocolos: [protocolo_niveles_1_y_2.md](protocolo_niveles_1_y_2.md),
+[protocolo_nivel3.md](protocolo_nivel3.md) y
+[protocolo_nivel3_adaptativo.md](protocolo_nivel3_adaptativo.md). Sus cifras están en
 los ficheros de métricas de `results/derived/`, no en `runs_summary.json`, que
 solo resume los pilotos.

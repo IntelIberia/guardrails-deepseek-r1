@@ -135,7 +135,7 @@ identificador del caso.
 - Plantilla interna: el banco ve los mensajes que envía, no los bytes de la
   plantilla que aplica el proveedor.
 - Validez del juez: un solo veredicto no valida nada; la comprobación con
-  etiquetas humanas se hizo después, en la evaluación (protocolo v2).
+  etiquetas humanas se hizo después, en el nivel 2.
 
 Fuentes consultadas el 18-11-2026:
 [formato de Llama Guard 4](https://dev.meta.ai/llama/docs/model-cards-and-prompt-formats/llama-guard-4),

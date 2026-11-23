@@ -10,12 +10,12 @@
 
 | Fichero | Qué resume | Lo genera |
 |---|---|---|
-| `screen_v2_metrics.json` | Nivel 1, cribado de entrada | `metrics_eval.py --screening` |
-| `eval_v2_metrics.json` | Nivel 2, evaluación completa | `metrics_eval.py` |
-| `revision_pista_b.json` | Revisión de los positivos del juez en el nivel 2 | Sin script; ver el protocolo v2 |
-| `eval_v3_metrics.json` | Nivel 3, corpus estático | `metrics_eval.py --corpus eval_v3 …` |
+| `metricas_nivel1.json` | Nivel 1, cribado de entrada | `metrics_eval.py --screening` |
+| `metricas_nivel2.json` | Nivel 2, evaluación completa | `metrics_eval.py` |
+| `revision_nivel2.json` | Nivel 2, revisión a mano de los positivos del juez en la pista B | Sin script ([protocolo](../docs/protocolo_niveles_1_y_2.md#cambios-durante-la-ejecución)) |
+| `metricas_nivel3.json` | Nivel 3, ataques de un mensaje | `metrics_eval.py --corpus nivel3` |
 | `revision_nivel3.json` | Nivel 3 revisado con el segundo juez y análisis de H-CoT | `revision_nivel3.py` |
-| `adaptive_metrics.json` | Nivel 3, ataques adaptativos | `metrics_adaptive.py` |
+| `metricas_nivel3_adaptativo.json` | Nivel 3, ataques adaptativos | `metrics_adaptive.py` (orden en el [protocolo](../docs/protocolo_nivel3_adaptativo.md#reproducir)) |
 | `segundo_juez/` | Veredictos del segundo juez (solo identificadores y etiquetas) | `segundo_juez.py`, `segundo_juez_adaptativo.py` |
 | `runs_summary.json` | Los pilotos del 17 al 19-11-2026 | `summarize_runs.py` |
 | `jbh-c0-transfer-20261118.json` | El piloto de JailbreakHub | `summarize_jbh_probe.py` |

@@ -2,18 +2,16 @@
 
 Los manifiestos de los corpus, la auditoría del nivel 2, las cabeceras de
 results/raw y las métricas de results/derived guardan las rutas con las que se
-generaron (por ejemplo, data/attacks/eval_v2_b1.jsonl). Esos ficheros son la
-evidencia y no se modifican, pero los ficheros se renombraron después para que
-el nombre diga a qué nivel pertenecen. Esta tabla es el único sitio donde se
-relaciona una cosa con la otra:
+generaron. Esos ficheros son la evidencia y no se modifican; los ficheros sí se
+renombraron para que el nombre diga a qué nivel pertenecen. Esta tabla es el
+único sitio que relaciona una cosa con la otra:
 
-- ``actual`` traduce una ruta leída de un manifiesto al fichero que hay hoy;
-- ``grabada`` hace lo contrario, para que los preparadores y las métricas sigan
-  escribiendo exactamente los mismos bytes que se congelaron.
+- ``actual`` traduce una ruta leída de un manifiesto al fichero de hoy;
+- ``grabada`` hace lo contrario, para que los preparadores y las métricas
+  escriban exactamente los mismos bytes que se congelaron.
 
-Los identificadores internos (corpus_id ``eval_v2``, ``eval_v3`` y ``screen_v2``,
-prefijos ``ev2-``, ``ev3-`` y ``sc2-`` de prompt_id y run_id) no son rutas y se
-conservan tal cual.
+Los identificadores internos (``corpus_id`` y los prefijos de ``prompt_id`` y
+``run_id``) no son rutas y no cambian.
 """
 
 from pathlib import Path

@@ -25,5 +25,5 @@ Los originales se conservan en `data/attacks/external/prompts_atacante/`.
 El motor verifica sus SHA-256 fijados, no ejecuta ninguno de ellos (los ficheros
 de Python se analizan con `ast`) y registra las huellas en la cabecera de cada
 ejecución. Las adaptaciones del bucle, el presupuesto y el arbitraje se describen
-en `docs/protocolo_v3_adaptativo.md`; no equivalen a reproducir los resultados
+en `docs/protocolo_nivel3_adaptativo.md`; no equivalen a reproducir los resultados
 publicados.

@@ -12,27 +12,20 @@ recuentos siguientes son líneas de casos, sin sumar dos veces los bloques.
 | `h4_smoke3.jsonl` | Extracción, pregunta inocente y control de violencia | 3 | C2 y C3 el 18-11; pilotos C1, C4 y C5 documentados el 19-11-2026 | Desarrollo / integración |
 | `h5_c4_smoke2.jsonl` | Respuesta de formato válido y respuesta incompatible | 2 | Piloto de Guardrails AI documentado el 19-11-2026 | Desarrollo / integración |
 | `development12.jsonl` | 9 ataques en tres escenarios y 3 controles inocentes | 12 | Preparado para el desarrollo común de C0–C5, noviembre de 2026; no es una campaña reservada | Desarrollo |
-| `screen_v2.jsonl` | Mensajes para probar solo los filtros de entrada | 5995 | Preparado el 20-11-2026; ejecución según protocolo v2 | Evaluación, nivel 1 |
-| `eval_v2.jsonl` | Pruebas completas con objetivos de aplicación y de contenido | 1075 | Preparado el 20-11-2026; campaña según protocolo v2 | Evaluación, nivel 2 |
-| `eval_v2_b1.jsonl` | Bloque 1 de `eval_v2` | 135 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b2.jsonl` | Bloque 2 de `eval_v2` | 135 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b3.jsonl` | Bloque 3 de `eval_v2` | 135 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b4.jsonl` | Bloque 4 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b5.jsonl` | Bloque 5 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b6.jsonl` | Bloque 6 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b7.jsonl` | Bloque 7 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
-| `eval_v2_b8.jsonl` | Bloque 8 de `eval_v2` | 134 | Parte de la campaña v2 | Evaluación |
-| `eval_v3.jsonl` | Ataques actuales: inyección en documentos (BIPIA), H-CoT, FlipAttack, Policy Puppetry, CoT Hijacking y benignos | 320 | Preparado el 22-11-2026; ejecutado el 22 y 23-11-2026 según el protocolo v3 | Evaluación, nivel 3 |
-| `eval_v3_b1.jsonl` … `eval_v3_b4.jsonl` | Los cuatro bloques de `eval_v3` | 80 cada uno | Parte de la campaña v3 | Evaluación, nivel 3 |
+| `nivel1_cribado.jsonl` | Nivel 1: mensajes para probar solo los filtros de entrada | 5995 | Preparado el 20-11-2026; ejecutado el 21-11-2026 | Evaluación, nivel 1 |
+| `nivel2.jsonl` | Nivel 2: pruebas completas con objetivos de aplicación y de contenido | 1075 | Preparado el 20-11-2026; ejecutado el 21 y 22-11-2026 | Evaluación, nivel 2 |
+| `nivel2_b1.jsonl` … `nivel2_b8.jsonl` | Los ocho bloques del nivel 2 | 135 o 134 | Igual que `nivel2.jsonl` | Evaluación, nivel 2 |
+| `nivel3.jsonl` | Nivel 3: inyección en documentos (BIPIA), H-CoT, FlipAttack, Policy Puppetry, CoT Hijacking y benignos | 320 | Preparado el 22-11-2026; ejecutado el 22 y 23-11-2026 | Evaluación, nivel 3 |
+| `nivel3_b1.jsonl` … `nivel3_b4.jsonl` | Los cuatro bloques del nivel 3 | 80 cada uno | Igual que `nivel3.jsonl` | Evaluación, nivel 3 |
 
-Los bloques contienen los mismos casos del corpus completo. Los 1075 casos de
-`eval_v2` también están en `screen_v2`, con el mismo identificador y texto.
+Los bloques contienen los mismos casos del corpus completo. Los 1075 casos del
+nivel 2 también están en el nivel 1, con el mismo identificador y texto.
 «Preparado» no significa «ejecutado»: consulta el
 [registro de ejecuciones](../../docs/registro_ejecuciones.md) y los registros
 originales para acreditar un ensayo.
 
 Los `*_manifest.json` conservan procedencia, selección y huellas. Las fichas
-[eval_v2.md](eval_v2.md),
+[nivel2.md](nivel2.md) (corpus de los niveles 1 y 2),
 [jailbreakhub_probe16.md](jailbreakhub_probe16.md) y
 [source_assessment.md](source_assessment.md) explican las decisiones.
 `licenses/` contiene las licencias de evaluación; los dos archivos `*LICENSE.txt`
@@ -46,4 +39,7 @@ JailbreakBench y los prompts originales del atacante de PAIR y PyRIT
 `jailbreakhub_seleccion.json` conserva la plantilla del mensaje de sistema y
 las exclusiones del piloto de 16 casos, separadas del código de preparación.
 Los textos experimentales y los nombres de sus fuentes se conservan literalmente.
-No regeneres ni renombres corpus usados para reanudar una ejecución.
+Los bytes de los corpus no se tocan: sus huellas identifican las ejecuciones.
+Los manifiestos guardan las rutas con las que se generaron;
+[`scripts/rutas_grabadas.py`](../../scripts/rutas_grabadas.py) las relaciona con
+los nombres actuales.

@@ -1,4 +1,4 @@
-Fuentes consideradas y no usadas en eval_v2 (comprobado el 19/20-11-2026)
+Fuentes consideradas y no usadas en los niveles 1 y 2 (comprobado el 19/20-11-2026)
 
 HackAPrompt (hackaprompt/hackaprompt-dataset, Hugging Face, revisión
 25b87fbedfb86840abaf8cd09af7a029208a971a). La ficha declara MIT, pero el dataset tiene acceso
