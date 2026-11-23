@@ -1,0 +1,5 @@
+deepset/prompt-injections (Hugging Face), revisión 4f61ecb038e9c3fb77e21034b22511b523772cdd.
+El repositorio no incluye un fichero LICENSE. La ficha (README.md, SHA-256
+d90b4518dfe06154deeec938243d1ec9119bdfbfd2105aee9cf1567999764b94) declara «license: apache-2.0»
+en la cabecera y, dentro del bloque dataset_info, «license: cc-by-4.0». Ambas licencias permiten
+la reutilización académica con atribución. Atribución: deepset GmbH.

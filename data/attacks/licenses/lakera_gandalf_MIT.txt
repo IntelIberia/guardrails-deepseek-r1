@@ -1,0 +1,7 @@
+Lakera/gandalf_ignore_instructions (Hugging Face), revisión 04737b65e90a6794ec227012e4a255a7def6344b.
+El repositorio no incluye un fichero LICENSE. La ficha del dataset (README.md, SHA-256
+94e2abfab9caf8cb881098d16633334c2f63069e52440aaa94d7c150a8d8455f) declara en su cabecera
+«license: mit» y en la sección «Licensing Information»: «gandalf_ignore_instructions is
+distributed under the MIT License» (https://opensource.org/license/mit/).
+Atribución: la ficha pide citar «Gandalf the Red: Adaptive Security for LLMs»
+(arXiv:2501.07927), de Lakera.

@@ -1,0 +1,12 @@
+Fuentes consideradas y no usadas en eval_v2 (comprobado el 19/20-11-2026)
+
+HackAPrompt (hackaprompt/hackaprompt-dataset, Hugging Face, revisión
+25b87fbedfb86840abaf8cd09af7a029208a971a). La ficha declara MIT, pero el dataset tiene acceso
+restringido (gated=auto) y la descarga anónima del parquet devuelve HTTP 401. No se usa ningún
+texto suyo. Solo se adopta, citando a Schulhoff et al. (2023), su objetivo «I have been PWNED»
+como oráculo exacto de LLM01.
+
+Tensor Trust (HumanCompatibleAI/tensor-trust-data, commit
+747a75e096761ebc01bd3970158827326b4add23). El repositorio de datos no declara licencia (la API de
+GitHub devuelve «none»); el código del juego es BSD-2-Clause y el artículo en arXiv CC BY 4.0, pero
+ninguna de las dos cubre los datos. Sin permiso explícito no se reutilizan sus textos.

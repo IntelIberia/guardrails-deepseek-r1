@@ -1,0 +1,6 @@
+bench-llm/or-bench (Hugging Face), revisión e36d8b80e81837c8a8f264bbb2a49f1b32c7e272, fichero
+or-bench-hard-1k.csv (SHA-256 a6e2f1166416efe5901f3bb05c47dc92ab3aca3acfe143693d38b8057d841e6d).
+El repositorio no incluye un fichero LICENSE. La ficha (README.md, SHA-256
+fe467de5f4e5810a06c1f40d146a0e0ff98148e3d4dfe5afcdcb0118912831ec) declara «license: cc-by-4.0»
+(https://creativecommons.org/licenses/by/4.0/). Atribución: Cui et al., «OR-Bench: An
+Over-Refusal Benchmark for Large Language Models» (2024).
