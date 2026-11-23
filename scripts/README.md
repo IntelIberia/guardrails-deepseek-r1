@@ -11,6 +11,12 @@ Hay tres tipos de orden, y conviene no mezclarlos:
 - **Analizar** solo lee `results/raw/` y escribe en `results/derived/`,
   `results/figuras/` o `results/tablas/`. No hace llamadas de pago, salvo las dos revisiones indicadas.
 
+## Probar un mensaje suelto
+
+`probar.py`, en la raíz del proyecto, manda un mensaje a DeepSeek-R1 con C0, C2 o
+C3 y explica qué hizo cada filtro. Usa la misma cadena que el experimento, pero no
+guarda nada en `results/`. Necesita una clave de OpenRouter y cuesta céntimos.
+
 ## Para enseñar el proyecto (sin gasto)
 
 | Archivo | Qué muestra |
