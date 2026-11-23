@@ -1,9 +1,6 @@
 # Criterios de diseño del estudio
 
-Lo escribí el 19-11-2026, antes de congelar la campaña comparativa, para fijar
-tema por tema qué había comprobado y qué decidía. Las decisiones definitivas
-están en los protocolos de evaluación, que remiten a las secciones de este
-documento; por eso conserva su numeración. Los pilotos están en
+Los pilotos están en
 [registro_ejecuciones.md](registro_ejecuciones.md).
 
 La regla de fondo es que cada cifra que se publique pueda ligarse a una
