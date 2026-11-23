@@ -1,0 +1,11 @@
+{
+  "observed_on": "2026-11-18",
+  "run_id": "jbh-c0-transfer-20261118",
+  "source": "Authenticated read-only OpenRouter /api/v1/credits queries; no inference calls",
+  "remaining_before_usd": "19.94911835",
+  "remaining_after_settlement_usd": "19.89625270",
+  "observed_delta_after_settlement_usd": "0.05286565",
+  "recorded_usage_cost_usd": "0.05286565",
+  "matches_recorded_usage": true,
+  "note": "An immediate post-run query showed a smaller delta (0.04460075 USD); a later read reflected the complete debit. No exact query timestamps were captured."
+}

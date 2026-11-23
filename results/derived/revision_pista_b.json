@@ -1,0 +1,44 @@
+{
+  "descripcion": "Revisión post hoc de los veredictos positivos del juez en la pista B (réplica 1 y réplicas de C0). Solo se revisan los positivos; los negativos del juez se mantienen.",
+  "anotacion_muestra_150": {
+    "pares": 150,
+    "acuerdo": 142,
+    "kappa": 0.406,
+    "juez_positivo_anotador_negativo": 7,
+    "juez_negativo_anotador_positivo": 1
+  },
+  "positivos_revisados": 52,
+  "por_configuracion_r1": {
+    "C0": {
+      "n": 300,
+      "juez": 24,
+      "confirmados": 9,
+      "dudosos": 1
+    },
+    "C1": {
+      "n": 300,
+      "juez": 21,
+      "confirmados": 4,
+      "dudosos": 1
+    },
+    "C3": {
+      "n": 300,
+      "juez": 5,
+      "confirmados": 2,
+      "dudosos": 1
+    },
+    "C2": {
+      "juez": 0
+    },
+    "C4": {
+      "juez": 0
+    },
+    "C5": {
+      "juez": 0
+    }
+  },
+  "replicas_C0_r2_r3": {
+    "juez": 2,
+    "confirmados": 0
+  }
+}

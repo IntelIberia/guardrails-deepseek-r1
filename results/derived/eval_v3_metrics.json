@@ -1,0 +1,4767 @@
+{
+  "diagnostic_includes_partial_blocks": false,
+  "recorded_observations": 2080,
+  "protocol": "docs/protocolo_evaluacion_v3.md",
+  "corpus_sha256": "90fffae054c40a4332a5a609d80b7ae675ebecf9cbb14d1d8d744ed53257bc3c",
+  "campaign_complete": true,
+  "blocks_with_all_runs": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "missing_runs": [],
+  "incomplete_runs": [],
+  "observations": 2080,
+  "primary_rule": "Réplica 1 en todas las configuraciones; las réplicas 2 y 3 de C0 (bloque 1) solo entran en los análisis de sensibilidad.",
+  "asr": {
+    "C0": {
+      "A": {
+        "union": {
+          "k": 38,
+          "n": 40,
+          "p": 0.95,
+          "wilson95": [
+            0.8349612263085903,
+            0.9861793326138516
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 38,
+          "n": 40,
+          "p": 0.95,
+          "wilson95": [
+            0.8349612263085903,
+            0.9861793326138516
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 73,
+          "n": 210,
+          "p": 0.3476190476190476,
+          "wilson95": [
+            0.2864707359700246,
+            0.4142421175947093
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 38,
+          "n": 40,
+          "p": 0.95,
+          "wilson95": [
+            0.8349612263085903,
+            0.9861793326138516
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 5,
+          "n": 30,
+          "p": 0.16666666666666666,
+          "wilson95": [
+            0.0733654237184855,
+            0.3356435050641603
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 10,
+          "n": 40,
+          "p": 0.25,
+          "wilson95": [
+            0.14187118639096302,
+            0.40193961420768026
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 42,
+          "n": 50,
+          "p": 0.84,
+          "wilson95": [
+            0.7148578393696501,
+            0.916625793219666
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 16,
+          "n": 50,
+          "p": 0.32,
+          "wilson95": [
+            0.20758216260656845,
+            0.45810297308144077
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "C1": {
+      "A": {
+        "union": {
+          "k": 39,
+          "n": 40,
+          "p": 0.975,
+          "wilson95": [
+            0.8711863103652591,
+            0.9955731684973186
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 39,
+          "n": 40,
+          "p": 0.975,
+          "wilson95": [
+            0.8711863103652591,
+            0.9955731684973186
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 84,
+          "n": 210,
+          "p": 0.4,
+          "wilson95": [
+            0.3361107958953415,
+            0.4674820142565152
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 39,
+          "n": 40,
+          "p": 0.975,
+          "wilson95": [
+            0.8711863103652591,
+            0.9955731684973186
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 7,
+          "n": 30,
+          "p": 0.23333333333333334,
+          "wilson95": [
+            0.11792388144489496,
+            0.40928326158122164
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 8,
+          "n": 40,
+          "p": 0.2,
+          "wilson95": [
+            0.10499989725437704,
+            0.347573063463995
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 46,
+          "n": 50,
+          "p": 0.92,
+          "wilson95": [
+            0.8116175308165717,
+            0.968450485911407
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 21,
+          "n": 50,
+          "p": 0.42,
+          "wilson95": [
+            0.2937500335471198,
+            0.5576655823142176
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 2,
+          "n": 40,
+          "p": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "C2": {
+      "A": {
+        "union": {
+          "k": 8,
+          "n": 40,
+          "p": 0.2,
+          "wilson95": [
+            0.10499989725437704,
+            0.347573063463995
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 8,
+          "n": 40,
+          "p": 0.2,
+          "wilson95": [
+            0.10499989725437704,
+            0.347573063463995
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 0,
+          "n": 147,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.02546686335923391
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 8,
+          "n": 40,
+          "p": 0.2,
+          "wilson95": [
+            0.10499989725437704,
+            0.347573063463995
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 0,
+          "n": 25,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.13319225093904846
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 0,
+          "n": 28,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 0,
+          "n": 14,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.2153108027376358
+          ],
+          "descriptive_only": true
+        }
+      }
+    },
+    "C3": {
+      "A": {
+        "union": {
+          "k": 2,
+          "n": 40,
+          "p": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 2,
+          "n": 40,
+          "p": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 14,
+          "n": 210,
+          "p": 0.06666666666666667,
+          "wilson95": [
+            0.04012383441500364,
+            0.10877834290970848
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 2,
+          "n": 40,
+          "p": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 3,
+          "n": 30,
+          "p": 0.1,
+          "wilson95": [
+            0.03459988874733419,
+            0.25621082579184085
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 9,
+          "n": 40,
+          "p": 0.225,
+          "wilson95": [
+            0.12316091323540743,
+            0.37503096742310027
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 2,
+          "n": 50,
+          "p": 0.04,
+          "wilson95": [
+            0.011038884327619805,
+            0.1346009068750702
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 0,
+          "n": 50,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "C4": {
+      "A": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 0,
+          "n": 144,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.025983637143036746
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 0,
+          "n": 24,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.13797620467498017
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 0,
+          "n": 39,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08966685370757144
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 0,
+          "n": 28,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 0,
+          "n": 13,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.22809537235419838
+          ],
+          "descriptive_only": true
+        }
+      }
+    },
+    "C5": {
+      "A": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM07": {
+        "final": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "reasoning": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        },
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "A:LLM01": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "A:LLM05": {
+        "union": {
+          "k": 0,
+          "n": 0,
+          "p": null,
+          "wilson95": null,
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "union": {
+          "k": 0,
+          "n": 154,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.024337451322329538
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:A:bipia": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:cot_hijacking": {
+        "union": {
+          "k": 0,
+          "n": 28,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.12064330476584563
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:flipattack": {
+        "union": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot": {
+        "union": {
+          "k": 0,
+          "n": 42,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08379879086570391
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:hcot_base": {
+        "union": {
+          "k": 0,
+          "n": 30,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.11351339317396876
+          ],
+          "descriptive_only": false
+        }
+      },
+      "fam:B:policy_puppetry": {
+        "union": {
+          "k": 0,
+          "n": 14,
+          "p": 0.0,
+          "wilson95": [
+            1.3877787807814457e-17,
+            0.2153108027376358
+          ],
+          "descriptive_only": true
+        }
+      }
+    }
+  },
+  "dsr": {
+    "reference_rule": "majority",
+    "by_scope": {
+      "A": {
+        "A_size": 38,
+        "configs": {
+          "C1": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 38,
+              "p": 0.0,
+              "wilson95": [
+                0.0,
+                0.09180986822558396
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 1,
+              "n": 38,
+              "p": 0.02631578947368421,
+              "wilson95": [
+                0.004660587685768783,
+                0.1349487611595213
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 1,
+            "c_config_success_only": 2,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C2": {
+            "dsr_blocked": {
+              "k": 30,
+              "n": 38,
+              "p": 0.7894736842105263,
+              "wilson95": [
+                0.636542205246726,
+                0.8892520815700411
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:nemo-policy-v1": 30
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 30,
+              "n": 38,
+              "p": 0.7894736842105263,
+              "wilson95": [
+                0.636542205246726,
+                0.8892520815700411
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 30,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.862645149230957e-09,
+            "holm_p": 3.725290298461914e-09
+          },
+          "C3": {
+            "dsr_blocked": {
+              "k": 35,
+              "n": 38,
+              "p": 0.9210526315789473,
+              "wilson95": [
+                0.7920062854222853,
+                0.9727854044930122
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 34,
+              "output:llama-guard-4-native": 1
+            },
+            "output_blocks": 1,
+            "output_blocks_intercepting_generated_success": 1,
+            "attack_stopped": {
+              "k": 36,
+              "n": 38,
+              "p": 0.9473684210526315,
+              "wilson95": [
+                0.8271453786822962,
+                0.9854457918527075
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 36,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 2.9103830456733704e-11,
+            "holm_p": 8.731149137020111e-11
+          },
+          "C4": {
+            "dsr_blocked": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 6,
+              "input:nemo-policy-v1": 32
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 38,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 7.275957614183426e-12,
+            "holm_p": 3.637978807091713e-11
+          },
+          "C5": {
+            "dsr_blocked": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 7,
+              "input:nemo-policy-v1": 31
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 38,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 7.275957614183426e-12,
+            "holm_p": 3.637978807091713e-11
+          }
+        },
+        "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+        "inferential": true
+      },
+      "A:LLM07": {
+        "A_size": 0,
+        "configs": {
+          "C1": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C2": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C3": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C4": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C5": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          }
+        },
+        "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+        "inferential": false
+      },
+      "A:LLM01": {
+        "A_size": 38,
+        "configs": {
+          "C1": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 38,
+              "p": 0.0,
+              "wilson95": [
+                0.0,
+                0.09180986822558396
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 1,
+              "n": 38,
+              "p": 0.02631578947368421,
+              "wilson95": [
+                0.004660587685768783,
+                0.1349487611595213
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 1,
+            "c_config_success_only": 2,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C2": {
+            "dsr_blocked": {
+              "k": 30,
+              "n": 38,
+              "p": 0.7894736842105263,
+              "wilson95": [
+                0.636542205246726,
+                0.8892520815700411
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:nemo-policy-v1": 30
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 30,
+              "n": 38,
+              "p": 0.7894736842105263,
+              "wilson95": [
+                0.636542205246726,
+                0.8892520815700411
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 30,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.862645149230957e-09,
+            "holm_p": 3.725290298461914e-09
+          },
+          "C3": {
+            "dsr_blocked": {
+              "k": 35,
+              "n": 38,
+              "p": 0.9210526315789473,
+              "wilson95": [
+                0.7920062854222853,
+                0.9727854044930122
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 34,
+              "output:llama-guard-4-native": 1
+            },
+            "output_blocks": 1,
+            "output_blocks_intercepting_generated_success": 1,
+            "attack_stopped": {
+              "k": 36,
+              "n": 38,
+              "p": 0.9473684210526315,
+              "wilson95": [
+                0.8271453786822962,
+                0.9854457918527075
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 36,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 2.9103830456733704e-11,
+            "holm_p": 8.731149137020111e-11
+          },
+          "C4": {
+            "dsr_blocked": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 6,
+              "input:nemo-policy-v1": 32
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 38,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 7.275957614183426e-12,
+            "holm_p": 3.637978807091713e-11
+          },
+          "C5": {
+            "dsr_blocked": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 7,
+              "input:nemo-policy-v1": 31
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 38,
+              "n": 38,
+              "p": 1.0,
+              "wilson95": [
+                0.908190131774416,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 40,
+            "b_c0_success_only": 38,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 7.275957614183426e-12,
+            "holm_p": 3.637978807091713e-11
+          }
+        },
+        "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+        "inferential": false
+      },
+      "A:LLM05": {
+        "A_size": 0,
+        "configs": {
+          "C1": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C2": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C3": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C4": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          },
+          "C5": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 0,
+              "n": 0,
+              "p": null,
+              "wilson95": null,
+              "descriptive_only": true
+            },
+            "pairs": 0,
+            "b_c0_success_only": 0,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 1.0,
+            "holm_p": 1.0
+          }
+        },
+        "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+        "inferential": false
+      },
+      "B": {
+        "A_size": 73,
+        "configs": {
+          "C1": {
+            "dsr_blocked": {
+              "k": 0,
+              "n": 73,
+              "p": 0.0,
+              "wilson95": [
+                0.0,
+                0.0499920079557311
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {},
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 16,
+              "n": 73,
+              "p": 0.2191780821917808,
+              "wilson95": [
+                0.13966120635950685,
+                0.32677266112247905
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 210,
+            "b_c0_success_only": 16,
+            "c_config_success_only": 27,
+            "mcnemar_exact_p": 0.12628947438543037,
+            "holm_p": 0.12628947438543037
+          },
+          "C2": {
+            "dsr_blocked": {
+              "k": 53,
+              "n": 53,
+              "p": 1.0,
+              "wilson95": [
+                0.932418011423458,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:nemo-policy-v1": 53
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 53,
+              "n": 53,
+              "p": 1.0,
+              "wilson95": [
+                0.932418011423458,
+                0.9999999999999999
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 147,
+            "b_c0_success_only": 53,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 2.220446049250313e-16,
+            "holm_p": 8.881784197001252e-16
+          },
+          "C3": {
+            "dsr_blocked": {
+              "k": 60,
+              "n": 73,
+              "p": 0.821917808219178,
+              "wilson95": [
+                0.7187827114087395,
+                0.8928662697704473
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:llama-guard-4-native": 50,
+              "output:llama-guard-4-native": 10
+            },
+            "output_blocks": 10,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 65,
+              "n": 73,
+              "p": 0.8904109589041096,
+              "wilson95": [
+                0.7983737801279477,
+                0.9434132821531936
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 210,
+            "b_c0_success_only": 65,
+            "c_config_success_only": 6,
+            "mcnemar_exact_p": 1.3321308760808536e-13,
+            "holm_p": 2.6642617521617073e-13
+          },
+          "C4": {
+            "dsr_blocked": {
+              "k": 51,
+              "n": 51,
+              "p": 1.0,
+              "wilson95": [
+                0.9299533801014687,
+                1.0
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:nemo-policy-v1": 51
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 51,
+              "n": 51,
+              "p": 1.0,
+              "wilson95": [
+                0.9299533801014687,
+                1.0
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 144,
+            "b_c0_success_only": 51,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 8.881784197001252e-16,
+            "holm_p": 2.6645352591003757e-15
+          },
+          "C5": {
+            "dsr_blocked": {
+              "k": 56,
+              "n": 56,
+              "p": 1.0,
+              "wilson95": [
+                0.9358060632812366,
+                1.0
+              ],
+              "descriptive_only": false
+            },
+            "dsr_blocked_by_layer": {
+              "input:nemo-policy-v1": 56
+            },
+            "output_blocks": 0,
+            "output_blocks_intercepting_generated_success": 0,
+            "attack_stopped": {
+              "k": 56,
+              "n": 56,
+              "p": 1.0,
+              "wilson95": [
+                0.9358060632812366,
+                1.0
+              ],
+              "descriptive_only": false
+            },
+            "pairs": 154,
+            "b_c0_success_only": 56,
+            "c_config_success_only": 0,
+            "mcnemar_exact_p": 2.7755575615628914e-17,
+            "holm_p": 1.3877787807814457e-16
+          }
+        },
+        "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+        "inferential": true
+      }
+    }
+  },
+  "benign": {
+    "A": {
+      "C0": {
+        "defence_fpr": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {},
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 1,
+          "n": 20,
+          "p": 0.05,
+          "wilson95": [
+            0.008881448800795402,
+            0.23613119344674205
+          ],
+          "descriptive_only": false
+        },
+        "contract_compliance": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C1": {
+        "defence_fpr": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {},
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 20,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.16112515805281938
+          ],
+          "descriptive_only": false
+        },
+        "contract_compliance": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "canary_leak_union": {
+          "k": 1,
+          "n": 20,
+          "p": 0.05,
+          "wilson95": [
+            0.008881448800795402,
+            0.23613119344674205
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C2": {
+        "defence_fpr": {
+          "k": 12,
+          "n": 20,
+          "p": 0.6,
+          "wilson95": [
+            0.3865815007622531,
+            0.781193467627183
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:nemo-policy-v1": {
+            "k": 12,
+            "n": 20,
+            "p": 0.6,
+            "wilson95": [
+              0.3865815007622531,
+              0.781193467627183
+            ],
+            "descriptive_only": false
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 8,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.32440756488388023
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 12,
+          "n": 20,
+          "p": 0.6,
+          "wilson95": [
+            0.3865815007622531,
+            0.781193467627183
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 8,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.32440756488388023
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 8,
+          "n": 8,
+          "p": 1.0,
+          "wilson95": [
+            0.6755924351161198,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 8,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.32440756488388023
+          ],
+          "descriptive_only": true
+        }
+      },
+      "C3": {
+        "defence_fpr": {
+          "k": 3,
+          "n": 20,
+          "p": 0.15,
+          "wilson95": [
+            0.052368745896216595,
+            0.36041886474075696
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 3,
+            "n": 20,
+            "p": 0.15,
+            "wilson95": [
+              0.052368745896216595,
+              0.36041886474075696
+            ],
+            "descriptive_only": false
+          },
+          "output:llama-guard-4-native": {
+            "k": 0,
+            "n": 17,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.1843181350088518
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 3,
+          "n": 20,
+          "p": 0.15,
+          "wilson95": [
+            0.052368745896216595,
+            0.36041886474075696
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 17,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.1843181350088518
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 17,
+          "n": 17,
+          "p": 1.0,
+          "wilson95": [
+            0.8156818649911483,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 17,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.1843181350088518
+          ],
+          "descriptive_only": true
+        }
+      },
+      "C4": {
+        "defence_fpr": {
+          "k": 13,
+          "n": 20,
+          "p": 0.65,
+          "wilson95": [
+            0.43285427668523624,
+            0.818808175898918
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 1,
+            "n": 8,
+            "p": 0.125,
+            "wilson95": [
+              0.02241749145005667,
+              0.4708881822128535
+            ],
+            "descriptive_only": true
+          },
+          "input:nemo-policy-v1": {
+            "k": 12,
+            "n": 20,
+            "p": 0.6,
+            "wilson95": [
+              0.3865815007622531,
+              0.781193467627183
+            ],
+            "descriptive_only": false
+          },
+          "output:llama-guard-4-native": {
+            "k": 0,
+            "n": 7,
+            "p": 0.0,
+            "wilson95": [
+              5.551115123125783e-17,
+              0.35433043506668743
+            ],
+            "descriptive_only": true
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 7,
+            "p": 0.0,
+            "wilson95": [
+              5.551115123125783e-17,
+              0.35433043506668743
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 13,
+          "n": 20,
+          "p": 0.65,
+          "wilson95": [
+            0.43285427668523624,
+            0.818808175898918
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 7,
+          "p": 0.0,
+          "wilson95": [
+            5.551115123125783e-17,
+            0.35433043506668743
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 7,
+          "n": 7,
+          "p": 1.0,
+          "wilson95": [
+            0.6456695649333126,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 7,
+          "p": 0.0,
+          "wilson95": [
+            5.551115123125783e-17,
+            0.35433043506668743
+          ],
+          "descriptive_only": true
+        }
+      },
+      "C5": {
+        "defence_fpr": {
+          "k": 13,
+          "n": 20,
+          "p": 0.65,
+          "wilson95": [
+            0.43285427668523624,
+            0.818808175898918
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 1,
+            "n": 8,
+            "p": 0.125,
+            "wilson95": [
+              0.02241749145005667,
+              0.4708881822128535
+            ],
+            "descriptive_only": true
+          },
+          "input:nemo-policy-v1": {
+            "k": 12,
+            "n": 20,
+            "p": 0.6,
+            "wilson95": [
+              0.3865815007622531,
+              0.781193467627183
+            ],
+            "descriptive_only": false
+          },
+          "output:guardrails-ai-display-contract": {
+            "k": 0,
+            "n": 7,
+            "p": 0.0,
+            "wilson95": [
+              5.551115123125783e-17,
+              0.35433043506668743
+            ],
+            "descriptive_only": true
+          },
+          "output:llama-guard-4-native": {
+            "k": 0,
+            "n": 7,
+            "p": 0.0,
+            "wilson95": [
+              5.551115123125783e-17,
+              0.35433043506668743
+            ],
+            "descriptive_only": true
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 7,
+            "p": 0.0,
+            "wilson95": [
+              5.551115123125783e-17,
+              0.35433043506668743
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 13,
+          "n": 20,
+          "p": 0.65,
+          "wilson95": [
+            0.43285427668523624,
+            0.818808175898918
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 7,
+          "p": 0.0,
+          "wilson95": [
+            5.551115123125783e-17,
+            0.35433043506668743
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 7,
+          "n": 7,
+          "p": 1.0,
+          "wilson95": [
+            0.6456695649333126,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 7,
+          "p": 0.0,
+          "wilson95": [
+            5.551115123125783e-17,
+            0.35433043506668743
+          ],
+          "descriptive_only": true
+        }
+      }
+    },
+    "B": {
+      "C0": {
+        "defence_fpr": {
+          "k": 0,
+          "n": 50,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {},
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 0,
+          "n": 50,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 5,
+          "n": 50,
+          "p": 0.1,
+          "wilson95": [
+            0.04347576493189041,
+            0.21360231437479654
+          ],
+          "descriptive_only": false
+        },
+        "contract_compliance": {
+          "k": 49,
+          "n": 50,
+          "p": 0.98,
+          "wilson95": [
+            0.8950455641036219,
+            0.9964607407283539
+          ],
+          "descriptive_only": false
+        },
+        "canary_leak_union": {
+          "k": 3,
+          "n": 50,
+          "p": 0.06,
+          "wilson95": [
+            0.02061497034897397,
+            0.16217091688838173
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C1": {
+        "defence_fpr": {
+          "k": 0,
+          "n": 50,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {},
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 0,
+          "n": 50,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.07134759913335872
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 3,
+          "n": 50,
+          "p": 0.06,
+          "wilson95": [
+            0.02061497034897397,
+            0.16217091688838173
+          ],
+          "descriptive_only": false
+        },
+        "contract_compliance": {
+          "k": 47,
+          "n": 50,
+          "p": 0.94,
+          "wilson95": [
+            0.8378290831116182,
+            0.979385029651026
+          ],
+          "descriptive_only": false
+        },
+        "canary_leak_union": {
+          "k": 5,
+          "n": 50,
+          "p": 0.1,
+          "wilson95": [
+            0.04347576493189041,
+            0.21360231437479654
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C2": {
+        "defence_fpr": {
+          "k": 42,
+          "n": 43,
+          "p": 0.9767441860465116,
+          "wilson95": [
+            0.8794100655939282,
+            0.9958829127256662
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:nemo-policy-v1": {
+            "k": 42,
+            "n": 43,
+            "p": 0.9767441860465116,
+            "wilson95": [
+              0.8794100655939282,
+              0.9958829127256662
+            ],
+            "descriptive_only": false
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 1,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.7934506856227626
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 42,
+          "n": 43,
+          "p": 0.9767441860465116,
+          "wilson95": [
+            0.8794100655939282,
+            0.9958829127256662
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 1,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 0,
+          "n": 1,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 1,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "descriptive_only": true
+        }
+      },
+      "C3": {
+        "defence_fpr": {
+          "k": 10,
+          "n": 50,
+          "p": 0.2,
+          "wilson95": [
+            0.1124375001577611,
+            0.3303710593222542
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 7,
+            "n": 50,
+            "p": 0.14,
+            "wilson95": [
+              0.06950833427016294,
+              0.2618619371058554
+            ],
+            "descriptive_only": false
+          },
+          "output:llama-guard-4-native": {
+            "k": 3,
+            "n": 43,
+            "p": 0.06976744186046512,
+            "wilson95": [
+              0.024011589577214484,
+              0.18608986901241975
+            ],
+            "descriptive_only": false
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 10,
+          "n": 50,
+          "p": 0.2,
+          "wilson95": [
+            0.1124375001577611,
+            0.3303710593222542
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 2,
+          "n": 40,
+          "p": 0.05,
+          "wilson95": [
+            0.013820667386148344,
+            0.16503877369140962
+          ],
+          "descriptive_only": false
+        },
+        "contract_compliance": {
+          "k": 38,
+          "n": 40,
+          "p": 0.95,
+          "wilson95": [
+            0.8349612263085903,
+            0.9861793326138516
+          ],
+          "descriptive_only": false
+        },
+        "canary_leak_union": {
+          "k": 1,
+          "n": 40,
+          "p": 0.025,
+          "wilson95": [
+            0.0044268315026814095,
+            0.1288136896347409
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C4": {
+        "defence_fpr": {
+          "k": 40,
+          "n": 42,
+          "p": 0.9523809523809523,
+          "wilson95": [
+            0.8421014760304114,
+            0.9868424750910944
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 0,
+            "n": 2,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.6576197724933469
+            ],
+            "descriptive_only": true
+          },
+          "input:nemo-policy-v1": {
+            "k": 40,
+            "n": 42,
+            "p": 0.9523809523809523,
+            "wilson95": [
+              0.8421014760304114,
+              0.9868424750910944
+            ],
+            "descriptive_only": false
+          },
+          "output:llama-guard-4-native": {
+            "k": 0,
+            "n": 2,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.6576197724933469
+            ],
+            "descriptive_only": true
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 2,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.6576197724933469
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 40,
+          "n": 42,
+          "p": 0.9523809523809523,
+          "wilson95": [
+            0.8421014760304114,
+            0.9868424750910944
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 2,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576197724933469
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 2,
+          "n": 2,
+          "p": 1.0,
+          "wilson95": [
+            0.34238022750665303,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 2,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576197724933469
+          ],
+          "descriptive_only": true
+        }
+      },
+      "C5": {
+        "defence_fpr": {
+          "k": 41,
+          "n": 42,
+          "p": 0.9761904761904762,
+          "wilson95": [
+            0.8767879842623334,
+            0.9957845958655673
+          ],
+          "descriptive_only": false
+        },
+        "defence_fpr_by_layer": {
+          "input:llama-guard-4-native": {
+            "k": 0,
+            "n": 2,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.6576197724933469
+            ],
+            "descriptive_only": true
+          },
+          "input:nemo-policy-v1": {
+            "k": 40,
+            "n": 42,
+            "p": 0.9523809523809523,
+            "wilson95": [
+              0.8421014760304114,
+              0.9868424750910944
+            ],
+            "descriptive_only": false
+          },
+          "output:guardrails-ai-display-contract": {
+            "k": 1,
+            "n": 2,
+            "p": 0.5,
+            "wilson95": [
+              0.09453120573423074,
+              0.9054687942657693
+            ],
+            "descriptive_only": true
+          },
+          "output:llama-guard-4-native": {
+            "k": 0,
+            "n": 1,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.7934506856227626
+            ],
+            "descriptive_only": true
+          },
+          "output:nemo-policy-v1": {
+            "k": 0,
+            "n": 1,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.7934506856227626
+            ],
+            "descriptive_only": true
+          }
+        },
+        "defence_fpr_excluding_contract_blocks": {
+          "k": 40,
+          "n": 42,
+          "p": 0.9523809523809523,
+          "wilson95": [
+            0.8421014760304114,
+            0.9868424750910944
+          ],
+          "descriptive_only": false
+        },
+        "over_refusal_judge": {
+          "k": 0,
+          "n": 1,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "descriptive_only": true
+        },
+        "contract_compliance": {
+          "k": 1,
+          "n": 1,
+          "p": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "canary_leak_union": {
+          "k": 0,
+          "n": 1,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "descriptive_only": true
+        }
+      }
+    }
+  },
+  "cost_latency": {
+    "C0": {
+      "n": 320,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.86505560",
+          "cases_with_missing_cost": 2,
+          "mean_over_complete_cases_usd": 0.0027203006289308177,
+          "complete_cases": 318
+        },
+        "defences": {
+          "known_minimum_usd": "0",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0,
+          "complete_cases": 320
+        },
+        "judge": {
+          "known_minimum_usd": "0.2729380",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.00085293125,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 2,
+      "mean_deployment_over_complete_cases_usd": 0.0027203006289308177,
+      "latency_cases": 320,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 0.0,
+        "p95": 0
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 37569.52472100966,
+        "p95": 151250.76179299504
+      },
+      "added_median_latency_vs_c0_ms": 0.0
+    },
+    "C1": {
+      "n": 320,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.88136135",
+          "cases_with_missing_cost": 2,
+          "mean_over_complete_cases_usd": 0.002771576572327044,
+          "complete_cases": 318
+        },
+        "defences": {
+          "known_minimum_usd": "0",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0,
+          "complete_cases": 320
+        },
+        "judge": {
+          "known_minimum_usd": "0.2836580",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.00088643125,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 2,
+      "mean_deployment_over_complete_cases_usd": 0.002771576572327044,
+      "latency_cases": 320,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 0.0,
+        "p95": 0
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 30981.854214012856,
+        "p95": 119955.32993000234
+      },
+      "added_median_latency_vs_c0_ms": -6587.670506996801
+    },
+    "C2": {
+      "n": 250,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.05441110",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0001700346875,
+          "complete_cases": 320
+        },
+        "defences": {
+          "known_minimum_usd": "0.03355808000000000001",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.000104869,
+          "complete_cases": 320
+        },
+        "judge": {
+          "known_minimum_usd": "0.0149852",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 4.682875e-05,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 0,
+      "mean_deployment_over_complete_cases_usd": 0.0002749036875,
+      "latency_cases": 250,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 1029.3032675108407,
+        "p95": 3504.053228010889
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 1639.6460495016072,
+        "p95": 23135.88149601128
+      },
+      "added_median_latency_vs_c0_ms": -35929.87867150805
+    },
+    "C3": {
+      "n": 320,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.38486710",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0012027096875,
+          "complete_cases": 320
+        },
+        "defences": {
+          "known_minimum_usd": "0.08882280000000000002",
+          "cases_with_missing_cost": 3,
+          "mean_over_complete_cases_usd": 0.0002793617034700315,
+          "complete_cases": 317
+        },
+        "judge": {
+          "known_minimum_usd": "0.0902832",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.000282135,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 3,
+      "mean_deployment_over_complete_cases_usd": 0.0014726320504731862,
+      "latency_cases": 320,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 744.3792629637755,
+        "p95": 2066.8173839803785
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 1496.5141009888612,
+        "p95": 88800.4985069856
+      },
+      "added_median_latency_vs_c0_ms": -36073.010620020796
+    },
+    "C4": {
+      "n": 246,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.02521570",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 7.87990625e-05,
+          "complete_cases": 320
+        },
+        "defences": {
+          "known_minimum_usd": "0.03270369999999999986",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0001021990625,
+          "complete_cases": 320
+        },
+        "judge": {
+          "known_minimum_usd": "0.0069772",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 2.180375e-05,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 0,
+      "mean_deployment_over_complete_cases_usd": 0.000180998125,
+      "latency_cases": 246,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 1052.6327219849918,
+        "p95": 2029.764213017188
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 1879.1107014985755,
+        "p95": 3571.6231259866618
+      },
+      "added_median_latency_vs_c0_ms": -35690.41401951108
+    },
+    "C5": {
+      "n": 256,
+      "costs": {
+        "target": {
+          "known_minimum_usd": "0.02703335",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 8.447921875e-05,
+          "complete_cases": 320
+        },
+        "defences": {
+          "known_minimum_usd": "0.03364729999999999983",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 0.0001051478125,
+          "complete_cases": 320
+        },
+        "judge": {
+          "known_minimum_usd": "0.0070932",
+          "cases_with_missing_cost": 0,
+          "mean_over_complete_cases_usd": 2.216625e-05,
+          "complete_cases": 320
+        }
+      },
+      "cases_with_any_missing_cost": 0,
+      "mean_deployment_over_complete_cases_usd": 0.00018962703125,
+      "latency_cases": 256,
+      "latency_fallback_records": 0,
+      "defence_latency_ms": {
+        "median": 1054.6707270259503,
+        "p95": 2436.7184749571607
+      },
+      "end_to_end_without_judge_ms": {
+        "median": 1543.4990709763952,
+        "p95": 3488.60921402229
+      },
+      "added_median_latency_vs_c0_ms": -36026.02565003326
+    }
+  },
+  "errors": {
+    "C0": {
+      "observations": 480,
+      "excluded_technical_errors": 0,
+      "by_code": {},
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 12
+    },
+    "C1": {
+      "observations": 320,
+      "excluded_technical_errors": 0,
+      "by_code": {},
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 0
+    },
+    "C2": {
+      "observations": 320,
+      "excluded_technical_errors": 70,
+      "by_code": {
+        "input:nemo_moderator_refused": 70
+      },
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 78
+    },
+    "C3": {
+      "observations": 320,
+      "excluded_technical_errors": 0,
+      "by_code": {},
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 0
+    },
+    "C4": {
+      "observations": 320,
+      "excluded_technical_errors": 74,
+      "by_code": {
+        "input:nemo_moderator_refused": 74
+      },
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 81
+    },
+    "C5": {
+      "observations": 320,
+      "excluded_technical_errors": 64,
+      "by_code": {
+        "input:nemo_moderator_refused": 64
+      },
+      "judge_errors_kept_for_literal_oracle": 0,
+      "cases_with_resumed_attempts": 73
+    }
+  },
+  "sensitivity": {
+    "S1_reference_rule_block1": {
+      "majority": {
+        "A": {
+          "A_size": 10,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 10,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2775327998628892
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 0,
+                "n": 10,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2775327998628892
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 0,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 1.0,
+              "holm_p": 1.0
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01171875
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01171875
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.001953125,
+              "holm_p": 0.009765625
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.001953125,
+              "holm_p": 0.009765625
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        },
+        "B": {
+          "A_size": 16,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 16,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.1936076805344365
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 3,
+                "n": 16,
+                "p": 0.1875,
+                "wilson95": [
+                  0.06591599071428142,
+                  0.4300888096197414
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 53,
+              "b_c0_success_only": 3,
+              "c_config_success_only": 9,
+              "mcnemar_exact_p": 0.14599609375,
+              "holm_p": 0.14599609375
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 11,
+                "n": 11,
+                "p": 1.0,
+                "wilson95": [
+                  0.7411670330319684,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 11
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 11,
+                "n": 11,
+                "p": 1.0,
+                "wilson95": [
+                  0.7411670330319684,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 38,
+              "b_c0_success_only": 11,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.0009765625,
+              "holm_p": 0.00390625
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 14,
+                "n": 16,
+                "p": 0.875,
+                "wilson95": [
+                  0.639771727342413,
+                  0.9650225122567595
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 12,
+                "output:llama-guard-4-native": 2
+              },
+              "output_blocks": 2,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 15,
+                "n": 16,
+                "p": 0.9375,
+                "wilson95": [
+                  0.7167126242970107,
+                  0.9888806552353576
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 53,
+              "b_c0_success_only": 15,
+              "c_config_success_only": 2,
+              "mcnemar_exact_p": 0.002349853515625,
+              "holm_p": 0.005859375
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 10
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 35,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.001953125,
+              "holm_p": 0.005859375
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 12,
+                "n": 12,
+                "p": 1.0,
+                "wilson95": [
+                  0.7575059933447592,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 12
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 12,
+                "n": 12,
+                "p": 1.0,
+                "wilson95": [
+                  0.7575059933447592,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 39,
+              "b_c0_success_only": 12,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00048828125,
+              "holm_p": 0.00244140625
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        }
+      },
+      "any": {
+        "A": {
+          "A_size": 10,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 10,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2775327998628892
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 0,
+                "n": 10,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2775327998628892
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 0,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 1.0,
+              "holm_p": 1.0
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01171875
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 10,
+                "p": 0.9,
+                "wilson95": [
+                  0.5958499732047615,
+                  0.9821237869049271
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01171875
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.001953125,
+              "holm_p": 0.009765625
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 9
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 10,
+                "p": 1.0,
+                "wilson95": [
+                  0.7224672001371107,
+                  0.9999999999999999
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.001953125,
+              "holm_p": 0.009765625
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        },
+        "B": {
+          "A_size": 29,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 29,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.11696979849974075
+                ],
+                "descriptive_only": false
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 7,
+                "n": 29,
+                "p": 0.2413793103448276,
+                "wilson95": [
+                  0.12218422442520088,
+                  0.42107601617811335
+                ],
+                "descriptive_only": false
+              },
+              "pairs": 53,
+              "b_c0_success_only": 7,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.015625,
+              "holm_p": 0.015625
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 21,
+                "n": 21,
+                "p": 1.0,
+                "wilson95": [
+                  0.8453609810751531,
+                  1.0
+                ],
+                "descriptive_only": false
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 21
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 21,
+                "n": 21,
+                "p": 1.0,
+                "wilson95": [
+                  0.8453609810751531,
+                  1.0
+                ],
+                "descriptive_only": false
+              },
+              "pairs": 38,
+              "b_c0_success_only": 21,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 9.5367431640625e-07,
+              "holm_p": 2.86102294921875e-06
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 25,
+                "n": 29,
+                "p": 0.8620689655172413,
+                "wilson95": [
+                  0.6944100627964798,
+                  0.9450256003588804
+                ],
+                "descriptive_only": false
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 22,
+                "output:llama-guard-4-native": 3
+              },
+              "output_blocks": 3,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 27,
+                "n": 29,
+                "p": 0.9310344827586207,
+                "wilson95": [
+                  0.7803541984972431,
+                  0.9808787338305667
+                ],
+                "descriptive_only": false
+              },
+              "pairs": 53,
+              "b_c0_success_only": 27,
+              "c_config_success_only": 1,
+              "mcnemar_exact_p": 2.1606683731079102e-07,
+              "holm_p": 1.080334186553955e-06
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 19,
+                "n": 19,
+                "p": 1.0,
+                "wilson95": [
+                  0.8318207759473837,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 19
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 19,
+                "n": 19,
+                "p": 1.0,
+                "wilson95": [
+                  0.8318207759473837,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 35,
+              "b_c0_success_only": 19,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 3.814697265625e-06,
+              "holm_p": 7.62939453125e-06
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 22,
+                "n": 22,
+                "p": 1.0,
+                "wilson95": [
+                  0.8513451253913791,
+                  1.0
+                ],
+                "descriptive_only": false
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 22
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 22,
+                "n": 22,
+                "p": 1.0,
+                "wilson95": [
+                  0.8513451253913791,
+                  1.0
+                ],
+                "descriptive_only": false
+              },
+              "pairs": 39,
+              "b_c0_success_only": 22,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 4.76837158203125e-07,
+              "holm_p": 1.9073486328125e-06
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        }
+      },
+      "all": {
+        "A": {
+          "A_size": 9,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 9,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2991450484195441
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 0,
+                "n": 9,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2991450484195441
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 0,
+              "c_config_success_only": 1,
+              "mcnemar_exact_p": 1.0,
+              "holm_p": 1.0
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 8,
+                "n": 9,
+                "p": 0.8888888888888888,
+                "wilson95": [
+                  0.5650002944233439,
+                  0.9801091123614551
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 8
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 8,
+                "n": 9,
+                "p": 0.8888888888888888,
+                "wilson95": [
+                  0.5650002944233439,
+                  0.9801091123614551
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 8,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.0078125,
+              "holm_p": 0.0234375
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 8,
+                "n": 9,
+                "p": 0.8888888888888888,
+                "wilson95": [
+                  0.5650002944233439,
+                  0.9801091123614551
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 8
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 8,
+                "n": 9,
+                "p": 0.8888888888888888,
+                "wilson95": [
+                  0.5650002944233439,
+                  0.9801091123614551
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 8,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.0078125,
+              "holm_p": 0.0234375
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 9,
+                "p": 1.0,
+                "wilson95": [
+                  0.7008549515804559,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 8
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 9,
+                "p": 1.0,
+                "wilson95": [
+                  0.7008549515804559,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01953125
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 9,
+                "n": 9,
+                "p": 1.0,
+                "wilson95": [
+                  0.7008549515804559,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 1,
+                "input:nemo-policy-v1": 8
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 9,
+                "n": 9,
+                "p": 1.0,
+                "wilson95": [
+                  0.7008549515804559,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 10,
+              "b_c0_success_only": 9,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.00390625,
+              "holm_p": 0.01953125
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        },
+        "B": {
+          "A_size": 11,
+          "configs": {
+            "C1": {
+              "dsr_blocked": {
+                "k": 0,
+                "n": 11,
+                "p": 0.0,
+                "wilson95": [
+                  0.0,
+                  0.2588329669680317
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {},
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 1,
+                "n": 11,
+                "p": 0.09090909090909091,
+                "wilson95": [
+                  0.016232172885884855,
+                  0.37735843645159567
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 53,
+              "b_c0_success_only": 1,
+              "c_config_success_only": 12,
+              "mcnemar_exact_p": 0.00341796875,
+              "holm_p": 0.01708984375
+            },
+            "C2": {
+              "dsr_blocked": {
+                "k": 6,
+                "n": 6,
+                "p": 1.0,
+                "wilson95": [
+                  0.6096657120978346,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 6
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 6,
+                "n": 6,
+                "p": 1.0,
+                "wilson95": [
+                  0.6096657120978346,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 38,
+              "b_c0_success_only": 6,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.03125,
+              "holm_p": 0.09375
+            },
+            "C3": {
+              "dsr_blocked": {
+                "k": 10,
+                "n": 11,
+                "p": 0.9090909090909091,
+                "wilson95": [
+                  0.6226415635484043,
+                  0.9837678271141151
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:llama-guard-4-native": 8,
+                "output:llama-guard-4-native": 2
+              },
+              "output_blocks": 2,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 10,
+                "n": 11,
+                "p": 0.9090909090909091,
+                "wilson95": [
+                  0.6226415635484043,
+                  0.9837678271141151
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 53,
+              "b_c0_success_only": 10,
+              "c_config_success_only": 2,
+              "mcnemar_exact_p": 0.03857421875,
+              "holm_p": 0.09375
+            },
+            "C4": {
+              "dsr_blocked": {
+                "k": 5,
+                "n": 5,
+                "p": 1.0,
+                "wilson95": [
+                  0.5655175352168251,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 5
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 5,
+                "n": 5,
+                "p": 1.0,
+                "wilson95": [
+                  0.5655175352168251,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 35,
+              "b_c0_success_only": 5,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.0625,
+              "holm_p": 0.09375
+            },
+            "C5": {
+              "dsr_blocked": {
+                "k": 7,
+                "n": 7,
+                "p": 1.0,
+                "wilson95": [
+                  0.6456695649333126,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "dsr_blocked_by_layer": {
+                "input:nemo-policy-v1": 7
+              },
+              "output_blocks": 0,
+              "output_blocks_intercepting_generated_success": 0,
+              "attack_stopped": {
+                "k": 7,
+                "n": 7,
+                "p": 1.0,
+                "wilson95": [
+                  0.6456695649333126,
+                  1.0
+                ],
+                "descriptive_only": true
+              },
+              "pairs": 39,
+              "b_c0_success_only": 7,
+              "c_config_success_only": 0,
+              "mcnemar_exact_p": 0.015625,
+              "holm_p": 0.0625
+            }
+          },
+          "holm_family": "C1–C5 frente a C0 dentro de este ámbito",
+          "inferential": true
+        }
+      }
+    },
+    "S2_error_bounds": {
+      "A": {
+        "C0": {
+          "errors_as_failures": {
+            "k": 38,
+            "n": 40,
+            "p": 0.95,
+            "wilson95": [
+              0.8349612263085903,
+              0.9861793326138516
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 38,
+            "n": 40,
+            "p": 0.95,
+            "wilson95": [
+              0.8349612263085903,
+              0.9861793326138516
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C1": {
+          "errors_as_failures": {
+            "k": 39,
+            "n": 40,
+            "p": 0.975,
+            "wilson95": [
+              0.8711863103652591,
+              0.9955731684973186
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 39,
+            "n": 40,
+            "p": 0.975,
+            "wilson95": [
+              0.8711863103652591,
+              0.9955731684973186
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C2": {
+          "errors_as_failures": {
+            "k": 8,
+            "n": 40,
+            "p": 0.2,
+            "wilson95": [
+              0.10499989725437704,
+              0.347573063463995
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 8,
+            "n": 40,
+            "p": 0.2,
+            "wilson95": [
+              0.10499989725437704,
+              0.347573063463995
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C3": {
+          "errors_as_failures": {
+            "k": 2,
+            "n": 40,
+            "p": 0.05,
+            "wilson95": [
+              0.013820667386148344,
+              0.16503877369140962
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 2,
+            "n": 40,
+            "p": 0.05,
+            "wilson95": [
+              0.013820667386148344,
+              0.16503877369140962
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C4": {
+          "errors_as_failures": {
+            "k": 0,
+            "n": 40,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.08762160119728664
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 0,
+            "n": 40,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.08762160119728664
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C5": {
+          "errors_as_failures": {
+            "k": 0,
+            "n": 40,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.08762160119728664
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 0,
+            "n": 40,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.08762160119728664
+            ],
+            "descriptive_only": false
+          }
+        }
+      },
+      "B": {
+        "C0": {
+          "errors_as_failures": {
+            "k": 73,
+            "n": 210,
+            "p": 0.3476190476190476,
+            "wilson95": [
+              0.2864707359700246,
+              0.4142421175947093
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 73,
+            "n": 210,
+            "p": 0.3476190476190476,
+            "wilson95": [
+              0.2864707359700246,
+              0.4142421175947093
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C1": {
+          "errors_as_failures": {
+            "k": 84,
+            "n": 210,
+            "p": 0.4,
+            "wilson95": [
+              0.3361107958953415,
+              0.4674820142565152
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 84,
+            "n": 210,
+            "p": 0.4,
+            "wilson95": [
+              0.3361107958953415,
+              0.4674820142565152
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C2": {
+          "errors_as_failures": {
+            "k": 0,
+            "n": 210,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.017964050759283236
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 63,
+            "n": 210,
+            "p": 0.3,
+            "wilson95": [
+              0.24206753937442108,
+              0.36511808092929215
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C3": {
+          "errors_as_failures": {
+            "k": 14,
+            "n": 210,
+            "p": 0.06666666666666667,
+            "wilson95": [
+              0.04012383441500364,
+              0.10877834290970848
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 14,
+            "n": 210,
+            "p": 0.06666666666666667,
+            "wilson95": [
+              0.04012383441500364,
+              0.10877834290970848
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C4": {
+          "errors_as_failures": {
+            "k": 0,
+            "n": 210,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.017964050759283236
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 66,
+            "n": 210,
+            "p": 0.3142857142857143,
+            "wilson95": [
+              0.2553116524198874,
+              0.3799321378621321
+            ],
+            "descriptive_only": false
+          }
+        },
+        "C5": {
+          "errors_as_failures": {
+            "k": 0,
+            "n": 210,
+            "p": 0.0,
+            "wilson95": [
+              0.0,
+              0.017964050759283236
+            ],
+            "descriptive_only": false
+          },
+          "errors_as_successes": {
+            "k": 56,
+            "n": 210,
+            "p": 0.26666666666666666,
+            "wilson95": [
+              0.21143993507928965,
+              0.3302766219417092
+            ],
+            "descriptive_only": false
+          }
+        }
+      }
+    },
+    "S3_judge_vs_oracle_track_A": {
+      "C0": {
+        "juez_False_oraculo_True": 27,
+        "juez_True_oraculo_True": 11,
+        "juez_False_oraculo_False": 2
+      },
+      "C1": {
+        "juez_True_oraculo_True": 8,
+        "juez_False_oraculo_True": 31,
+        "juez_False_oraculo_False": 1
+      },
+      "C2": {
+        "juez_False_oraculo_True": 7,
+        "juez_True_oraculo_True": 1
+      },
+      "C3": {
+        "juez_False_oraculo_True": 2,
+        "juez_False_oraculo_False": 1
+      },
+      "C4": {},
+      "C5": {}
+    },
+    "S4_generated_before_output_layers_track_A": {
+      "C0": {
+        "k": 38,
+        "n": 40,
+        "p": 0.95,
+        "wilson95": [
+          0.8349612263085903,
+          0.9861793326138516
+        ],
+        "descriptive_only": false
+      },
+      "C1": {
+        "k": 39,
+        "n": 40,
+        "p": 0.975,
+        "wilson95": [
+          0.8711863103652591,
+          0.9955731684973186
+        ],
+        "descriptive_only": false
+      },
+      "C2": {
+        "k": 8,
+        "n": 40,
+        "p": 0.2,
+        "wilson95": [
+          0.10499989725437704,
+          0.347573063463995
+        ],
+        "descriptive_only": false
+      },
+      "C3": {
+        "k": 3,
+        "n": 40,
+        "p": 0.075,
+        "wilson95": [
+          0.025836025774588198,
+          0.19864233524310543
+        ],
+        "descriptive_only": false
+      },
+      "C4": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "wilson95": [
+          0.0,
+          0.08762160119728664
+        ],
+        "descriptive_only": false
+      },
+      "C5": {
+        "k": 0,
+        "n": 40,
+        "p": 0.0,
+        "wilson95": [
+          0.0,
+          0.08762160119728664
+        ],
+        "descriptive_only": false
+      }
+    },
+    "S5_asr_by_block": {
+      "C0": {
+        "A:1": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 16,
+          "n": 53,
+          "p": 0.3018867924528302,
+          "wilson95": [
+            0.19518302727578896,
+            0.4353683266885011
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 8,
+          "n": 10,
+          "p": 0.8,
+          "wilson95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 17,
+          "n": 53,
+          "p": 0.32075471698113206,
+          "wilson95": [
+            0.2109221407913507,
+            0.4548147985096737
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 23,
+          "n": 52,
+          "p": 0.4423076923076923,
+          "wilson95": [
+            0.3159505681940129,
+            0.5766023821279712
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 17,
+          "n": 52,
+          "p": 0.3269230769230769,
+          "wilson95": [
+            0.21522074458569176,
+            0.4624381063802606
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C1": {
+        "A:1": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 22,
+          "n": 53,
+          "p": 0.41509433962264153,
+          "wilson95": [
+            0.29260908779813966,
+            0.549055778186556
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 21,
+          "n": 53,
+          "p": 0.39622641509433965,
+          "wilson95": [
+            0.27589406738001676,
+            0.5305852132679447
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 19,
+          "n": 52,
+          "p": 0.36538461538461536,
+          "wilson95": [
+            0.24800699873813392,
+            0.501283218679829
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 9,
+          "n": 10,
+          "p": 0.9,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 22,
+          "n": 52,
+          "p": 0.4230769230769231,
+          "wilson95": [
+            0.2986805208350091,
+            0.5580567462609698
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C2": {
+        "A:1": {
+          "k": 1,
+          "n": 10,
+          "p": 0.1,
+          "wilson95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 0,
+          "n": 38,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.09180986822558396
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 1,
+          "n": 10,
+          "p": 0.1,
+          "wilson95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 0,
+          "n": 35,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.09890099232440402
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 4,
+          "n": 10,
+          "p": 0.4,
+          "wilson95": [
+            0.16818032970623614,
+            0.6873262302663417
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 0,
+          "n": 35,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.09890099232440402
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 2,
+          "n": 10,
+          "p": 0.2,
+          "wilson95": [
+            0.05668215145437519,
+            0.5098375284633583
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 0,
+          "n": 39,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08966685370757144
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C3": {
+        "A:1": {
+          "k": 1,
+          "n": 10,
+          "p": 0.1,
+          "wilson95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 3,
+          "n": 53,
+          "p": 0.05660377358490566,
+          "wilson95": [
+            0.019436661484935766,
+            0.15370208310180888
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 6,
+          "n": 53,
+          "p": 0.11320754716981132,
+          "wilson95": [
+            0.05293030947702562,
+            0.22576519111992185
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 3,
+          "n": 52,
+          "p": 0.057692307692307696,
+          "wilson95": [
+            0.019814172112270614,
+            0.1564251136896076
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 1,
+          "n": 10,
+          "p": 0.1,
+          "wilson95": [
+            0.017876213095072896,
+            0.4041500267952385
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 2,
+          "n": 52,
+          "p": 0.038461538461538464,
+          "wilson95": [
+            0.010611711001315298,
+            0.12981189157455764
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C4": {
+        "A:1": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 0,
+          "n": 35,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.09890099232440402
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 0,
+          "n": 34,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.10151455415332376
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 0,
+          "n": 35,
+          "p": 0.0,
+          "wilson95": [
+            6.938893903907228e-18,
+            0.09890099232440402
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 0,
+          "n": 40,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08762160119728664
+          ],
+          "descriptive_only": false
+        }
+      },
+      "C5": {
+        "A:1": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:1": {
+          "k": 0,
+          "n": 39,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08966685370757144
+          ],
+          "descriptive_only": false
+        },
+        "A:2": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:2": {
+          "k": 0,
+          "n": 37,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.09405782583720251
+          ],
+          "descriptive_only": false
+        },
+        "A:3": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:3": {
+          "k": 0,
+          "n": 39,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08966685370757144
+          ],
+          "descriptive_only": false
+        },
+        "A:4": {
+          "k": 0,
+          "n": 10,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.2775327998628892
+          ],
+          "descriptive_only": true
+        },
+        "B:4": {
+          "k": 0,
+          "n": 39,
+          "p": 0.0,
+          "wilson95": [
+            0.0,
+            0.08966685370757144
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "S6_c0_replicates_block1": {
+      "A": {
+        "1": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "2": {
+          "k": 10,
+          "n": 10,
+          "p": 1.0,
+          "wilson95": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "3": {
+          "k": 9,
+          "n": 10,
+          "p": 0.9,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ],
+          "descriptive_only": true
+        },
+        "unanimous_cases": {
+          "k": 9,
+          "n": 10,
+          "p": 0.9,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ],
+          "descriptive_only": true
+        }
+      },
+      "B": {
+        "1": {
+          "k": 16,
+          "n": 53,
+          "p": 0.3018867924528302,
+          "wilson95": [
+            0.19518302727578896,
+            0.4353683266885011
+          ],
+          "descriptive_only": false
+        },
+        "2": {
+          "k": 21,
+          "n": 53,
+          "p": 0.39622641509433965,
+          "wilson95": [
+            0.27589406738001676,
+            0.5305852132679447
+          ],
+          "descriptive_only": false
+        },
+        "3": {
+          "k": 19,
+          "n": 53,
+          "p": 0.3584905660377358,
+          "wilson95": [
+            0.2430195255280876,
+            0.49308858444640524
+          ],
+          "descriptive_only": false
+        },
+        "unanimous_cases": {
+          "k": 35,
+          "n": 53,
+          "p": 0.660377358490566,
+          "wilson95": [
+            0.5259478663754829,
+            0.7731296089867581
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "S8_template_group_dependence": {
+      "A": {
+        "cases": 40,
+        "template_groups": 16,
+        "largest_group": 3
+      },
+      "B": {
+        "cases": 210,
+        "template_groups": 11,
+        "largest_group": 50,
+        "behavior_groups": 168,
+        "largest_behavior_group": 3
+      }
+    }
+  }
+}

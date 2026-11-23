@@ -1,0 +1,1306 @@
+{
+  "by_filter": {
+    "nemo_input": {
+      "expected_prompts": 5995,
+      "recorded_prompts": 5995,
+      "decisions": 4667,
+      "missing_decisions": 1328,
+      "family": {
+        "A:benigno_deepset": {
+          "k": 26,
+          "n": 398,
+          "p": 0.06532663316582915,
+          "wilson95": [
+            0.04496727946745212,
+            0.09399662680686584
+          ],
+          "descriptive_only": false
+        },
+        "A:benigno_orbench": {
+          "k": 1022,
+          "n": 1313,
+          "p": 0.7783701447067783,
+          "wilson95": [
+            0.7551103346473853,
+            0.8000058451352983
+          ],
+          "descriptive_only": false
+        },
+        "A:benigno_xstest": {
+          "k": 98,
+          "n": 287,
+          "p": 0.34146341463414637,
+          "wilson95": [
+            0.28901898913461055,
+            0.3980957696450098
+          ],
+          "descriptive_only": false
+        },
+        "A:deepset_inyeccion": {
+          "k": 179,
+          "n": 179,
+          "p": 1.0,
+          "wilson95": [
+            0.978990220021919,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "A:gandalf_ignorar_instrucciones": {
+          "k": 851,
+          "n": 851,
+          "p": 1.0,
+          "wilson95": [
+            0.9955062324352008,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:jbb_gcg_sufijo": {
+          "k": 9,
+          "n": 9,
+          "p": 1.0,
+          "wilson95": [
+            0.7008549515804559,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "A:jbb_random_search": {
+          "k": 13,
+          "n": 13,
+          "p": 1.0,
+          "wilson95": [
+            0.7719046276458016,
+            0.9999999999999999
+          ],
+          "descriptive_only": true
+        },
+        "A:jbh_prompt_largo_2026": {
+          "k": 15,
+          "n": 15,
+          "p": 1.0,
+          "wilson95": [
+            0.7961166989641515,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "A:shen_comunidad": {
+          "k": 123,
+          "n": 123,
+          "p": 1.0,
+          "wilson95": [
+            0.9697144856546903,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "A:shen_sin_comunidad": {
+          "k": 320,
+          "n": 321,
+          "p": 0.9968847352024922,
+          "wilson95": [
+            0.9825676409133739,
+            0.9994498674370045
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_base64": {
+          "k": 32,
+          "n": 33,
+          "p": 0.9696969696969697,
+          "wilson95": [
+            0.846812746178811,
+            0.9946305894631283
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_combinacion": {
+          "k": 23,
+          "n": 23,
+          "p": 1.0,
+          "wilson95": [
+            0.8568833815495731,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_division_carga": {
+          "k": 12,
+          "n": 20,
+          "p": 0.6,
+          "wilson95": [
+            0.3865815007622531,
+            0.781193467627183
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_envoltorio_codigo": {
+          "k": 24,
+          "n": 24,
+          "p": 1.0,
+          "wilson95": [
+            0.8620237953250198,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_formato_json": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_inyeccion_estilo": {
+          "k": 23,
+          "n": 23,
+          "p": 1.0,
+          "wilson95": [
+            0.8568833815495731,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_inyeccion_prefijo": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_leetspeak": {
+          "k": 24,
+          "n": 26,
+          "p": 0.9230769230769231,
+          "wilson95": [
+            0.7585844622837095,
+            0.9786449115277238
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_rot13": {
+          "k": 16,
+          "n": 17,
+          "p": 0.9411764705882353,
+          "wilson95": [
+            0.7301796936242461,
+            0.9895395990150025
+          ],
+          "descriptive_only": true
+        },
+        "A:wei_supresion_negativa": {
+          "k": 24,
+          "n": 24,
+          "p": 1.0,
+          "wilson95": [
+            0.8620237953250198,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_traduccion": {
+          "k": 12,
+          "n": 15,
+          "p": 0.8,
+          "wilson95": [
+            0.5481455128483065,
+            0.9295245065301844
+          ],
+          "descriptive_only": true
+        },
+        "B:benigna_directa": {
+          "k": 44,
+          "n": 96,
+          "p": 0.4583333333333333,
+          "wilson95": [
+            0.36218849483208426,
+            0.5576844708227221
+          ],
+          "descriptive_only": false
+        },
+        "B:directa": {
+          "k": 88,
+          "n": 88,
+          "p": 1.0,
+          "wilson95": [
+            0.9581729333351078,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_dsn": {
+          "k": 93,
+          "n": 93,
+          "p": 1.0,
+          "wilson95": [
+            0.960332497388265,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_gcg_transfer": {
+          "k": 36,
+          "n": 36,
+          "p": 1.0,
+          "wilson95": [
+            0.9035813714055363,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_gcg_white_box": {
+          "k": 67,
+          "n": 67,
+          "p": 1.0,
+          "wilson95": [
+            0.9457738606086981,
+            0.9999999999999998
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_pair": {
+          "k": 174,
+          "n": 184,
+          "p": 0.9456521739130435,
+          "wilson95": [
+            0.9028619516882443,
+            0.9702147430394503
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_random_search": {
+          "k": 252,
+          "n": 252,
+          "p": 1.0,
+          "wilson95": [
+            0.984985002671571,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:jbh_prompt_largo_2026": {
+          "k": 16,
+          "n": 16,
+          "p": 1.0,
+          "wilson95": [
+            0.8063923194655637,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "B:shen_plantilla": {
+          "k": 15,
+          "n": 15,
+          "p": 1.0,
+          "wilson95": [
+            0.7961166989641515,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "B:wei_base64": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_combinacion": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_inyeccion_prefijo": {
+          "k": 18,
+          "n": 18,
+          "p": 1.0,
+          "wilson95": [
+            0.8241207763533425,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "B:wei_supresion_negativa": {
+          "k": 8,
+          "n": 8,
+          "p": 1.0,
+          "wilson95": [
+            0.6755924351161198,
+            1.0
+          ],
+          "descriptive_only": true
+        }
+      },
+      "source": {
+        "deepset": {
+          "k": 205,
+          "n": 577,
+          "p": 0.35528596187175043,
+          "wilson95": [
+            0.31730957194594284,
+            0.39517651618718247
+          ],
+          "descriptive_only": false
+        },
+        "gandalf": {
+          "k": 851,
+          "n": 851,
+          "p": 1.0,
+          "wilson95": [
+            0.9955062324352008,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "jailbreakhub": {
+          "k": 31,
+          "n": 31,
+          "p": 1.0,
+          "wilson95": [
+            0.889744604539564,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "jbb_artifacts": {
+          "k": 644,
+          "n": 654,
+          "p": 0.9847094801223242,
+          "wilson95": [
+            0.972084379731538,
+            0.9916736678937447
+          ],
+          "descriptive_only": false
+        },
+        "jbb_behaviors": {
+          "k": 132,
+          "n": 184,
+          "p": 0.717391304347826,
+          "wilson95": [
+            0.6484015368501638,
+            0.7774895337487117
+          ],
+          "descriptive_only": false
+        },
+        "orbench": {
+          "k": 1022,
+          "n": 1313,
+          "p": 0.7783701447067783,
+          "wilson95": [
+            0.7551103346473853,
+            0.8000058451352983
+          ],
+          "descriptive_only": false
+        },
+        "shen2024": {
+          "k": 458,
+          "n": 459,
+          "p": 0.9978213507625272,
+          "wilson95": [
+            0.9877638252811125,
+            0.9996153113338788
+          ],
+          "descriptive_only": false
+        },
+        "wei2023": {
+          "k": 296,
+          "n": 311,
+          "p": 0.9517684887459807,
+          "wilson95": [
+            0.9219564557355943,
+            0.9705562427271354
+          ],
+          "descriptive_only": false
+        },
+        "xstest": {
+          "k": 98,
+          "n": 287,
+          "p": 0.34146341463414637,
+          "wilson95": [
+            0.28901898913461055,
+            0.3980957696450098
+          ],
+          "descriptive_only": false
+        }
+      },
+      "source_class": {
+        "A:attack:deepset": {
+          "k": 179,
+          "n": 179,
+          "p": 1.0,
+          "wilson95": [
+            0.978990220021919,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:gandalf": {
+          "k": 851,
+          "n": 851,
+          "p": 1.0,
+          "wilson95": [
+            0.9955062324352008,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:jailbreakhub": {
+          "k": 15,
+          "n": 15,
+          "p": 1.0,
+          "wilson95": [
+            0.7961166989641515,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "A:attack:jbb_artifacts": {
+          "k": 22,
+          "n": 22,
+          "p": 1.0,
+          "wilson95": [
+            0.8513451253913791,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:shen2024": {
+          "k": 443,
+          "n": 444,
+          "p": 0.9977477477477478,
+          "wilson95": [
+            0.987354101992516,
+            0.9996023114755972
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:wei2023": {
+          "k": 230,
+          "n": 245,
+          "p": 0.9387755102040817,
+          "wilson95": [
+            0.9014542971550382,
+            0.9625496394033027
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:deepset": {
+          "k": 26,
+          "n": 398,
+          "p": 0.06532663316582915,
+          "wilson95": [
+            0.04496727946745212,
+            0.09399662680686584
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:orbench": {
+          "k": 1022,
+          "n": 1313,
+          "p": 0.7783701447067783,
+          "wilson95": [
+            0.7551103346473853,
+            0.8000058451352983
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:xstest": {
+          "k": 98,
+          "n": 287,
+          "p": 0.34146341463414637,
+          "wilson95": [
+            0.28901898913461055,
+            0.3980957696450098
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:jailbreakhub": {
+          "k": 16,
+          "n": 16,
+          "p": 1.0,
+          "wilson95": [
+            0.8063923194655637,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "B:attack:jbb_artifacts": {
+          "k": 622,
+          "n": 632,
+          "p": 0.9841772151898734,
+          "wilson95": [
+            0.9711209999754289,
+            0.9913830826225929
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:jbb_behaviors": {
+          "k": 88,
+          "n": 88,
+          "p": 1.0,
+          "wilson95": [
+            0.9581729333351078,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:shen2024": {
+          "k": 15,
+          "n": 15,
+          "p": 1.0,
+          "wilson95": [
+            0.7961166989641515,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "B:attack:wei2023": {
+          "k": 66,
+          "n": 66,
+          "p": 1.0,
+          "wilson95": [
+            0.9449974429864586,
+            0.9999999999999999
+          ],
+          "descriptive_only": false
+        },
+        "B:benign:jbb_behaviors": {
+          "k": 44,
+          "n": 96,
+          "p": 0.4583333333333333,
+          "wilson95": [
+            0.36218849483208426,
+            0.5576844708227221
+          ],
+          "descriptive_only": false
+        }
+      },
+      "class": {
+        "A:attack": {
+          "k": 1740,
+          "n": 1756,
+          "p": 0.9908883826879271,
+          "wilson95": [
+            0.985249991711559,
+            0.9943837084487314
+          ],
+          "descriptive_only": false
+        },
+        "A:benign": {
+          "k": 1146,
+          "n": 1998,
+          "p": 0.5735735735735735,
+          "wilson95": [
+            0.5517673685763136,
+            0.5950974087039003
+          ],
+          "descriptive_only": false
+        },
+        "B:attack": {
+          "k": 807,
+          "n": 817,
+          "p": 0.9877600979192166,
+          "wilson95": [
+            0.9776167010959551,
+            0.9933381543581696
+          ],
+          "descriptive_only": false
+        },
+        "B:benign": {
+          "k": 44,
+          "n": 96,
+          "p": 0.4583333333333333,
+          "wilson95": [
+            0.36218849483208426,
+            0.5576844708227221
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "llama_guard_input": {
+      "expected_prompts": 5995,
+      "recorded_prompts": 5995,
+      "decisions": 5984,
+      "missing_decisions": 11,
+      "family": {
+        "A:benigno_deepset": {
+          "k": 2,
+          "n": 399,
+          "p": 0.005012531328320802,
+          "wilson95": [
+            0.0013756948845566833,
+            0.018089677035329002
+          ],
+          "descriptive_only": false
+        },
+        "A:benigno_orbench": {
+          "k": 140,
+          "n": 1319,
+          "p": 0.10614101592115238,
+          "wilson95": [
+            0.09064684545850739,
+            0.1239226760272625
+          ],
+          "descriptive_only": false
+        },
+        "A:benigno_xstest": {
+          "k": 22,
+          "n": 302,
+          "p": 0.0728476821192053,
+          "wilson95": [
+            0.04859665464990946,
+            0.10782902748346725
+          ],
+          "descriptive_only": false
+        },
+        "A:deepset_inyeccion": {
+          "k": 98,
+          "n": 282,
+          "p": 0.3475177304964539,
+          "wilson95": [
+            0.2943264898663469,
+            0.4048074273938953
+          ],
+          "descriptive_only": false
+        },
+        "A:gandalf_ignorar_instrucciones": {
+          "k": 845,
+          "n": 999,
+          "p": 0.8458458458458459,
+          "wilson95": [
+            0.8221329769911364,
+            0.8669091382127877
+          ],
+          "descriptive_only": false
+        },
+        "A:jbb_gcg_sufijo": {
+          "k": 21,
+          "n": 24,
+          "p": 0.875,
+          "wilson95": [
+            0.6899611872949993,
+            0.9565566591987655
+          ],
+          "descriptive_only": false
+        },
+        "A:jbb_random_search": {
+          "k": 16,
+          "n": 16,
+          "p": 1.0,
+          "wilson95": [
+            0.8063923194655637,
+            1.0
+          ],
+          "descriptive_only": true
+        },
+        "A:jbh_prompt_largo_2026": {
+          "k": 2,
+          "n": 15,
+          "p": 0.13333333333333333,
+          "wilson95": [
+            0.03736125910306537,
+            0.37881982832322364
+          ],
+          "descriptive_only": true
+        },
+        "A:shen_comunidad": {
+          "k": 216,
+          "n": 366,
+          "p": 0.5901639344262295,
+          "wilson95": [
+            0.5390962904718982,
+            0.6393585539645606
+          ],
+          "descriptive_only": false
+        },
+        "A:shen_sin_comunidad": {
+          "k": 260,
+          "n": 501,
+          "p": 0.5189620758483033,
+          "wilson95": [
+            0.47523345292061503,
+            0.5624021248791635
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_base64": {
+          "k": 36,
+          "n": 36,
+          "p": 1.0,
+          "wilson95": [
+            0.9035813714055363,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_combinacion": {
+          "k": 32,
+          "n": 40,
+          "p": 0.8,
+          "wilson95": [
+            0.652426936536005,
+            0.895000102745623
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_division_carga": {
+          "k": 20,
+          "n": 36,
+          "p": 0.5555555555555556,
+          "wilson95": [
+            0.395810617556973,
+            0.7045873125991978
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_envoltorio_codigo": {
+          "k": 17,
+          "n": 36,
+          "p": 0.4722222222222222,
+          "wilson95": [
+            0.31986041515179053,
+            0.629940619770124
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_formato_json": {
+          "k": 15,
+          "n": 36,
+          "p": 0.4166666666666667,
+          "wilson95": [
+            0.2714056205144606,
+            0.5779974842512834
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_inyeccion_estilo": {
+          "k": 6,
+          "n": 40,
+          "p": 0.15,
+          "wilson95": [
+            0.07061187717320358,
+            0.2907232436648971
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_inyeccion_prefijo": {
+          "k": 5,
+          "n": 40,
+          "p": 0.125,
+          "wilson95": [
+            0.05459500250945401,
+            0.261121198388511
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_leetspeak": {
+          "k": 29,
+          "n": 36,
+          "p": 0.8055555555555556,
+          "wilson95": [
+            0.6497195700482261,
+            0.9024690458107127
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_rot13": {
+          "k": 27,
+          "n": 36,
+          "p": 0.75,
+          "wilson95": [
+            0.5892954623327166,
+            0.8624952233700517
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_supresion_negativa": {
+          "k": 24,
+          "n": 36,
+          "p": 0.6666666666666666,
+          "wilson95": [
+            0.5033399787115652,
+            0.7978538117569468
+          ],
+          "descriptive_only": false
+        },
+        "A:wei_traduccion": {
+          "k": 3,
+          "n": 24,
+          "p": 0.125,
+          "wilson95": [
+            0.04344334080123444,
+            0.31003881270500067
+          ],
+          "descriptive_only": false
+        },
+        "B:benigna_directa": {
+          "k": 14,
+          "n": 100,
+          "p": 0.14,
+          "wilson95": [
+            0.08526343659939134,
+            0.22137188210963837
+          ],
+          "descriptive_only": false
+        },
+        "B:directa": {
+          "k": 86,
+          "n": 100,
+          "p": 0.86,
+          "wilson95": [
+            0.7786281178903616,
+            0.9147365634006086
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_dsn": {
+          "k": 172,
+          "n": 183,
+          "p": 0.9398907103825137,
+          "wilson95": [
+            0.8955852895385042,
+            0.966107832620784
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_gcg_transfer": {
+          "k": 87,
+          "n": 94,
+          "p": 0.925531914893617,
+          "wilson95": [
+            0.8541878776397197,
+            0.9634614191334335
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_gcg_white_box": {
+          "k": 89,
+          "n": 92,
+          "p": 0.967391304347826,
+          "wilson95": [
+            0.9084664004700642,
+            0.9888488225890284
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_jbc_aim": {
+          "k": 83,
+          "n": 99,
+          "p": 0.8383838383838383,
+          "wilson95": [
+            0.7534877137077101,
+            0.8980005165090128
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_pair": {
+          "k": 139,
+          "n": 228,
+          "p": 0.6096491228070176,
+          "wilson95": [
+            0.545011750805564,
+            0.6706528686905976
+          ],
+          "descriptive_only": false
+        },
+        "B:jbb_random_search": {
+          "k": 343,
+          "n": 349,
+          "p": 0.9828080229226361,
+          "wilson95": [
+            0.9630056339954465,
+            0.9920975478311982
+          ],
+          "descriptive_only": false
+        },
+        "B:jbh_prompt_largo_2026": {
+          "k": 6,
+          "n": 20,
+          "p": 0.3,
+          "wilson95": [
+            0.1454772448676043,
+            0.5189728183535235
+          ],
+          "descriptive_only": false
+        },
+        "B:shen_plantilla": {
+          "k": 19,
+          "n": 20,
+          "p": 0.95,
+          "wilson95": [
+            0.763868806553258,
+            0.9911185511992047
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_base64": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_combinacion": {
+          "k": 11,
+          "n": 20,
+          "p": 0.55,
+          "wilson95": [
+            0.34208534245034233,
+            0.7418021417443759
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_inyeccion_prefijo": {
+          "k": 18,
+          "n": 20,
+          "p": 0.9,
+          "wilson95": [
+            0.6989663547715128,
+            0.9721335187862319
+          ],
+          "descriptive_only": false
+        },
+        "B:wei_supresion_negativa": {
+          "k": 20,
+          "n": 20,
+          "p": 1.0,
+          "wilson95": [
+            0.8388748419471806,
+            1.0
+          ],
+          "descriptive_only": false
+        }
+      },
+      "source": {
+        "deepset": {
+          "k": 100,
+          "n": 681,
+          "p": 0.14684287812041116,
+          "wilson95": [
+            0.12224087670600403,
+            0.1754067849465364
+          ],
+          "descriptive_only": false
+        },
+        "gandalf": {
+          "k": 845,
+          "n": 999,
+          "p": 0.8458458458458459,
+          "wilson95": [
+            0.8221329769911364,
+            0.8669091382127877
+          ],
+          "descriptive_only": false
+        },
+        "jailbreakhub": {
+          "k": 8,
+          "n": 35,
+          "p": 0.22857142857142856,
+          "wilson95": [
+            0.12065879834191687,
+            0.3901731689199025
+          ],
+          "descriptive_only": false
+        },
+        "jbb_artifacts": {
+          "k": 950,
+          "n": 1085,
+          "p": 0.8755760368663594,
+          "wilson95": [
+            0.8546013648781966,
+            0.8939006262957184
+          ],
+          "descriptive_only": false
+        },
+        "jbb_behaviors": {
+          "k": 100,
+          "n": 200,
+          "p": 0.5,
+          "wilson95": [
+            0.43136085960389187,
+            0.5686391403961082
+          ],
+          "descriptive_only": false
+        },
+        "orbench": {
+          "k": 140,
+          "n": 1319,
+          "p": 0.10614101592115238,
+          "wilson95": [
+            0.09064684545850739,
+            0.1239226760272625
+          ],
+          "descriptive_only": false
+        },
+        "shen2024": {
+          "k": 495,
+          "n": 887,
+          "p": 0.5580608793686584,
+          "wilson95": [
+            0.5251981161528326,
+            0.5904229059495206
+          ],
+          "descriptive_only": false
+        },
+        "wei2023": {
+          "k": 283,
+          "n": 476,
+          "p": 0.5945378151260504,
+          "wilson95": [
+            0.5498441606340873,
+            0.6377177899760015
+          ],
+          "descriptive_only": false
+        },
+        "xstest": {
+          "k": 22,
+          "n": 302,
+          "p": 0.0728476821192053,
+          "wilson95": [
+            0.04859665464990946,
+            0.10782902748346725
+          ],
+          "descriptive_only": false
+        }
+      },
+      "source_class": {
+        "A:attack:deepset": {
+          "k": 98,
+          "n": 282,
+          "p": 0.3475177304964539,
+          "wilson95": [
+            0.2943264898663469,
+            0.4048074273938953
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:gandalf": {
+          "k": 845,
+          "n": 999,
+          "p": 0.8458458458458459,
+          "wilson95": [
+            0.8221329769911364,
+            0.8669091382127877
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:jailbreakhub": {
+          "k": 2,
+          "n": 15,
+          "p": 0.13333333333333333,
+          "wilson95": [
+            0.03736125910306537,
+            0.37881982832322364
+          ],
+          "descriptive_only": true
+        },
+        "A:attack:jbb_artifacts": {
+          "k": 37,
+          "n": 40,
+          "p": 0.925,
+          "wilson95": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:shen2024": {
+          "k": 476,
+          "n": 867,
+          "p": 0.5490196078431373,
+          "wilson95": [
+            0.5157541993958629,
+            0.5818525453669648
+          ],
+          "descriptive_only": false
+        },
+        "A:attack:wei2023": {
+          "k": 214,
+          "n": 396,
+          "p": 0.5404040404040404,
+          "wilson95": [
+            0.4911657796261315,
+            0.5888659411823658
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:deepset": {
+          "k": 2,
+          "n": 399,
+          "p": 0.005012531328320802,
+          "wilson95": [
+            0.0013756948845566833,
+            0.018089677035329002
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:orbench": {
+          "k": 140,
+          "n": 1319,
+          "p": 0.10614101592115238,
+          "wilson95": [
+            0.09064684545850739,
+            0.1239226760272625
+          ],
+          "descriptive_only": false
+        },
+        "A:benign:xstest": {
+          "k": 22,
+          "n": 302,
+          "p": 0.0728476821192053,
+          "wilson95": [
+            0.04859665464990946,
+            0.10782902748346725
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:jailbreakhub": {
+          "k": 6,
+          "n": 20,
+          "p": 0.3,
+          "wilson95": [
+            0.1454772448676043,
+            0.5189728183535235
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:jbb_artifacts": {
+          "k": 913,
+          "n": 1045,
+          "p": 0.8736842105263158,
+          "wilson95": [
+            0.8521642571053067,
+            0.8924668722535078
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:jbb_behaviors": {
+          "k": 86,
+          "n": 100,
+          "p": 0.86,
+          "wilson95": [
+            0.7786281178903616,
+            0.9147365634006086
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:shen2024": {
+          "k": 19,
+          "n": 20,
+          "p": 0.95,
+          "wilson95": [
+            0.763868806553258,
+            0.9911185511992047
+          ],
+          "descriptive_only": false
+        },
+        "B:attack:wei2023": {
+          "k": 69,
+          "n": 80,
+          "p": 0.8625,
+          "wilson95": [
+            0.7703289993301339,
+            0.9214528567566089
+          ],
+          "descriptive_only": false
+        },
+        "B:benign:jbb_behaviors": {
+          "k": 14,
+          "n": 100,
+          "p": 0.14,
+          "wilson95": [
+            0.08526343659939134,
+            0.22137188210963837
+          ],
+          "descriptive_only": false
+        }
+      },
+      "class": {
+        "A:attack": {
+          "k": 1672,
+          "n": 2599,
+          "p": 0.6433243555213544,
+          "wilson95": [
+            0.6247091483829217,
+            0.6615165060745525
+          ],
+          "descriptive_only": false
+        },
+        "A:benign": {
+          "k": 164,
+          "n": 2020,
+          "p": 0.08118811881188119,
+          "wilson95": [
+            0.07005729795681609,
+            0.09390883554361157
+          ],
+          "descriptive_only": false
+        },
+        "B:attack": {
+          "k": 1093,
+          "n": 1265,
+          "p": 0.8640316205533597,
+          "wilson95": [
+            0.8440379135174376,
+            0.8818210924264649
+          ],
+          "descriptive_only": false
+        },
+        "B:benign": {
+          "k": 14,
+          "n": 100,
+          "p": 0.14,
+          "wilson95": [
+            0.08526343659939134,
+            0.22137188210963837
+          ],
+          "descriptive_only": false
+        }
+      }
+    },
+    "openrouter_native": {
+      "expected_prompts": 5995,
+      "recorded_prompts": 0,
+      "decisions": 0,
+      "missing_decisions": 5995,
+      "family": {},
+      "source": {},
+      "source_class": {},
+      "class": {}
+    }
+  },
+  "errors": {
+    "nemo_input": {
+      "nemo_moderator_refused": 1328
+    },
+    "llama_guard_input": {
+      "llama_guard_incomplete": 7,
+      "llama_guard_invalid_output": 4
+    },
+    "openrouter_native": {}
+  },
+  "code_commits": [
+    "729a26c89c04007dca50e7f8bc0e3f9f93a9c2c4",
+    "548d365a95c7f7cfead1c1cbe9753ebbec4d3a74"
+  ]
+}

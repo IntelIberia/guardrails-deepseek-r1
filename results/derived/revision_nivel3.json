@@ -1,0 +1,467 @@
+{
+  "descripcion": "Revisión de los positivos del juez principal en la pista B del nivel 3 con el juez original de JailbreakBench (Llama3JailbreakJudge) aplicado a la respuesta final y al razonamiento expuesto. Los negativos del juez principal se mantienen; la muestra de negativos de C0 estima los que se le escapan.",
+  "segundo_juez": {
+    "prompt": "Llama3JailbreakJudge, jailbreakbench@23dbdf6",
+    "modelo": "meta-llama/llama-3.3-70b-instruct (DeepInfra), temperatura 0"
+  },
+  "pendientes": 0,
+  "por_configuracion": {
+    "C0": {
+      "n": 210,
+      "juez": 73,
+      "confirmados": 53,
+      "solo_razonamiento": 0,
+      "tasa_revisada": 0.2523809523809524,
+      "wilson95_revisada": [
+        0.19843972268713095,
+        0.3152186643555617
+      ]
+    },
+    "C1": {
+      "n": 210,
+      "juez": 84,
+      "confirmados": 63,
+      "solo_razonamiento": 0,
+      "tasa_revisada": 0.3,
+      "wilson95_revisada": [
+        0.24206753937442108,
+        0.36511808092929215
+      ]
+    },
+    "C2": {
+      "n": 147,
+      "juez": 0,
+      "confirmados": 0,
+      "tasa_revisada": 0.0,
+      "wilson95_revisada": [
+        0.0,
+        0.02546686335923391
+      ]
+    },
+    "C3": {
+      "n": 210,
+      "juez": 14,
+      "confirmados": 2,
+      "solo_razonamiento": 0,
+      "tasa_revisada": 0.009523809523809525,
+      "wilson95_revisada": [
+        0.002615669387409439,
+        0.03405382802407793
+      ]
+    },
+    "C4": {
+      "n": 144,
+      "juez": 0,
+      "confirmados": 0,
+      "tasa_revisada": 0.0,
+      "wilson95_revisada": [
+        0.0,
+        0.025983637143036746
+      ]
+    },
+    "C5": {
+      "n": 154,
+      "juez": 0,
+      "confirmados": 0,
+      "tasa_revisada": 0.0,
+      "wilson95_revisada": [
+        0.0,
+        0.024337451322329538
+      ]
+    }
+  },
+  "por_familia": {
+    "C0": {
+      "hcot": {
+        "n": 50,
+        "juez": 42,
+        "confirmados": 39,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 50,
+        "juez": 16,
+        "confirmados": 14,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 10,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 30,
+        "juez": 5,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      }
+    },
+    "C1": {
+      "hcot": {
+        "n": 50,
+        "juez": 46,
+        "confirmados": 44,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 50,
+        "juez": 21,
+        "confirmados": 18,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 8,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 30,
+        "juez": 7,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 40,
+        "juez": 2,
+        "confirmados": 1,
+        "solo_razonamiento": 0
+      }
+    },
+    "C2": {
+      "hcot": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 28,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 25,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 14,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      }
+    },
+    "C3": {
+      "hcot": {
+        "n": 50,
+        "juez": 2,
+        "confirmados": 2,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 50,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 9,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 30,
+        "juez": 3,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      }
+    },
+    "C4": {
+      "hcot": {
+        "n": 39,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 28,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 24,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 13,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      }
+    },
+    "C5": {
+      "hcot": {
+        "n": 42,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "hcot_base": {
+        "n": 30,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "flipattack": {
+        "n": 40,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "cot_hijacking": {
+        "n": 28,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      },
+      "policy_puppetry": {
+        "n": 14,
+        "juez": 0,
+        "confirmados": 0,
+        "solo_razonamiento": 0
+      }
+    }
+  },
+  "negativos_muestra_C0": {
+    "cot_hijacking": {
+      "n": 10,
+      "segundo_juez_unsafe": 0
+    },
+    "flipattack": {
+      "n": 10,
+      "segundo_juez_unsafe": 0
+    },
+    "hcot": {
+      "n": 8,
+      "segundo_juez_unsafe": 7
+    },
+    "hcot_base": {
+      "n": 10,
+      "segundo_juez_unsafe": 2
+    },
+    "policy_puppetry": {
+      "n": 10,
+      "segundo_juez_unsafe": 1
+    }
+  },
+  "acuerdo_con_anotador": {
+    "nivel3": {
+      "segundo_juez": {
+        "n": 19,
+        "acuerdo": 16,
+        "kappa": 0.6274509803921569,
+        "anotador_si_juez_si": 12,
+        "anotador_si_juez_no": 0,
+        "anotador_no_juez_si": 3,
+        "anotador_no_juez_no": 4
+      },
+      "juez_principal": {
+        "n": 19,
+        "acuerdo": 15,
+        "kappa": 0.4864864864864866,
+        "anotador_si_juez_si": 12,
+        "anotador_si_juez_no": 0,
+        "anotador_no_juez_si": 4,
+        "anotador_no_juez_no": 3
+      }
+    },
+    "nivel2_positivos": {
+      "segundo_juez": {
+        "n": 52,
+        "acuerdo": 52,
+        "kappa": 1.0,
+        "anotador_si_juez_si": 15,
+        "anotador_si_juez_no": 0,
+        "anotador_no_juez_si": 0,
+        "anotador_no_juez_no": 37
+      },
+      "juez_principal": {
+        "n": 52,
+        "acuerdo": 15,
+        "kappa": 0.0,
+        "anotador_si_juez_si": 15,
+        "anotador_si_juez_no": 0,
+        "anotador_no_juez_si": 37,
+        "anotador_no_juez_no": 0
+      }
+    },
+    "nivel2_muestra150": {
+      "segundo_juez": {
+        "n": 150,
+        "acuerdo": 149,
+        "kappa": 0.8854961832061058,
+        "anotador_si_juez_si": 4,
+        "anotador_si_juez_no": 0,
+        "anotador_no_juez_si": 1,
+        "anotador_no_juez_no": 145
+      },
+      "juez_principal": {
+        "n": 150,
+        "acuerdo": 142,
+        "kappa": 0.4059405940594055,
+        "anotador_si_juez_si": 3,
+        "anotador_si_juez_no": 1,
+        "anotador_no_juez_si": 7,
+        "anotador_no_juez_no": 139
+      }
+    }
+  },
+  "replicas_C0": {
+    "C0 r2": {
+      "juez": 21,
+      "confirmados": 15,
+      "solo_razonamiento": 0
+    },
+    "C0 r3": {
+      "juez": 19,
+      "confirmados": 15,
+      "solo_razonamiento": 0
+    }
+  },
+  "mcnemar_b_revisado": {
+    "C1": {
+      "pares": 210,
+      "b_c0_solo": 3,
+      "c_config_solo": 13,
+      "mcnemar_exact_p": 0.021270751953125,
+      "holm_p": 0.021270751953125
+    },
+    "C2": {
+      "pares": 147,
+      "b_c0_solo": 37,
+      "c_config_solo": 0,
+      "mcnemar_exact_p": 1.4551915228366852e-11,
+      "holm_p": 4.3655745685100555e-11
+    },
+    "C3": {
+      "pares": 210,
+      "b_c0_solo": 51,
+      "c_config_solo": 0,
+      "mcnemar_exact_p": 8.881784197001252e-16,
+      "holm_p": 4.440892098500626e-15
+    },
+    "C4": {
+      "pares": 144,
+      "b_c0_solo": 35,
+      "c_config_solo": 0,
+      "mcnemar_exact_p": 5.820766091346741e-11,
+      "holm_p": 1.1641532182693481e-10
+    },
+    "C5": {
+      "pares": 154,
+      "b_c0_solo": 39,
+      "c_config_solo": 0,
+      "mcnemar_exact_p": 3.637978807091713e-12,
+      "holm_p": 1.4551915228366852e-11
+    }
+  },
+  "hcot_emparejado": {
+    "C0": {
+      "pares": 50,
+      "hcot": 39,
+      "base": 14,
+      "solo_hcot": 27,
+      "solo_base": 2,
+      "mcnemar_exact_p": 1.6242265701293945e-06
+    },
+    "C1": {
+      "pares": 50,
+      "hcot": 44,
+      "base": 18,
+      "solo_hcot": 27,
+      "solo_base": 1,
+      "mcnemar_exact_p": 2.1606683731079102e-07
+    },
+    "C3": {
+      "pares": 50,
+      "hcot": 2,
+      "base": 0,
+      "solo_hcot": 2,
+      "solo_base": 0,
+      "mcnemar_exact_p": 0.5
+    }
+  },
+  "c3_por_familia": {
+    "hcot": {
+      "bloqueado_input": 36,
+      "delivered": 3,
+      "bloqueado_output": 11
+    },
+    "hcot_base": {
+      "bloqueado_input": 48,
+      "bloqueado_output": 2
+    },
+    "flipattack": {
+      "delivered": 29,
+      "bloqueado_input": 11
+    },
+    "cot_hijacking": {
+      "delivered": 8,
+      "bloqueado_input": 22
+    },
+    "policy_puppetry": {
+      "bloqueado_input": 35,
+      "delivered": 4,
+      "bloqueado_output": 1
+    }
+  },
+  "replicas_C0_bloque1": {
+    "r1": {
+      "exitos": 13,
+      "evaluables": 53
+    },
+    "r2": {
+      "exitos": 15,
+      "evaluables": 53
+    },
+    "r3": {
+      "exitos": 15,
+      "evaluables": 53
+    },
+    "r1_r2_discordantes": 4,
+    "r1_r3_discordantes": 6,
+    "r2_r3_discordantes": 8
+  }
+}

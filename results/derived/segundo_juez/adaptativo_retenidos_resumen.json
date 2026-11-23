@@ -1,0 +1,23 @@
+{
+  "C4 bon": {
+    "negativas_moderador": 6,
+    "conductas_con_negativa": 4,
+    "retenidas_en_salida": 0,
+    "conductas_con_retenida_unsafe": 0,
+    "retenidas_sin_revisar": 0
+  },
+  "C4 crescendo": {
+    "negativas_moderador": 10,
+    "conductas_con_negativa": 7,
+    "retenidas_en_salida": 1,
+    "conductas_con_retenida_unsafe": 1,
+    "retenidas_sin_revisar": 0
+  },
+  "C4 pair": {
+    "negativas_moderador": 49,
+    "conductas_con_negativa": 17,
+    "retenidas_en_salida": 2,
+    "conductas_con_retenida_unsafe": 2,
+    "retenidas_sin_revisar": 0
+  }
+}
