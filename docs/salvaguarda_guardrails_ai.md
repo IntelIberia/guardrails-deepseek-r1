@@ -85,7 +85,7 @@ escenario.
 Las pruebas usan el framework real con sockets y DNS bloqueados: aceptación
 del formato válido, rechazo sin coerciones, errores, ausencia de inferencia y
 criterio del consumidor. El piloto real de dos controles está descrito en
-[protocolos.md](protocolos.md); se ejecutó el 19-11-2026 como
+[pilotos_integracion.md](pilotos_integracion.md); se ejecutó el 19-11-2026 como
 `piloto-gai-20261119`: el control válido pasó y el texto plano se bloqueó.
 
 Fuentes consultadas el 18-11-2026:

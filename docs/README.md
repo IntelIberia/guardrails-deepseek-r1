@@ -25,7 +25,7 @@ reproduce. Lo que cambió durante la ejecución está al final, con fecha y moti
 | [nemo.md](nemo.md) | C2: NeMo Guardrails y su política. |
 | [salvaguarda_llama_guard.md](salvaguarda_llama_guard.md) | C3: Llama Guard 4. |
 | [salvaguarda_guardrails_ai.md](salvaguarda_guardrails_ai.md) | La capa de salida de C5: Guardrails AI y el consumidor simulado. |
-| [protocolos.md](protocolos.md) | Los pilotos de integración de cada filtro, antes de la evaluación. |
+| [pilotos_integracion.md](pilotos_integracion.md) | Los pilotos de integración de cada filtro, antes de la evaluación. |
 | [registro_ejecuciones.md](registro_ejecuciones.md) | Los pilotos ejecutados, con sus costes y huellas. |
 
 Los corpus tienen su propio índice en

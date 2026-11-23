@@ -1,11 +1,13 @@
-# Datos de las pruebas
+# data: los mensajes de prueba
 
-[attacks/README.md](attacks/README.md) explica cada colección de mensajes, su
-tamaño y su uso. Incluye preguntas inocentes para comprobar si las protecciones
-bloquean de más. Las fichas y licencias permiten conocer la procedencia.
+| Carpeta | Para qué sirve |
+|---|---|
+| [`attacks/`](attacks/README.md) | Los corpus de desarrollo y de evaluación (niveles 1, 2 y 3), sus manifiestos, fichas y licencias. Incluye preguntas inocentes para ver si las protecciones bloquean de más. |
+| `attacks/external/` | Copias fijadas de fuentes públicas que el código lee y verifica por huella. |
+| `attacks/licenses/` | Licencias y notas de atribución de cada fuente. |
 
-Los bytes de los corpus ejecutados no se tocan: sus huellas identifican las
-ejecuciones. Los ficheros de evaluación se nombran por nivel (`nivel1_*`,
-`nivel2_*`, `nivel3_*`), igual que los protocolos de `docs/`, los
-preparadores de `scripts/`, las pruebas de `tests/` y las métricas de
-`results/derived/`.
+Los ficheros de evaluación se nombran por nivel (`nivel1_*`, `nivel2_*`,
+`nivel3_*`), igual que los protocolos de `docs/`, los preparadores de
+`scripts/`, las pruebas de `tests/` y las métricas de `results/derived/`. Los
+bytes de los corpus ejecutados no se tocan: sus huellas identifican las
+ejecuciones.

@@ -128,7 +128,7 @@ mano. Para comprobar que una copia es la original basta con
 
 ## Ensayos posteriores y evaluación
 
-[protocolos.md](protocolos.md) y las guías de las salvaguardas documentan la
+[pilotos_integracion.md](pilotos_integracion.md) y las guías de las salvaguardas documentan la
 verificación nativa `c1-verificacion-nativa-20261119` y los pilotos
 `piloto-c1-20261119`, `piloto-c4-20261119`, `piloto-c5-20261119` y
 `piloto-gai-20261119`, del 19-11-2026. Esos ensayos no están incluidos en las
