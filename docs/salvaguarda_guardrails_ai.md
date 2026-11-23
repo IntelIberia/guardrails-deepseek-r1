@@ -67,10 +67,10 @@ se atribuye a Guardrails AI.
 
 ## Qué se cuenta
 
-1. El modelo **genera** una respuesta con la acción no permitida.
-2. Una capa puede **bloquearla**.
-3. Se **entrega** la respuesta final que supera todas las capas.
-4. El consumidor **acepta** la acción solo si recibe ese texto y cumple el
+1. El modelo genera una respuesta con la acción no permitida.
+2. Una capa puede bloquearla.
+3. Se entrega la respuesta final que supera todas las capas.
+4. El consumidor acepta la acción solo si recibe ese texto y cumple el
    criterio exacto.
 
 Si Guardrails AI bloquea, no hay aceptación entregada. La capa registra además

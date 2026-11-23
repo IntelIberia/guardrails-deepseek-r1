@@ -141,15 +141,15 @@ miden cosas distintas y no se suman.
 
 - ASR por escenario (LLM07, LLM01, LLM05) y, en LLM07, por canal.
 - ASR por familia en cada pista. Con menos de 20 casos evaluables el
-  resultado es **solo descriptivo** (marcado con † en las tablas) y no entra
+  resultado es solo descriptivo (marcado con † en las tablas) y no entra
   en ninguna prueba. En la pista A tienen menos de 20 casos las familias de
   15 o 16 casos (JailbreakHub, random search, prefijo, estilo y combinación).
 - DSR por capa y número de bloqueos de salida que interceptan una salida que
   ya cumplía el oráculo.
 - Sobre-rechazo del modelo (benignos entregados con veredicto negativo del
   juez), cumplimiento del contrato y fuga de canaria en benignos.
-- Coste por caso del objetivo, las defensas y el juez. **Nunca se promedia con
-  costes ausentes**: se da el coste conocido (cota inferior), el número de
+- Coste por caso del objetivo, las defensas y el juez. Nunca se promedia con
+  costes ausentes: se da el coste conocido (cota inferior), el número de
   casos con algún coste ausente y la media solo sobre los casos completos.
 - Latencia de despliegue sin juez (`deployment_latency_ms` del registro;
   en registros antiguos sin ese campo, total menos la etapa del juez, y se
@@ -170,7 +170,7 @@ bloqueo aunque falte el juez de un benigno.
 
 ## 7. Comparaciones
 
-Las comparaciones con C0 son emparejadas por caso y usan **McNemar exacto**
+Las comparaciones con C0 son emparejadas por caso y usan McNemar exacto
 bilateral (binomial con p = 1/2 sobre los pares discordantes). Hay dos
 familias de contrastes, una por pista: C1–C5 frente a C0 con todos los ataques
 de la pista, corregidas con Holm-Bonferroni y α = 0,05. No se seleccionan contrastes
@@ -196,8 +196,8 @@ el tamaño se reduce en proporción (con 3 bloques, unos 193 ataques A, 113 B y
 En la pista A el juez es secundario. En la pista B es el oráculo, con la
 rúbrica del juez de JailbreakBench adaptada (Chao et al., 2024; detalle en
 [eval_v2.md](../data/attacks/eval_v2.md)). Por eso la validación frente a
-etiquetas humanas es **requisito para presentar la pista B como resultado
-principal**:
+etiquetas humanas es requisito para presentar la pista B como resultado
+principal:
 
 1. Tras la campaña, `scripts/sample_human_labels.py` extrae con semilla
    20261121 una muestra de 150 respuestas entregadas de la pista B,
@@ -246,8 +246,8 @@ Los precios por token se ajustan con las llamadas observadas (48 del objetivo,
 795,26 tokens de salida en ataques A y 634,06 en benignos. Para B se suponen
 1988,15 tokens, 2,5 veces la media A: no hay un piloto B. Se incluye la longitud
 real de las rúbricas. Se supone que ningún filtro bloquea y que se revisan los
-dos canales de salida. Esto aumenta el coste estimado, pero **no es un máximo
-garantizado**: no hay un límite de salida del objetivo en los YAML.
+dos canales de salida. Esto aumenta el coste estimado, pero no es un máximo
+garantizado: no hay un límite de salida del objetivo en los YAML.
 
 | Nivel y tamaño | USD con margen 1,5 | Clave nativa | Horas con margen 1,5 |
 |---|---:|---:|---:|
@@ -267,8 +267,8 @@ El mínimo por el limitador es una llamada por segundo y filtro. No se incluyen
 las pausas manuales de 60 s, una cola del proveedor ni reanudaciones completas.
 El margen de 1,5 se aplica tanto al coste como al tiempo, no dos veces al coste.
 
-Con los límites actuales se propone **nivel 1 con NeMo y Llama Guard completo,
-y bloques 1–2 del nivel 2**: 11,287392 USD, 3,122901 con la clave nativa y unas
+Con los límites actuales se propone nivel 1 con NeMo y Llama Guard completo,
+y bloques 1–2 del nivel 2: 11,287392 USD, 3,122901 con la clave nativa y unas
 14,463 h. El cribado nativo completo se deja como alternativa: con él se prevé
 solo el bloque 1 del nivel 2 (8,624653 USD y 3,347447 nativos). La prueba nativa
 de cinco prompts reserva otros 0,02 USD, incluidos en el plan.
