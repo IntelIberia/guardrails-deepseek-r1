@@ -1,4 +1,4 @@
-"""Corpus estático v3 y compatibilidad de métricas, sin llamadas de red."""
+"""Corpus estático del nivel 3 y sus métricas, sin llamadas de red."""
 
 import hashlib
 import json
@@ -10,28 +10,29 @@ import pytest
 
 from scripts import metrics_eval as metrics
 from scripts import corpus_comun as comun
-from scripts import prepare_eval_v2 as v2
-from scripts import prepare_eval_v3 as prep
+from scripts import prepare_niveles_1_y_2 as n2
+from scripts import prepare_nivel3 as prep
 from scripts.run_config import load_attacks
+from scripts.rutas_grabadas import fichero, grabada
 
 ROOT = Path(__file__).resolve().parents[1]
 JsonObject = dict[str, Any]
-MANIFEST: JsonObject = json.loads((ROOT / 'data/attacks/eval_v3_manifest.json').read_text())
+MANIFEST: JsonObject = json.loads((ROOT / 'data/attacks/nivel3_manifest.json').read_text())
 
 
 def test_determinismo_y_cargador(tmp_path: Path) -> None:
     first = prep.write_outputs(prep.build(), tmp_path / 'first')
     second = prep.write_outputs(prep.build(), tmp_path / 'second')
     assert first == second == MANIFEST
-    for name in ('eval_v3.jsonl', 'eval_v3_manifest.json', *(f'eval_v3_b{i}.jsonl' for i in range(1, 5))):
+    for name in ('nivel3.jsonl', 'nivel3_manifest.json', *(f'nivel3_b{i}.jsonl' for i in range(1, 5))):
         expected = (ROOT / 'data/attacks' / name).read_bytes()
         assert (tmp_path / 'first' / name).read_bytes() == expected
         assert (tmp_path / 'second' / name).read_bytes() == expected
-    attacks, digest = load_attacks(tmp_path / 'first/eval_v3.jsonl')
+    attacks, digest = load_attacks(tmp_path / 'first/nivel3.jsonl')
     assert len(attacks) == 320 and digest == MANIFEST['corpus_sha256']
     ids = []
     for b in MANIFEST['blocks']:
-        block, digest = load_attacks(ROOT / b['path'])
+        block, digest = load_attacks(fichero(b['path']))
         assert digest == b['sha256'] and len(block) == b['count'] == 80
         assert [a.prompt_id for a in block] == b['prompt_ids']
         ids.extend(b['prompt_ids'])
@@ -64,7 +65,7 @@ def test_flipattack_reversible(text: str, mode: str) -> None:
 
 
 def test_pistas_contrato_oraculos_y_fuentes() -> None:
-    cases = {a.prompt_id: a for a in load_attacks(ROOT / MANIFEST['corpus_path'])[0]}
+    cases = {a.prompt_id: a for a in load_attacks(fichero(MANIFEST['corpus_path']))[0]}
     hcot = [json.loads(l) for l in (ROOT / 'data/attacks/external/hcot/hcot_deepseek_r1.jsonl').read_text().splitlines()]
     for row in MANIFEST['rows']:
         case = cases[row['prompt_id']]
@@ -93,7 +94,7 @@ def test_pistas_contrato_oraculos_y_fuentes() -> None:
             col = 'Request' if row['family'] == 'hcot_base' else 'Full_Input (H-CoT + Request)'
             assert case.prompt == original[col]
             assert row['inserted_request'] == row['original_goal'] == original['Goal']
-            assert case.objective == v2.judge_objective_harmful(original['Goal'])
+            assert case.objective == n2.judge_objective_harmful(original['Goal'])
         if row['family'] == 'flipattack':
             encoded = case.prompt.split('<encoded_request>\n', 1)[1].rsplit('\n</encoded_request>', 1)[0]
             assert prep.flip(encoded, row['subtechnique']) == row['inserted_request']
@@ -102,7 +103,7 @@ def test_pistas_contrato_oraculos_y_fuentes() -> None:
 
 
 def test_bipia_documentos_ideales_y_controles_emparejados() -> None:
-    cases = {c.prompt_id: c for c in load_attacks(ROOT / MANIFEST['corpus_path'])[0]}
+    cases = {c.prompt_id: c for c in load_attacks(fichero(MANIFEST['corpus_path']))[0]}
     docs = {task: [json.loads(l) for l in (ROOT / f'data/attacks/external/bipia/{task}_test.jsonl').read_text().splitlines()]
             for task in ('email', 'table')}
     rows = [r for r in MANIFEST['rows'] if r['family'] == 'bipia']
@@ -125,9 +126,9 @@ def test_puzles_y_licencias() -> None:
     prefixes = [prep.puzzle_prefix(i) for i in range(3)]
     assert len(set(prefixes)) == 3 and all(600 <= len(p.split()) <= 900 for p in prefixes)
     for row in MANIFEST['rows']:
-        assert (ROOT / row['license_file']).is_file()
+        assert fichero(row['license_file']).is_file()
     for name, expected in MANIFEST['license_files_sha256'].items():
-        raw = (ROOT / name).read_bytes()
+        raw = fichero(name).read_bytes()
         assert hashlib.sha256(raw).hexdigest() == expected
         assert len(raw) > 1000
     assert 'CC BY-NC-SA 4.0' in prep.SOURCES['hcot']['license']
@@ -147,7 +148,7 @@ def test_rechaza_entrada_alterada(tmp_path: Path) -> None:
 
 def synthetic_runs(raw_dir: Path, manifest: JsonObject) -> None:
     """Campaña completa con éxitos, bloqueos, errores, controles y costes."""
-    all_cases = {c.prompt_id: c for c in load_attacks(ROOT / manifest['corpus_path'])[0]}
+    all_cases = {c.prompt_id: c for c in load_attacks(fichero(manifest['corpus_path']))[0]}
     for spec in metrics.manifest_plan(manifest):
         block = next(b for b in manifest['blocks'] if b['block'] == spec.block)
         cases = [{k: getattr(all_cases[pid], k) for k in ('prompt_id', 'prompt_source',
@@ -175,29 +176,30 @@ def synthetic_runs(raw_dir: Path, manifest: JsonObject) -> None:
             ''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in [header, *records]))
 
 
-def test_metricas_v3_integradas(tmp_path: Path) -> None:
+def test_metricas_nivel3_integradas(tmp_path: Path) -> None:
     synthetic_runs(tmp_path, MANIFEST)
     result = metrics.compute(tmp_path, MANIFEST)
     assert result['campaign_complete'] and result['blocks_with_all_runs'] == [1, 2, 3, 4]
     assert result['observations'] == 2080
-    assert result['protocol'] == 'docs/protocolo_evaluacion_v3.md'
+    assert result['protocol'] == grabada('docs/protocolo_nivel3.md')
+    assert fichero(result['protocol']).is_file()
     assert set(result['sensitivity']['S5_asr_by_block']['C0']) == {
         f'{track}:{b}' for track in ('A', 'B') for b in range(1, 5)}
     assert result['asr']['C0']['A']['union']['n'] > 0
     assert result['asr']['C0']['B']['union']['n'] > 0
     out = tmp_path / 'metrics.json'
-    assert metrics.main(['--corpus', 'eval_v3', '--raw-dir', str(tmp_path), '--output', str(out),
+    assert metrics.main(['--corpus', 'nivel3', '--raw-dir', str(tmp_path), '--output', str(out),
                          '--tables-dir', str(tmp_path / 'tables'), '--no-figures']) == 0
     assert json.loads(out.read_text()) == result
-    assert (tmp_path / 'tables/eval_v3_asr.tex').exists()
-    assert not (tmp_path / 'tables/eval_v2_asr.tex').exists()
+    assert (tmp_path / 'tables/nivel3_asr.tex').exists()
+    assert not (tmp_path / 'tables/nivel2_asr.tex').exists()
 
 
-def test_v2_conserva_resultados_con_campana_sintetica(tmp_path: Path) -> None:
-    manifest = json.loads((ROOT / 'data/attacks/eval_v2_manifest.json').read_text())
+def test_nivel2_conserva_resultados_con_campana_sintetica(tmp_path: Path) -> None:
+    manifest = json.loads((ROOT / 'data/attacks/nivel2_manifest.json').read_text())
     synthetic_runs(tmp_path, manifest)
     result = metrics.compute(tmp_path, manifest)
     digest = hashlib.sha256(json.dumps(result, sort_keys=True, ensure_ascii=False).encode()).hexdigest()
-    # Huella obtenida con metrics_eval.py anterior a la extensión de v3.
+    # Huella fijada de las métricas del nivel 2 sobre esta campaña sintética.
     assert digest == '2f555ba878177ac5f28204f22e649315610fc074005265353c3d67827424ee04'
     assert metrics.manifest_plan(manifest) == metrics.campaign_plan()

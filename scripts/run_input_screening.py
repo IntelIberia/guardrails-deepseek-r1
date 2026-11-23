@@ -15,7 +15,7 @@ el nivel 2. Registro JSONL con cabecera, identidad del código y reanudación.
 
 Uso:
     PYTHONPATH=src .venv/bin/python scripts/run_input_screening.py \
-        --input data/attacks/screen_v2.jsonl --part 1 --run-id sc2-p1 --dry-run
+        --input data/attacks/nivel1_cribado.jsonl --part 1 --run-id sc2-p1 --dry-run
 """
 
 import argparse
@@ -40,8 +40,8 @@ from scripts.run_config import (  # noqa: E402
     RUN_ID_PATTERN, _canonical_hash, _code_fingerprint, _git_state, load_attacks, write_jsonl_line,
 )
 
-DEFAULT_INPUT = ROOT / "data/attacks/screen_v2.jsonl"
-DEFAULT_MANIFEST = ROOT / "data/attacks/screen_v2_manifest.json"
+DEFAULT_INPUT = ROOT / "data/attacks/nivel1_cribado.jsonl"
+DEFAULT_MANIFEST = ROOT / "data/attacks/nivel1_cribado_manifest.json"
 DEFAULT_GUARDS_CONFIG = ROOT / "configs/c4_combined.yaml"
 FILTERS = ("nemo_input", "llama_guard_input", "openrouter_native")
 NATIVE_MAX_TOKENS = 16

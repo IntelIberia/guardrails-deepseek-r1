@@ -1,4 +1,4 @@
-"""Comprueba los corpus eval_v2 (nivel 2) y screen_v2 (nivel 1) sin red ni fuentes externas."""
+"""Comprueba los corpus de los niveles 1 y 2 sin red ni fuentes externas."""
 
 import base64
 import codecs
@@ -10,16 +10,17 @@ from typing import Any
 import pytest
 
 from scripts import corpus_comun as comun
-from scripts import prepare_eval_v2 as prep
+from scripts import prepare_niveles_1_y_2 as prep
 from scripts.metrics_eval import row_sha256
 from scripts.run_config import load_attacks
+from scripts.rutas_grabadas import fichero
 
 ROOT = Path(__file__).resolve().parents[1]
-CORPUS = ROOT / "data/attacks/eval_v2.jsonl"
-SCREEN = ROOT / "data/attacks/screen_v2.jsonl"
-MANIFEST: dict[str, Any] = json.loads((ROOT / "data/attacks/eval_v2_manifest.json").read_text("utf-8"))
+CORPUS = ROOT / "data/attacks/nivel2.jsonl"
+SCREEN = ROOT / "data/attacks/nivel1_cribado.jsonl"
+MANIFEST: dict[str, Any] = json.loads((ROOT / "data/attacks/nivel2_manifest.json").read_text("utf-8"))
 SCREEN_MANIFEST: dict[str, Any] = json.loads(
-    (ROOT / "data/attacks/screen_v2_manifest.json").read_text("utf-8"))
+    (ROOT / "data/attacks/nivel1_cribado_manifest.json").read_text("utf-8"))
 
 
 def cases(path: Path) -> list[dict[str, Any]]:
@@ -31,7 +32,7 @@ def test_el_cargador_del_banco_acepta_corpus_bloques_y_cribado() -> None:
     assert digest == MANIFEST["corpus_sha256"] and len(attacks) == MANIFEST["count"]
     ids: list[str] = []
     for block in MANIFEST["blocks"]:
-        block_attacks, block_digest = load_attacks(ROOT / block["path"])
+        block_attacks, block_digest = load_attacks(fichero(block["path"]))
         assert block_digest == block["sha256"]
         assert [a.prompt_id for a in block_attacks] == block["prompt_ids"]
         ids.extend(block["prompt_ids"])
@@ -166,7 +167,7 @@ def test_transformaciones_basicas() -> None:
 def test_cribado_descarta_plantillas_daninas_de_a_y_conserva_conductas_publicas_b() -> None:
     import hashlib
 
-    audit = json.loads((ROOT / "data/attacks/eval_v2_audit.json").read_text("utf-8"))
+    audit = json.loads((ROOT / "data/attacks/nivel2_audit.json").read_text("utf-8"))
     meta = {r["prompt_id"]: r for r in SCREEN_MANIFEST["rows"]}
     for case in cases(SCREEN):
         row = meta[case["prompt_id"]]
@@ -184,7 +185,7 @@ def test_licencias_registradas_y_equilibrio_de_categorias_b() -> None:
     for source in MANIFEST["sources"].values():
         assert source["license"]
         if "license_file" in source:
-            path = ROOT / source["license_file"]
+            path = fichero(source["license_file"])
             assert hashlib.sha256(path.read_bytes()).hexdigest() == MANIFEST["license_files_sha256"][source["license_file"]]
     for family in {r["family"] for r in MANIFEST["rows"] if r["track"] == "B" and r["case_class"] == "attack"}:
         counts = Counter(r["jbb_category"] for r in MANIFEST["rows"]

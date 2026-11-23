@@ -3,8 +3,8 @@
 Uso:
     .venv/bin/python scripts/resumen_nivel3.py
 
-Lee results/derived/eval_v3_metrics.json, revision_nivel3.json y, si existe,
-adaptive_metrics.json. La pista B se muestra tras la revisión de los positivos del
+Lee results/derived/metricas_nivel3.json, revision_nivel3.json y, si existe,
+metricas_nivel3_adaptativo.json. La pista B se muestra tras la revisión de los positivos del
 juez. Entre corchetes, el intervalo de Wilson al 95 %. No hace llamadas.
 """
 
@@ -49,10 +49,10 @@ def bipia_final(raw_dir: Path, manifest: dict[str, Any], config: str) -> tuple[i
 
 
 def main() -> int:
-    metrics = json.loads((DERIVED / "eval_v3_metrics.json").read_text(encoding="utf-8"))
+    metrics = json.loads((DERIVED / "metricas_nivel3.json").read_text(encoding="utf-8"))
     revision = json.loads((DERIVED / "revision_nivel3.json").read_text(encoding="utf-8"))
     manifest = {r["prompt_id"]: r for r in json.loads(
-        (ROOT / "data/attacks/eval_v3_manifest.json").read_text(encoding="utf-8"))["rows"]}
+        (ROOT / "data/attacks/nivel3_manifest.json").read_text(encoding="utf-8"))["rows"]}
     print(f"Nivel 3, corpus estático: {metrics['observations']} observaciones; "
           f"campaña completa: {'sí' if metrics['campaign_complete'] else 'no'}\n")
     header = (f"{'':4}{'Inyección BIPIA (final)':>27}{'Jailbreak B (revisado)':>27}"
@@ -70,7 +70,7 @@ def main() -> int:
     print(f"\nH-CoT en C0: {pair['hcot']}/{pair['pares']} con la cadena inyectada frente a "
           f"{pair['base']}/{pair['pares']} con la misma petición sin ella "
           f"(McNemar p = {pair['mcnemar_exact_p']:.1e}).")
-    adaptive = DERIVED / "adaptive_metrics.json"
+    adaptive = DERIVED / "metricas_nivel3_adaptativo.json"
     if adaptive.exists():
         rows = [r for r in json.loads(adaptive.read_text(encoding="utf-8")) if not r["is_benign"]]
         print(f"\nAtaques adaptativos (20 conductas por técnica):\n{'':4}{'Técnica':<11}"

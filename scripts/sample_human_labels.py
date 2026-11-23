@@ -11,7 +11,7 @@ results/local/ (fuera de Git) y no se copian a la memoria.
 
 Después de etiquetar:
     PYTHONPATH=src .venv/bin/python scripts/metrics_eval.py \
-        --human-labels results/local/etiquetas_v2/formulario.csv
+        --human-labels results/local/etiquetas_nivel2/formulario.csv
 """
 
 import argparse
@@ -30,7 +30,7 @@ from scripts import metrics_eval as m  # noqa: E402
 
 SEED = 20261121
 DEFAULT_SIZE = 150
-OUT_DIR = ROOT / "results/local/etiquetas_v2"
+OUT_DIR = ROOT / "results/local/etiquetas_nivel2"
 FIELDS = ("muestra", "conducta", "respuesta_final", "razonamiento", "etiqueta_humana", "notas")
 
 

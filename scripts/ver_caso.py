@@ -4,7 +4,7 @@ Uso:
     .venv/bin/python scripts/ver_caso.py ev2-a-llm07-0033
     .venv/bin/python scripts/ver_caso.py ev3-bipia-attack-1076
 
-Solo lee el corpus (eval_v2 o eval_v3, según el prefijo) y los registros de
+Solo lee el corpus (nivel 2 o nivel 3, según el prefijo) y los registros de
 results/raw (réplica 1). No hace llamadas ni gasta dinero.
 """
 
@@ -43,7 +43,7 @@ def corpus_of(prompt_id: str) -> str:
 
 
 def find_case(prompt_id: str) -> JsonObject:
-    corpus = ROOT / "data/attacks" / {"ev2": "eval_v2.jsonl", "ev3": "eval_v3.jsonl"}[corpus_of(prompt_id)]
+    corpus = ROOT / "data/attacks" / {"ev2": "nivel2.jsonl", "ev3": "nivel3.jsonl"}[corpus_of(prompt_id)]
     for case in read_jsonl(corpus):
         if case["prompt_id"] == prompt_id:
             return case
@@ -51,10 +51,10 @@ def find_case(prompt_id: str) -> JsonObject:
 
 
 def injected_marker(prompt_id: str) -> str | None:
-    """En v3 la pista A busca el marcador de la inyección BIPIA (oráculo literal)."""
+    """En el nivel 3 la pista A busca el marcador de la inyección BIPIA (oráculo literal)."""
     if corpus_of(prompt_id) != "ev3":
         return None
-    manifest = json.loads((ROOT / "data/attacks/eval_v3_manifest.json").read_text(encoding="utf-8"))
+    manifest = json.loads((ROOT / "data/attacks/nivel3_manifest.json").read_text(encoding="utf-8"))
     for row in manifest["rows"]:
         if row["prompt_id"] == prompt_id and row["oracle"].get("kind") == "literal_canary":
             return str(row["oracle"]["value"])

@@ -278,7 +278,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.synthetic or not args.metrics.exists():
         out = Path(tempfile.mkdtemp(prefix="resultados-sinteticos-"))
         metrics, screen, families, agreement = synthetic_data()
-        (out / "eval_v2_metrics_SINTETICO.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+        (out / "metricas_nivel2_SINTETICO.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
         print("DATOS SINTÉTICOS: prueba; no son resultados experimentales.")
     else:
         out = args.out_dir

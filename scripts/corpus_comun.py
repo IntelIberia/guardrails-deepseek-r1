@@ -1,4 +1,4 @@
-"""Reglas comunes para preparar los corpus de evaluación (eval_v2 y eval_v3).
+"""Reglas comunes para preparar los corpus de evaluación (niveles 1, 2 y 3).
 
 Aquí está lo que comparten los preparadores y el motor adaptativo: la lectura del
 corpus de Shen et al. comprobando su huella, la detección del marcador de pregunta

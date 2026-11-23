@@ -1,4 +1,4 @@
-"""Pruebas del script de métricas de eval_v2 con ejecuciones sintéticas (sin red)."""
+"""Pruebas del script de métricas del nivel 2 con ejecuciones sintéticas (sin red)."""
 
 import csv
 import hashlib
@@ -233,10 +233,10 @@ def test_tablas_y_figuras(campaign: tuple[Path, JsonObject], tmp_path: Path) -> 
     out, tables, figures = tmp_path / "out.json", tmp_path / "tables", tmp_path / "figures"
     assert m.main(["--include-partial", "--raw-dir", str(raw), "--manifest", str(manifest_path), "--output", str(out),
                    "--tables-dir", str(tables), "--figures-dir", str(figures)]) == 0
-    for name in ("eval_v2_asr.tex", "eval_v2_dsr.tex", "eval_v2_benignos.tex", "eval_v2_coste.tex"):
+    for name in ("nivel2_asr.tex", "nivel2_dsr.tex", "nivel2_benignos.tex", "nivel2_coste.tex"):
         assert (tables / name).read_text(encoding="utf-8").startswith("% Generado")
-    for name in ("eval_v2_asr", "eval_v2_dsr", "eval_v2_heatmap_A", "eval_v2_heatmap_B",
-                 "eval_v2_fpr_latencia_coste"):
+    for name in ("nivel2_asr", "nivel2_dsr", "nivel2_heatmap_A", "nivel2_heatmap_B",
+                 "nivel2_fpr_latencia_coste"):
         assert (figures / f"{name}.png").stat().st_size > 0
         assert (figures / f"{name}.pdf").stat().st_size > 0
 
@@ -303,7 +303,7 @@ def test_cribado_y_etiquetas_humanas(campaign: tuple[Path, JsonObject], tmp_path
     assert metrics["by_filter"]["nemo_input"]["class"]["A:attack"]["k"] == 4
     assert metrics["by_filter"]["openrouter_native"]["class"]["A:attack"]["k"] == 0
     m.write_screening_figures(metrics, tmp_path / "fig")
-    assert (tmp_path / "fig/screen_v2_heatmap.png").exists()
+    assert (tmp_path / "fig/nivel1_heatmap.png").exists()
     labels = tmp_path / "labels.csv"
     with labels.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["muestra", "run_id", "prompt_id", "etiqueta_humana"])

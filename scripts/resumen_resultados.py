@@ -3,7 +3,7 @@
 Uso:
     .venv/bin/python scripts/resumen_resultados.py
 
-Lee results/derived/eval_v2_metrics.json (lo genera scripts/metrics_eval.py).
+Lee results/derived/metricas_nivel2.json (lo genera scripts/metrics_eval.py).
 Entre corchetes, el intervalo de confianza de Wilson al 95 %.
 """
 
@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-METRICS = ROOT / "results/derived/eval_v2_metrics.json"
+METRICS = ROOT / "results/derived/metricas_nivel2.json"
 CONFIGS = ("C0", "C1", "C2", "C3", "C4", "C5")
 
 
@@ -26,7 +26,7 @@ def pct(cell: dict[str, Any] | None) -> str:
 
 def main() -> int:
     if not METRICS.exists():
-        sys.exit("Falta results/derived/eval_v2_metrics.json: ejecuta antes scripts/metrics_eval.py")
+        sys.exit("Falta results/derived/metricas_nivel2.json: ejecuta antes scripts/metrics_eval.py")
     m = json.loads(METRICS.read_text(encoding="utf-8"))
     print(f"Evaluación completa: {m['observations']} observaciones, "
           f"bloques completos {len(m['blocks_with_all_runs'])} de 8\n")

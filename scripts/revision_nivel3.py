@@ -4,7 +4,7 @@ análisis emparejado de H-CoT.
 Uso: PYTHONPATH=src .venv/bin/python scripts/revision_nivel3.py
 
 Entradas: results/derived/segundo_juez/{nivel3,nivel2_positivos,nivel2_muestra150}.jsonl,
-results/derived/eval_v3_metrics.json, los registros de results/raw y, si existen, las
+results/derived/metricas_nivel3.json, los registros de results/raw y, si existen, las
 etiquetas de revisión de results/local (solo para medir el acuerdo).
 Salida: results/derived/revision_nivel3.json. No hace llamadas.
 
@@ -65,7 +65,7 @@ def paired_b(raw: RawRecords, manifest_doc: Json, confirmed: set[tuple[str, str]
     """McNemar exacto de C1–C5 frente a C0 en la pista B (réplica 1), con Holm.
 
     Con ``confirmed=None`` usa el veredicto del juez principal (debe reproducir
-    eval_v3_metrics.json); con un conjunto, solo cuentan los positivos confirmados.
+    metricas_nivel3.json); con un conjunto, solo cuentan los positivos confirmados.
     """
     block_of = {pid: block["block"] for block in manifest_doc["blocks"] for pid in block["prompt_ids"]}
     ids = [r["prompt_id"] for r in manifest_doc["rows"]
@@ -100,9 +100,9 @@ def paired_b(raw: RawRecords, manifest_doc: Json, confirmed: set[tuple[str, str]
 
 def main() -> None:
     raw = RawRecords(ROOT / "results/raw")
-    manifest_doc = json.loads((ROOT / "data/attacks/eval_v3_manifest.json").read_text(encoding="utf-8"))
+    manifest_doc = json.loads((ROOT / "data/attacks/nivel3_manifest.json").read_text(encoding="utf-8"))
     manifest = {r["prompt_id"]: r for r in manifest_doc["rows"]}
-    metrics = json.loads((DERIVED / "eval_v3_metrics.json").read_text(encoding="utf-8"))
+    metrics = json.loads((DERIVED / "metricas_nivel3.json").read_text(encoding="utf-8"))
     _, items = read_output(DERIVED / "segundo_juez/nivel3.jsonl")
 
     by_config: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
@@ -164,13 +164,13 @@ def main() -> None:
         summary["por_familia"][config] = families
     summary["replicas_C0"] = {g: dict(v) for g, v in by_config.items() if " r" in g}
 
-    # Comprobación: con el veredicto del juez se reproducen los pares de eval_v3_metrics.json.
+    # Comprobación: con el veredicto del juez se reproducen los pares de metricas_nivel3.json.
     original = paired_b(raw, manifest_doc, None)
     for config, entry in original.items():
         stored = metrics["dsr"]["by_scope"]["B"]["configs"][config]
         if (entry["pares"], entry["b_c0_solo"], entry["c_config_solo"]) != (
                 stored["pairs"], stored["b_c0_success_only"], stored["c_config_success_only"]):
-            raise ValueError(f"{config}: el emparejamiento no reproduce eval_v3_metrics.json")
+            raise ValueError(f"{config}: el emparejamiento no reproduce metricas_nivel3.json")
     confirmed = {(item["run_id"], item["prompt_id"]) for item in items.values() if item["unsafe"]}
     summary["mcnemar_b_revisado"] = paired_b(raw, manifest_doc, confirmed)
 

@@ -71,7 +71,7 @@ def test_cli_falta_entrada_usa_temporal(tmp_path: Path, monkeypatch: pytest.Monk
     forbidden = tmp_path / "salida_elegida"
     assert f.main(["--metrics", str(tmp_path / "inexistente.json"), "--out-dir", str(forbidden)]) == 0
     assert not forbidden.exists()
-    assert (seen[0] / "eval_v2_metrics_SINTETICO.json").exists()
+    assert (seen[0] / "metricas_nivel2_SINTETICO.json").exists()
     assert "SINTÉTICOS" in capsys.readouterr().out
 
 

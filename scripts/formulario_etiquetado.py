@@ -2,7 +2,7 @@
 acuerdo con el juez.
 
 Primero se ejecuta sample_human_labels.py. Después:
-  formulario_etiquetado.py --sample results/local/etiquetas_v2/formulario.csv
+  formulario_etiquetado.py --sample results/local/etiquetas_nivel2/formulario.csv
   formulario_etiquetado.py --agreement results/local/formulario_autor/formulario.csv
 El segundo modo escribe acuerdo_juez_humano.json junto al formulario, o --output.
 No sobrescribe formularios ni etiquetas. Las etiquetas siempre las pone el autor.

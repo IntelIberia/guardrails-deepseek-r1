@@ -1,8 +1,8 @@
 """Dibuja las figuras del nivel 3 (fase 3) con el mismo estilo que las del nivel 2.
 
 Uso: PYTHONPATH=src .venv/bin/python scripts/figuras_nivel3.py
-Lee results/derived/eval_v3_metrics.json y, si existen, revision_nivel3.json y
-adaptive_metrics.json. Las figuras cuyos datos faltan se omiten y se avisa.
+Lee results/derived/metricas_nivel3.json y, si existen, revision_nivel3.json y
+metricas_nivel3_adaptativo.json. Las figuras cuyos datos faltan se omiten y se avisa.
 """
 
 import argparse
@@ -109,12 +109,12 @@ def track_a(plt: Any, metrics: Json, out: Path, raw_dir: Path, manifest: Path) -
     channels = bipia_channels(raw_dir, manifest)
     for c in CONFIGS:
         if channels[c][1:] != (metrics["asr"][c]["A"]["union"]["k"], metrics["asr"][c]["A"]["union"]["n"]):
-            raise ValueError(f"{c}: la unión no coincide con eval_v3_metrics.json")
+            raise ValueError(f"{c}: la unión no coincide con metricas_nivel3.json")
     fig, ax = plt.subplots(figsize=(6.4, 3.4))
     series = [("Marcador en la respuesta final", [(f, n) for f, _, n in channels.values()]),
               ("En la respuesta o en el razonamiento", [(u, n) for _, u, n in channels.values()])]
     grouped_bars(ax, list(CONFIGS), series, "Inyecciones con éxito (%)\nIC de Wilson del 95 %")
-    save(fig, out, "eval_v3_pista_a")
+    save(fig, out, "nivel3_pista_a")
     plt.close(fig)
     print("  BIPIA (final, unión, n):", channels)
 
@@ -129,7 +129,7 @@ def benign(plt: Any, metrics: Json, out: Path) -> None:
             items.append((entry["k"], entry["n"]))
         series.append((label, items))
     grouped_bars(ax, list(CONFIGS), series, "Benignas bloqueadas (%)\nIC de Wilson del 95 %")
-    save(fig, out, "eval_v3_benignos")
+    save(fig, out, "nivel3_benignos")
     plt.close(fig)
 
 
@@ -146,7 +146,7 @@ def families_b(plt: Any, revision: Json, out: Path) -> None:
     fig, ax = matrix_plot(plt, [label for _, label in FAMILIES], list(CONFIGS), values)
     ax.set_xlabel("Configuración")
     fig.axes[-1].set_ylabel("ASR revisado (%)")
-    save(fig, out, "eval_v3_familias_b")
+    save(fig, out, "nivel3_familias_b")
     plt.close(fig)
 
 
@@ -170,20 +170,20 @@ def adaptive(plt: Any, rows: list[Json], out: Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    parser.add_argument("--metrics", type=Path, default=ROOT / "results/derived/eval_v3_metrics.json")
+    parser.add_argument("--metrics", type=Path, default=ROOT / "results/derived/metricas_nivel3.json")
     parser.add_argument("--revision", type=Path, default=ROOT / "results/derived/revision_nivel3.json")
-    parser.add_argument("--adaptive", type=Path, default=ROOT / "results/derived/adaptive_metrics.json")
+    parser.add_argument("--adaptive", type=Path, default=ROOT / "results/derived/metricas_nivel3_adaptativo.json")
     parser.add_argument("--out", type=Path, default=ROOT / "results/figuras/nivel3")
     args = parser.parse_args()
     plt = pyplot()
     args.out.mkdir(parents=True, exist_ok=True)
     metrics = json.loads(args.metrics.read_text(encoding="utf-8"))
-    track_a(plt, metrics, args.out, ROOT / "results/raw", ROOT / "data/attacks/eval_v3_manifest.json")
+    track_a(plt, metrics, args.out, ROOT / "results/raw", ROOT / "data/attacks/nivel3_manifest.json")
     benign(plt, metrics, args.out)
     if args.revision.exists():
         families_b(plt, json.loads(args.revision.read_text(encoding="utf-8")), args.out)
     else:
-        print("eval_v3_familias_b: falta la revisión de la pista B")
+        print("nivel3_familias_b: falta la revisión de la pista B")
     if args.adaptive.exists():
         adaptive(plt, json.loads(args.adaptive.read_text(encoding="utf-8")), args.out)
     else:

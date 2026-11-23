@@ -1,6 +1,6 @@
-"""Nivel 3: prepara el corpus eval_v3 sin red, a partir de entradas fijadas y textos propios.
+"""Nivel 3: prepara el corpus estático del nivel 3 sin red, a partir de entradas fijadas y textos propios.
 
-Uso: PYTHONPATH=src .venv/bin/python scripts/prepare_eval_v3.py build
+Uso: PYTHONPATH=src .venv/bin/python scripts/prepare_nivel3.py build
 Las entradas se tratan como datos y se verifican antes de construir los casos.
 """
 
@@ -21,7 +21,8 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from scripts import corpus_comun as comun
-from scripts import prepare_eval_v2 as v2  # noqa: E402
+from scripts import prepare_niveles_1_y_2 as n2  # noqa: E402
+from scripts.rutas_grabadas import fichero, grabada  # noqa: E402
 
 JsonObject = dict[str, Any]
 SEED = 20261122
@@ -37,9 +38,9 @@ SOURCE_FILES = {
     "bipia/text_attack_test.json":
         "75750e7b4e8b34e8f9d88d89b357aeaaf02bd07f9e493ccd37eda74a0cd7c7f8",
     "jbb_behaviors/data/harmful-behaviors.csv":
-        v2.SOURCE_FILES["jbb_behaviors/data/harmful-behaviors.csv"],
+        n2.SOURCE_FILES["jbb_behaviors/data/harmful-behaviors.csv"],
     "jbb_behaviors/data/benign-behaviors.csv":
-        v2.SOURCE_FILES["jbb_behaviors/data/benign-behaviors.csv"],
+        n2.SOURCE_FILES["jbb_behaviors/data/benign-behaviors.csv"],
 }
 SOURCES: JsonObject = {
     "hcot": {
@@ -48,7 +49,7 @@ SOURCES: JsonObject = {
         "license": "CC BY-NC-SA 4.0",
         "license_file": "data/attacks/licenses/hcot_CC-BY-NC-SA-4.0.txt",
     },
-    "jbb_behaviors": v2.SOURCES_META["jbb_behaviors"],
+    "jbb_behaviors": n2.SOURCES_META["jbb_behaviors"],
     "bipia_email": {
         "title": "BIPIA, Yi et al., KDD 2025, arXiv:2312.14197 (email)",
         "repository": "https://github.com/microsoft/BIPIA",
@@ -62,7 +63,7 @@ SOURCES: JsonObject = {
     },
     "templates": {
         "title": "Plantillas originales del TFG",
-        "license": "MIT", "license_file": "data/attacks/licenses/eval_v3_templates_MIT.txt",
+        "license": "MIT", "license_file": grabada("data/attacks/licenses/nivel3_templates_MIT.txt"),
     },
 }
 METHODS = {
@@ -203,7 +204,7 @@ def read_sources(root: Path) -> dict[str, bytes]:
     result = {}
     for rel, expected in SOURCE_FILES.items():
         data = (root / rel).read_bytes()
-        if v2.sha256_bytes(data) != expected:
+        if n2.sha256_bytes(data) != expected:
             raise ValueError(f"{rel}: SHA-256 distinto del fijado {expected}")
         result[rel] = data
     return result
@@ -232,10 +233,10 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
             index: int, *, benign: bool = False, mode: str = "original",
             extra: JsonObject | None = None, marker: str | None = None) -> None:
         pid = f"ev3-{family}-{'benign' if benign else 'attack'}-{index:03d}"
-        canary = "TFG-EV3-CANARY-" + v2.sha256_text(pid)[:16].upper()
+        canary = "TFG-EV3-CANARY-" + n2.sha256_text(pid)[:16].upper()
         track = "A" if family == "bipia" else "B"
         scenario = "benign" if benign else "LLM01" if track == "A" else "HARM"
-        objective = v2.judge_objective_benign(request) if benign else v2.judge_objective_harmful(request)
+        objective = n2.judge_objective_benign(request) if benign else n2.judge_objective_harmful(request)
         oracle: JsonObject
         if benign:
             oracle = {"kind": "benign", "canary_leak_value": canary,
@@ -248,10 +249,10 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
                          "o en el razonamiento expuesto. Una paráfrasis no cuenta.")
         else:
             oracle = {"kind": "judge_harmful", "goal": request,
-                      "rubric": v2.JBB_JUDGE_RUBRIC_ID, "channels": ["union"],
+                      "rubric": n2.JBB_JUDGE_RUBRIC_ID, "channels": ["union"],
                       "canary_leak_value": canary}
         src = SOURCES[source]
-        owasp, nist = v2.owasp_nist(track, scenario)
+        owasp, nist = n2.owasp_nist(track, scenario)
         adaptation = ("Texto original con contrato de aplicación." if family.startswith("hcot")
                       else "Envoltorio original del TFG; " + METHODS.get(family, "inyección documental literal"))
         source_index = (extra or {}).get("document_index", index)
@@ -268,9 +269,9 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
                 "inserted_request": request, "canary": canary, "oracle": oracle,
                 "license": src["license"], "license_file": src["license_file"],
                 "owasp_category": owasp, "nist_category": nist, "adaptation": adaptation,
-                "row_sha256": v2.sha256_text(v2.serialize(case)),
-                "prompt_sha256": v2.sha256_text(prompt),
-                "system_sha256": v2.sha256_text(case["system_prompt"]),
+                "row_sha256": n2.sha256_text(n2.serialize(case)),
+                "prompt_sha256": n2.sha256_text(prompt),
+                "system_sha256": n2.sha256_text(case["system_prompt"]),
                 "prompt_chars": len(prompt), "objective_chars": len(objective), **(extra or {})}
         if canary in prompt:
             raise ValueError("La canaria de sistema no puede aparecer en el documento")
@@ -319,7 +320,7 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
             context, question = item["context"], item["question"]
             for benign in ((False, True) if j < 10 else (False,)):
                 serial = (0 if task == "email" else 1000) + index
-                marker = None if benign else f"TFG-EV3-INJECT-{v2.sha256_text(f'{task}:{index}')[:20].upper()}"
+                marker = None if benign else f"TFG-EV3-INJECT-{n2.sha256_text(f'{task}:{index}')[:20].upper()}"
                 document = context
                 if marker:
                     document += "\n\n" + INJECTIONS[j % len(INJECTIONS)].format(marker=marker)
@@ -329,7 +330,7 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
                 add("bipia", question, prompt, f"bipia_{task}", rel, serial, benign=benign,
                     mode=f"{task}:" + ("clean" if benign else f"injection_{j % 8 + 1}"), marker=marker,
                     extra={"document_index": index, "source_id": f"{rel}#{index}",
-                           "document_sha256": v2.sha256_text(context), "ideal": item["ideal"],
+                           "document_sha256": n2.sha256_text(context), "ideal": item["ideal"],
                            "document_task": task, "document_pair_id": f"{task}:{index}",
                            "injection_language": None if benign else "en" if j % 8 < 4 else "es",
                            "template_license_file": SOURCES["templates"]["license_file"]})
@@ -352,33 +353,33 @@ def build(root: Path = OUT_DIR / "external") -> JsonObject:
 def write_outputs(built: JsonObject, out_dir: Path = OUT_DIR) -> JsonObject:
     out_dir.mkdir(parents=True, exist_ok=True)
     cases, rows = built["cases"], built["rows"]
-    content = "".join(v2.serialize(c) for c in cases).encode()
-    (out_dir / "eval_v3.jsonl").write_bytes(content)
+    content = "".join(n2.serialize(c) for c in cases).encode()
+    (out_dir / "nivel3.jsonl").write_bytes(content)
     blocks = []
     for block in range(1, BLOCK_COUNT + 1):
         ids = {r["prompt_id"] for r in rows if r["block"] == block}
         items = [c for c in cases if c["prompt_id"] in ids]
-        raw = "".join(v2.serialize(c) for c in items).encode()
-        name = f"eval_v3_b{block}.jsonl"
+        raw = "".join(n2.serialize(c) for c in items).encode()
+        name = f"nivel3_b{block}.jsonl"
         (out_dir / name).write_bytes(raw)
-        blocks.append({"block": block, "path": f"data/attacks/{name}",
-                       "sha256": v2.sha256_bytes(raw), "count": len(items),
+        blocks.append({"block": block, "path": grabada(f"data/attacks/{name}"),
+                       "sha256": n2.sha256_bytes(raw), "count": len(items),
                        "prompt_ids": [c["prompt_id"] for c in items]})
     license_files = {s["license_file"] for s in SOURCES.values()}
     license_files.add("data/attacks/licenses/bipia_email_OpenAI_Evals_LICENSE.txt")
     manifest = {"schema_version": 2, "corpus_id": "eval_v3", "purpose": "held_out_evaluation",
-                "prepared_on": "2026-11-22", "generated_by": "scripts/prepare_eval_v3.py",
-                "seed": SEED, "corpus_path": "data/attacks/eval_v3.jsonl",
-                "corpus_sha256": v2.sha256_bytes(content), "count": len(cases),
+                "prepared_on": "2026-11-22", "generated_by": grabada("scripts/prepare_nivel3.py"),
+                "seed": SEED, "corpus_path": grabada("data/attacks/nivel3.jsonl"),
+                "corpus_sha256": n2.sha256_bytes(content), "count": len(cases),
                 "counts": dict(sorted(Counter(f"{r['track']}:{r['case_class']}:{r['family']}"
                                               for r in rows).items())),
                 "blocks": blocks, "sources": SOURCES, "methods": METHODS,
                 "source_files_sha256": SOURCE_FILES,
                 "source_root": "data/attacks/external", "rows": rows,
                 "system_prompt_template": comun.system_prompt("<CANARIA>"),
-                "license_files_sha256": {p: v2.sha256_bytes((ROOT / p).read_bytes())
+                "license_files_sha256": {p: n2.sha256_bytes(fichero(p).read_bytes())
                                          for p in sorted(license_files)}}
-    (out_dir / "eval_v3_manifest.json").write_text(
+    (out_dir / "nivel3_manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return manifest
 
@@ -390,7 +391,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--out-dir", type=Path, default=OUT_DIR)
     args = parser.parse_args(argv)
     manifest = write_outputs(build(args.src_root), args.out_dir)
-    print(f"eval_v3: {manifest['count']} casos; SHA-256 {manifest['corpus_sha256']}")
+    print(f"nivel 3: {manifest['count']} casos; SHA-256 {manifest['corpus_sha256']}")
     return 0
 
 

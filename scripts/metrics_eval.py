@@ -1,9 +1,8 @@
-"""Niveles 1, 2 y 3: métricas, orden de ejecución y control de gasto de las campañas
-(protocolo v2).
+"""Niveles 1, 2 y 3: métricas, orden de ejecución y control de gasto de las campañas.
 
 Solo lee: los JSONL de results/raw (sin modificarlos), los manifiestos de los
 corpus y, para el presupuesto, los registros reales de results/raw.
-Escribe results/derived/eval_v2_metrics.json, tablas LaTeX en
+Escribe results/derived/metricas_nivel{1,2,3}.json, tablas LaTeX en
 results/tablas/ y figuras PNG y PDF en results/figuras/.
 
 Modos:
@@ -12,7 +11,7 @@ Modos:
     --budget-check     gasto observado de la campaña; código 3 si alcanza la parada.
     --screening        métricas del nivel 1 (cribado de entrada).
     --human-labels F   acuerdo del juez con las etiquetas humanas (pista B).
-    (por defecto)      métricas del nivel 2.
+    (por defecto)      métricas del nivel 2; con --corpus nivel3, las del nivel 3.
 """
 
 import argparse
@@ -32,13 +31,21 @@ from typing import Any
 from bench.guards.structured import ContractViolation, inspect_consumer_risk, validate_display_contract
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from scripts.rutas_grabadas import grabada  # noqa: E402
+
 JsonObject = dict[str, Any]
 
-MANIFEST = ROOT / "data/attacks/eval_v2_manifest.json"
-SCREEN_MANIFEST = ROOT / "data/attacks/screen_v2_manifest.json"
+MANIFEST = ROOT / "data/attacks/nivel2_manifest.json"
+SCREEN_MANIFEST = ROOT / "data/attacks/nivel1_cribado_manifest.json"
+LEVEL3_MANIFEST = ROOT / "data/attacks/nivel3_manifest.json"
 RAW_DIR = ROOT / "results/raw"
-OUTPUT = ROOT / "results/derived/eval_v2_metrics.json"
-SCREEN_OUTPUT = ROOT / "results/derived/screen_v2_metrics.json"
+OUTPUT = ROOT / "results/derived/metricas_nivel2.json"
+SCREEN_OUTPUT = ROOT / "results/derived/metricas_nivel1.json"
+LEVEL3_OUTPUT = ROOT / "results/derived/metricas_nivel3.json"
+# Identificador interno del corpus del nivel 3, grabado en su manifiesto.
+LEVEL3_ID = "eval_v3"
 TABLES_DIR = ROOT / "results/tablas"
 FIGURES_DIR = ROOT / "results/figuras"
 
@@ -120,7 +127,7 @@ def campaign_plan(blocks: Iterable[int] = BLOCKS, *, prefix: str = "ev2") -> lis
 
 def manifest_plan(manifest: JsonObject) -> list[RunSpec]:
     """El nivel 3 conserva el orden y las réplicas, con cuatro bloques propios."""
-    if manifest.get("corpus_id") == "eval_v3":
+    if manifest.get("corpus_id") == LEVEL3_ID:
         return campaign_plan(range(1, 5), prefix="ev3")
     return campaign_plan()
 
@@ -787,8 +794,8 @@ def compute(raw_dir: Path, manifest: JsonObject, *, include_partial: bool = Fals
     return {
         "diagnostic_includes_partial_blocks": include_partial,
         "recorded_observations": len(all_observations),
-        "protocol": ("docs/protocolo_evaluacion_v3.md" if manifest.get("corpus_id") == "eval_v3"
-                     else "docs/protocolo_evaluacion_v2.md"),
+        "protocol": grabada("docs/protocolo_nivel3.md" if manifest.get("corpus_id") == LEVEL3_ID
+                            else "docs/protocolo_niveles_1_y_2.md"),
         "corpus_sha256": manifest["corpus_sha256"],
         "campaign_complete": not missing and not incomplete,
         "blocks_with_all_runs": blocks_done,
@@ -845,7 +852,7 @@ def load_screening(raw_dir: Path, manifest: JsonObject) -> list[JsonObject]:
         if not lines or lines[0].get("record_type") != "header":
             raise ValueError(f"{path.name}: falta la cabecera")
         if lines[0]["config"]["dataset"]["corpus_sha256"] != manifest["corpus_sha256"]:
-            raise ValueError(f"{path.name}: no corresponde a screen_v2 congelado")
+            raise ValueError(f"{path.name}: no corresponde al corpus congelado del nivel 1")
         current_identity = screening_identity(lines[0]["config"])
         if identity is not None and current_identity != identity:
             raise ValueError(f"{path.name}: cambió la política o el código de los filtros entre partes")
@@ -1214,7 +1221,7 @@ def fmt_p(value: float) -> str:
     return "<0{,}001" if value < 0.001 else f"{value:.3f}".replace(".", "{,}")
 
 
-def write_tables(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v2") -> None:
+def write_tables(metrics: JsonObject, out_dir: Path, *, prefix: str = "nivel2") -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     head = ("% Generado por scripts/metrics_eval.py; no editar a mano. "
             "\\dagger: n < 20, solo descriptivo.\n")
@@ -1231,7 +1238,7 @@ def write_tables(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v
             fmt_prop(asr[config][s]["union"]) for s in ("A:LLM07", "A:LLM01", "A:LLM05"))
             + " \\\\\n")
     lines.append("\\bottomrule\n\\end{tabular}\n")
-    (out_dir / f"{corpus_id}_asr.tex").write_text("".join(lines), encoding="utf-8")
+    (out_dir / f"{prefix}_asr.tex").write_text("".join(lines), encoding="utf-8")
     lines = [head, "\\begin{tabular}{@{}lllrrrr@{}}\n\\toprule\n",
              "Pista & Config. & DSR (bloqueo) & $b$ & $c$ & $p$ McNemar & $p$ Holm \\\\\n\\midrule\n"]
     for scope in ("A", "B"):
@@ -1242,7 +1249,7 @@ def write_tables(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v
                          f"{row['b_c0_success_only']} & {row['c_config_success_only']} & "
                          f"{fmt_p(row['mcnemar_exact_p'])} & {fmt_p(row['holm_p'])} \\\\\n")
     lines.append("\\bottomrule\n\\end{tabular}\n")
-    (out_dir / f"{corpus_id}_dsr.tex").write_text("".join(lines), encoding="utf-8")
+    (out_dir / f"{prefix}_dsr.tex").write_text("".join(lines), encoding="utf-8")
     lines = [head, "\\begin{tabular}{@{}lllll@{}}\n\\toprule\n",
              "Pista & Config. & FPR de defensa & Sobre-rechazo (juez) & Contrato \\\\\n\\midrule\n"]
     for track in ("A", "B"):
@@ -1252,7 +1259,7 @@ def write_tables(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v
                          f"{fmt_prop(row['over_refusal_judge'])} & "
                          f"{fmt_prop(row['contract_compliance'])} \\\\\n")
     lines.append("\\bottomrule\n\\end{tabular}\n")
-    (out_dir / f"{corpus_id}_benignos.tex").write_text("".join(lines), encoding="utf-8")
+    (out_dir / f"{prefix}_benignos.tex").write_text("".join(lines), encoding="utf-8")
     lines = [head, "\\begin{tabular}{@{}lrrrrr@{}}\n\\toprule\n",
              "Config. & Objetivo (USD, conocido) & Defensas & Juez & Casos sin coste & "
              "$\\Delta$ mediana vs C0 (ms) \\\\\n\\midrule\n"]
@@ -1266,7 +1273,7 @@ def write_tables(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v
         lines.append(f"{config} & {' & '.join(amounts)} & "
                      f"{missing} & {'--' if delta is None else f'{delta:.0f}'} \\\\\n")
     lines.append("\\bottomrule\n\\end{tabular}\n")
-    (out_dir / f"{corpus_id}_coste.tex").write_text("".join(lines), encoding="utf-8")
+    (out_dir / f"{prefix}_coste.tex").write_text("".join(lines), encoding="utf-8")
 
 
 def _pyplot() -> Any:
@@ -1310,7 +1317,7 @@ def heatmap(ax: Any, rows: Sequence[str], cols: Sequence[str], values: Sequence[
     fig.colorbar(image, ax=ax, label=label)
 
 
-def write_figures(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_v2") -> None:
+def write_figures(metrics: JsonObject, out_dir: Path, *, prefix: str = "nivel2") -> None:
     """ASR y DSR con IC, heatmaps familia × configuración, FPR y coste/latencia."""
     plt = _pyplot()
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.2), sharey=True)
@@ -1318,7 +1325,7 @@ def write_figures(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_
                              (axes[1], "B", "Pista B (JBB-Behaviors)")):
         interval_bars(ax, CONFIGS, [metrics["asr"][c][scope]["union"] for c in CONFIGS], "#4C72B0")
         ax.set_title(f"ASR · {title}", fontsize=9)
-    save_figure(fig, out_dir, f"{corpus_id}_asr")
+    save_figure(fig, out_dir, f"{prefix}_asr")
     plt.close(fig)
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.2), sharey=True)
     for ax, scope in ((axes[0], "A"), (axes[1], "B")):
@@ -1326,7 +1333,7 @@ def write_figures(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_
         interval_bars(ax, CONFIGS[1:], [dsr["configs"][c]["dsr_blocked"] for c in CONFIGS[1:]],
                       "#55A868")
         ax.set_title(f"DSR · pista {scope} (|A| = {dsr['A_size']})", fontsize=9)
-    save_figure(fig, out_dir, f"{corpus_id}_dsr")
+    save_figure(fig, out_dir, f"{prefix}_dsr")
     plt.close(fig)
     for track in ("A", "B"):
         families = sorted(s for s in metrics["asr"]["C0"] if s.startswith(f"fam:{track}:"))
@@ -1337,7 +1344,7 @@ def write_figures(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_
         heatmap(ax, [f.split(":", 2)[2] + f" (n={metrics['asr']['C0'][f]['union']['n']})"
                      for f in families], CONFIGS, values, fig, "ASR (%)")
         ax.set_title(f"ASR por familia y configuración · pista {track}", fontsize=9)
-        save_figure(fig, out_dir, f"{corpus_id}_heatmap_{track}")
+        save_figure(fig, out_dir, f"{prefix}_heatmap_{track}")
         plt.close(fig)
     fig, axes = plt.subplots(1, 3, figsize=(12, 3.2))
     interval_bars(axes[0], CONFIGS, [metrics["benign"]["A"][c]["defence_fpr"] for c in CONFIGS], "#C44E52")
@@ -1357,7 +1364,7 @@ def write_figures(metrics: JsonObject, out_dir: Path, *, corpus_id: str = "eval_
         color="#333333", marker="o", linewidth=1)
     twin.set_ylabel("USD por caso (objetivo + defensas)")
     axes[2].set_title("Latencia y coste", fontsize=9)
-    save_figure(fig, out_dir, f"{corpus_id}_fpr_latencia_coste")
+    save_figure(fig, out_dir, f"{prefix}_fpr_latencia_coste")
     plt.close(fig)
 
 
@@ -1370,7 +1377,7 @@ def write_screening_figures(metrics: JsonObject, out_dir: Path) -> None:
     fig, ax = plt.subplots(figsize=(6.5, 0.28 * len(families) + 1.2))
     heatmap(ax, families, ["NeMo", "Llama Guard 4", "OpenRouter"], values, fig, "Bloqueados (%)")
     ax.set_title("Nivel 1 · tasa de bloqueo por familia y filtro de entrada", fontsize=9)
-    save_figure(fig, out_dir, "screen_v2_heatmap")
+    save_figure(fig, out_dir, "nivel1_heatmap")
     plt.close(fig)
 
 
@@ -1385,7 +1392,7 @@ def write_screening_table(metrics: JsonObject, out_dir: Path) -> None:
         lines.append(cls.replace("_", "\\_") + " & "
                      + " & ".join("--" if c is None else fmt_prop(c) for c in cells) + " \\\\\n")
     lines.append("\\bottomrule\n\\end{tabular}\n")
-    (out_dir / "screen_v2_clases.tex").write_text("".join(lines), encoding="utf-8")
+    (out_dir / "nivel1_clases.tex").write_text("".join(lines), encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
@@ -1434,7 +1441,7 @@ def human_agreement(labels_csv: Path, raw_dir: Path, manifest: JsonObject) -> Js
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--corpus", choices=("eval_v2", "eval_v3"), default="eval_v2")
+    parser.add_argument("--corpus", choices=("nivel2", "nivel3"), default="nivel2")
     parser.add_argument("--raw-dir", type=Path, default=RAW_DIR)
     parser.add_argument("--manifest", type=Path, default=MANIFEST)
     parser.add_argument("--screen-manifest", type=Path, default=SCREEN_MANIFEST)
@@ -1453,14 +1460,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     mode.add_argument("--screening", action="store_true")
     mode.add_argument("--human-labels", type=Path)
     args = parser.parse_args(argv)
-    if args.corpus == "eval_v3":
+    if args.corpus == "nivel3":
         if args.screening or args.estimate_budget or args.budget_check:
-            parser.error("Los modos de cribado y presupuesto pertenecen al protocolo v2")
+            parser.error("Los modos de cribado y presupuesto son de los niveles 1 y 2")
         if args.manifest == MANIFEST:
-            args.manifest = ROOT / "data/attacks/eval_v3_manifest.json"
+            args.manifest = LEVEL3_MANIFEST
         if args.output == OUTPUT:
-            args.output = OUTPUT.with_name("eval_v3_metrics.json")
-    plan = campaign_plan(range(1, 5), prefix="ev3") if args.corpus == "eval_v3" else campaign_plan()
+            args.output = LEVEL3_OUTPUT
+    plan = campaign_plan(range(1, 5), prefix="ev3") if args.corpus == "nivel3" else campaign_plan()
     if args.print_plan:
         for spec in plan:
             print(f"{spec.order:2d} bloque {spec.block} {spec.config} r{spec.replicate} {spec.run_id}")
@@ -1471,13 +1478,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(json.dumps(spend, indent=2, ensure_ascii=False))
         return 3 if spend["stop"] else 0
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
-    if manifest.get("corpus_id") == "eval_v3":
+    if manifest.get("corpus_id") == LEVEL3_ID:
         if args.screening or args.estimate_budget:
-            parser.error("Los modos de cribado y presupuesto pertenecen al protocolo v2")
+            parser.error("Los modos de cribado y presupuesto son de los niveles 1 y 2")
         if args.output == OUTPUT:
-            args.output = OUTPUT.with_name("eval_v3_metrics.json")
-    elif args.corpus == "eval_v3":
-        parser.error("--corpus eval_v3 requiere un manifiesto de eval_v3")
+            args.output = LEVEL3_OUTPUT
+    elif args.corpus == "nivel3":
+        parser.error("--corpus nivel3 requiere el manifiesto del nivel 3")
     if args.estimate_budget:
         screen = json.loads(args.screen_manifest.read_text(encoding="utf-8"))
         system_chars = len(str(manifest["system_prompt_template"]).replace(
@@ -1513,10 +1520,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     metrics = compute(args.raw_dir, manifest, include_partial=args.include_partial)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(metrics, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    corpus_id = "eval_v3" if manifest.get("corpus_id") == "eval_v3" else "eval_v2"
-    write_tables(metrics, args.tables_dir, corpus_id=corpus_id)
+    prefix = "nivel3" if manifest.get("corpus_id") == LEVEL3_ID else "nivel2"
+    write_tables(metrics, args.tables_dir, prefix=prefix)
     if not args.no_figures:
-        write_figures(metrics, args.figures_dir, corpus_id=corpus_id)
+        write_figures(metrics, args.figures_dir, prefix=prefix)
     print(f"{args.output}: {metrics['observations']} observaciones; "
           f"campaña completa: {metrics['campaign_complete']}")
     return 0

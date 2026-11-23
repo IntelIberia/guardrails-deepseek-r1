@@ -33,8 +33,8 @@ from bench.core.config import load_config
 from bench.core.schema import AttackPrompt, JsonObject
 from bench.openrouter import OpenRouterClient, routing
 from scripts.corpus_comun import system_prompt as contract_system_prompt
-from scripts.prepare_eval_v2 import (judge_objective_benign, judge_objective_harmful,
-                                     read_csv_rows)
+from scripts.prepare_niveles_1_y_2 import (judge_objective_benign, judge_objective_harmful,
+                                           read_csv_rows)
 from scripts.run_config import (_canonical_hash, _code_fingerprint, _git_state,
                                 RUN_ID_PATTERN, write_jsonl_line)
 
@@ -94,7 +94,7 @@ CANARY_PREFIX = "TFG-EV3A-CANARY-"
 
 
 def select_behaviors(src_root: Path, n: int, seed: int, n_benign: int = 0) -> list[AttackPrompt]:
-    """Muestrea por categoría las fuentes JBB fijadas y verificadas por v2.
+    """Muestrea por categoría las fuentes JBB fijadas y verificadas en el nivel 2.
 
     El mensaje de sistema es el contrato de la pista B del nivel 2, con una canaria
     propia por conducta, para que los resultados sean comparables.
@@ -229,10 +229,10 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=ROOT / "configs/c0_baseline.yaml")
     parser.add_argument("--adaptive-config", type=Path, default=ROOT / "configs/adaptativo.yaml")
     parser.add_argument("--src-root", type=Path, default=ROOT / "data/attacks/external",
-                        help="Fuentes locales de v2 con jbb_behaviors/data/*.csv")
+                        help="Fuentes locales con jbb_behaviors/data/*.csv")
     parser.add_argument("--n-behaviors", type=int, default=20)
     parser.add_argument("--n-benign", type=int, default=0,
-                        help="Controles benignos; los falsos positivos ya se miden en v2 y v3")
+                        help="Controles benignos; los falsos positivos ya se miden en los niveles 2 y 3")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--technique", choices=(*TECHNIQUES, "all"), default="all")
     parser.add_argument("--max-target-calls", type=int, default=20)
