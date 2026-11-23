@@ -1,0 +1,31 @@
+# Claves: nunca se suben al repositorio
+.env
+.env.*
+!.env.example
+
+# Registros crudos y ficha local de la política nativa (los publicados se añaden a mano con git add -f)
+results/raw/
+results/local/
+
+# Entorno de Python y cachés
+__pycache__/
+.venv
+.venv.icloud-old/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+
+# Ficheros del sistema
+.DS_Store
+
+# Salidas temporales y rutas antiguas del PDF
+/tmp/
+/output/
+/build/
+/htmlcov/
+.coverage
+.ruff_cache/
+*.swp
+*.swo
+*~
